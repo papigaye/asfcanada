@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 21 Février 2014 à 20:59
+-- Généré le: Jeu 27 Février 2014 à 21:36
 -- Version du serveur: 5.1.72-community
 -- Version de PHP: 5.4.12
 
@@ -28,7 +28,6 @@ USE `asfcanada`;
 -- Structure de la table `asf_assets`
 --
 
-DROP TABLE IF EXISTS `asf_assets`;
 CREATE TABLE IF NOT EXISTS `asf_assets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
@@ -42,67 +41,63 @@ CREATE TABLE IF NOT EXISTS `asf_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
---
--- Vider la table avant d'insérer `asf_assets`
---
-
-TRUNCATE TABLE `asf_assets`;
 --
 -- Contenu de la table `asf_assets`
 --
 
 INSERT INTO `asf_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 1, 97, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 1, 99, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
-(7, 1, 13, 16, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(8, 1, 17, 46, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(9, 1, 47, 48, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 49, 50, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
-(11, 1, 51, 52, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(12, 1, 53, 54, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 55, 56, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 57, 58, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 59, 60, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
-(16, 1, 61, 62, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(17, 1, 63, 64, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 65, 66, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 67, 70, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 71, 72, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 73, 74, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 75, 76, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 77, 78, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 79, 82, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.own":{"6":1},"core.edit.state":[]}'),
-(25, 1, 83, 88, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 89, 90, 1, 'com_wrapper', 'com_wrapper', '{}'),
-(27, 8, 18, 27, 2, 'com_content.category.2', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(7, 1, 13, 18, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(8, 1, 19, 48, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(9, 1, 49, 50, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 51, 52, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
+(11, 1, 53, 54, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(12, 1, 55, 56, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 57, 58, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 59, 60, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 61, 62, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
+(16, 1, 63, 64, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(17, 1, 65, 66, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
+(18, 1, 67, 68, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 69, 72, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 73, 74, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 75, 76, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 77, 78, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 79, 80, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 81, 84, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.own":{"6":1},"core.edit.state":[]}'),
+(25, 1, 85, 90, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 91, 92, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(27, 8, 20, 29, 2, 'com_content.category.2', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 68, 69, 2, 'com_newsfeeds.category.5', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 84, 85, 2, 'com_weblinks.category.6', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 80, 81, 1, 'com_users.category.7', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 91, 92, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 25, 86, 87, 2, 'com_weblinks.category.8', 'Liens de Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(35, 8, 28, 45, 2, 'com_content.category.9', 'Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(36, 27, 19, 20, 3, 'com_content.article.1', 'A propos de ce site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(37, 27, 21, 22, 3, 'com_content.article.2', 'Travailler sur le site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(38, 35, 29, 30, 3, 'com_content.article.3', 'Bienvenue sur le Blog', ''),
-(39, 35, 31, 32, 3, 'com_content.article.4', 'A propos de la page d''accueil', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(40, 35, 33, 34, 3, 'com_content.article.5', 'Vos modules', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(41, 1, 93, 94, 1, 'com_users.notes.category.10', 'Non catégorisé', ''),
-(42, 1, 95, 96, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(43, 35, 35, 36, 3, 'com_content.article.6', 'Notre action', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(44, 35, 37, 38, 3, 'com_content.article.7', 'parrainer une famille', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(45, 35, 39, 40, 3, 'com_content.article.8', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(46, 27, 23, 24, 3, 'com_content.article.9', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(47, 27, 25, 26, 3, 'com_content.article.10', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(48, 35, 41, 42, 3, 'com_content.article.11', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(49, 35, 43, 44, 3, 'com_content.article.12', 'blaaamamaa', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
+(30, 19, 70, 71, 2, 'com_newsfeeds.category.5', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 86, 87, 2, 'com_weblinks.category.6', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 82, 83, 1, 'com_users.category.7', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 93, 94, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 25, 88, 89, 2, 'com_weblinks.category.8', 'Liens de Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(35, 8, 30, 47, 2, 'com_content.category.9', 'Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(36, 27, 21, 22, 3, 'com_content.article.1', 'A propos de ce site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(37, 27, 23, 24, 3, 'com_content.article.2', 'Travailler sur le site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(38, 35, 31, 32, 3, 'com_content.article.3', 'Bienvenue sur le Blog', ''),
+(39, 35, 33, 34, 3, 'com_content.article.4', 'A propos de la page d''accueil', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(40, 35, 35, 36, 3, 'com_content.article.5', 'Vos modules', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(41, 1, 95, 96, 1, 'com_users.notes.category.10', 'Non catégorisé', ''),
+(42, 1, 97, 98, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(43, 35, 37, 38, 3, 'com_content.article.6', 'Notre action', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(44, 35, 39, 40, 3, 'com_content.article.7', 'parrainer une famille', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(45, 35, 41, 42, 3, 'com_content.article.8', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(46, 27, 25, 26, 3, 'com_content.article.9', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(47, 27, 27, 28, 3, 'com_content.article.10', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(48, 35, 43, 44, 3, 'com_content.article.11', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(49, 35, 45, 46, 3, 'com_content.article.12', 'blaaamamaa', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(50, 7, 16, 17, 2, 'com_contact.category.10', 'asf-contact', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}');
 
 -- --------------------------------------------------------
 
@@ -110,7 +105,6 @@ INSERT INTO `asf_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `tit
 -- Structure de la table `asf_associations`
 --
 
-DROP TABLE IF EXISTS `asf_associations`;
 CREATE TABLE IF NOT EXISTS `asf_associations` (
   `id` varchar(50) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
@@ -119,73 +113,12 @@ CREATE TABLE IF NOT EXISTS `asf_associations` (
   KEY `idx_key` (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_associations`
---
-
-TRUNCATE TABLE `asf_associations`;
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banner_clients`
---
-
-DROP TABLE IF EXISTS `asf_banner_clients`;
-CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `contact` varchar(255) NOT NULL DEFAULT '',
-  `email` varchar(255) NOT NULL DEFAULT '',
-  `extrainfo` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `metakey` text NOT NULL,
-  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
-  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
-  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-  PRIMARY KEY (`id`),
-  KEY `idx_own_prefix` (`own_prefix`),
-  KEY `idx_metakey_prefix` (`metakey_prefix`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Vider la table avant d'insérer `asf_banner_clients`
---
-
-TRUNCATE TABLE `asf_banner_clients`;
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banner_tracks`
---
-
-DROP TABLE IF EXISTS `asf_banner_tracks`;
-CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
-  `track_date` datetime NOT NULL,
-  `track_type` int(10) unsigned NOT NULL,
-  `banner_id` int(10) unsigned NOT NULL,
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
-  KEY `idx_track_date` (`track_date`),
-  KEY `idx_track_type` (`track_type`),
-  KEY `idx_banner_id` (`banner_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Vider la table avant d'insérer `asf_banner_tracks`
---
-
-TRUNCATE TABLE `asf_banner_tracks`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_banners`
 --
 
-DROP TABLE IF EXISTS `asf_banners`;
 CREATE TABLE IF NOT EXISTS `asf_banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) NOT NULL DEFAULT '0',
@@ -224,18 +157,55 @@ CREATE TABLE IF NOT EXISTS `asf_banners` (
   KEY `idx_language` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
 --
--- Vider la table avant d'insérer `asf_banners`
+-- Structure de la table `asf_banner_clients`
 --
 
-TRUNCATE TABLE `asf_banners`;
+CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `contact` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `extrainfo` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `metakey` text NOT NULL,
+  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
+  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`id`),
+  KEY `idx_own_prefix` (`own_prefix`),
+  KEY `idx_metakey_prefix` (`metakey_prefix`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_banner_tracks`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
+  `track_date` datetime NOT NULL,
+  `track_type` int(10) unsigned NOT NULL,
+  `banner_id` int(10) unsigned NOT NULL,
+  `count` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
+  KEY `idx_track_date` (`track_date`),
+  KEY `idx_track_type` (`track_type`),
+  KEY `idx_banner_id` (`banner_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_categories`
 --
 
-DROP TABLE IF EXISTS `asf_categories`;
 CREATE TABLE IF NOT EXISTS `asf_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -271,19 +241,14 @@ CREATE TABLE IF NOT EXISTS `asf_categories` (
   KEY `idx_left_right` (`lft`,`rgt`),
   KEY `idx_alias` (`alias`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
---
--- Vider la table avant d'insérer `asf_categories`
---
-
-TRUNCATE TABLE `asf_categories`;
 --
 -- Contenu de la table `asf_categories`
 --
 
 INSERT INTO `asf_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`) VALUES
-(1, 0, 0, 0, 19, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '', 883, '2009-10-18 16:07:09', 0, '0000-00-00 00:00:00', 0, '*'),
+(1, 0, 0, 0, 21, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '', 883, '2009-10-18 16:07:09', 0, '0000-00-00 00:00:00', 0, '*'),
 (2, 27, 1, 1, 2, 1, 'non-categorise', 'com_content', 'Non catégorisé', 'non-categorise', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 883, '2010-06-28 13:26:37', 0, '0000-00-00 00:00:00', 0, '*'),
 (3, 28, 1, 3, 4, 1, 'non-categorise', 'com_banners', 'Non catégorisé', 'non-categorise', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":"","foobar":""}', '', '', '{"page_title":"","author":"","robots":""}', 883, '2010-06-28 13:27:35', 0, '0000-00-00 00:00:00', 0, '*'),
 (4, 29, 1, 5, 6, 1, 'non-categorise', 'com_contact', 'Non catégorisé', 'non-categorise', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 883, '2010-06-28 13:27:57', 0, '0000-00-00 00:00:00', 0, '*'),
@@ -291,7 +256,8 @@ INSERT INTO `asf_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `leve
 (6, 31, 1, 9, 10, 1, 'non-categorise', 'com_weblinks', 'Non catégorisé', 'non-categorise', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 883, '2010-06-28 13:28:33', 0, '0000-00-00 00:00:00', 0, '*'),
 (7, 32, 1, 11, 12, 1, 'non-categorise', 'com_users', 'Non catégorisé', 'non-categorise', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"target":"","image":""}', '', '', '{"page_title":"","author":"","robots":""}', 883, '2010-06-28 13:28:33', 0, '0000-00-00 00:00:00', 0, '*'),
 (8, 34, 1, 13, 14, 1, 'liens-blog', 'com_weblinks', 'Liens de Blog', 'liens-blog', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 883, '2012-01-04 15:02:08', 0, '0000-00-00 00:00:00', 0, '*'),
-(9, 35, 1, 15, 16, 1, 'blog', 'com_content', 'Blog', 'blog', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 883, '2012-01-04 15:43:10', 0, '0000-00-00 00:00:00', 0, '*');
+(9, 35, 1, 15, 16, 1, 'blog', 'com_content', 'Blog', 'blog', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 883, '2012-01-04 15:43:10', 0, '0000-00-00 00:00:00', 0, '*'),
+(10, 50, 1, 19, 20, 1, 'asf-contact', 'com_contact', 'asf-contact', 'asf-contact', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 883, '2014-02-26 18:57:22', 0, '0000-00-00 00:00:00', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -299,7 +265,6 @@ INSERT INTO `asf_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `leve
 -- Structure de la table `asf_contact_details`
 --
 
-DROP TABLE IF EXISTS `asf_contact_details`;
 CREATE TABLE IF NOT EXISTS `asf_contact_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -352,20 +317,21 @@ CREATE TABLE IF NOT EXISTS `asf_contact_details` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Vider la table avant d'insérer `asf_contact_details`
+-- Contenu de la table `asf_contact_details`
 --
 
-TRUNCATE TABLE `asf_contact_details`;
+INSERT INTO `asf_contact_details` (`id`, `name`, `alias`, `con_position`, `address`, `suburb`, `state`, `country`, `postcode`, `telephone`, `fax`, `misc`, `image`, `imagepos`, `email_to`, `default_con`, `published`, `checked_out`, `checked_out_time`, `ordering`, `params`, `user_id`, `catid`, `access`, `mobile`, `webpage`, `sortname1`, `sortname2`, `sortname3`, `language`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `metakey`, `metadesc`, `metadata`, `featured`, `xreference`, `publish_up`, `publish_down`) VALUES
+(1, 'ASF Canada', 'asf-canada', 'Artistes Sans Frontières Canada est une initiative de la Fondation québécoise pour la danse contemporaine (FQDC). Le numéro d’organisme de charité de la FQDC est le : 86018 2799 RR0001.', '372, rue Ste-Catherine Ouest, bureau 327, 3ème étage, Montréal(Québec) Canada\r\nMétro Place-des-Arts, sortie Bleury', 'Montréal', '', 'Canada', ' H3B 1A2', '514-878-2586, poste 33', '514-395-2276', '<p>Nos heures de bureaux sont du lundi au vendredi de 9h30 à 17h30.</p>\r\n<p>Vous pouvez nous joindre en tout temps par courriel :  info@asfcanada.org.</p>\r\n<p>Pour les demandes d''emplois, de stages et de bénévolat : emploi@asfcanada.org</p>', 'images/logo.png', NULL, 'info@asfcanada.org', 0, 1, 0, '0000-00-00 00:00:00', 1, '{"show_contact_category":"","show_contact_list":"","presentation_style":"plain","show_name":"0","show_position":"1","show_email":"1","show_street_address":"1","show_suburb":"1","show_state":"1","show_postcode":"1","show_country":"1","show_telephone":"1","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"1","show_image":"","allow_vcard":"","show_articles":"","show_profile":"","show_links":"","linka_name":"","linka":false,"linkb_name":"","linkb":false,"linkc_name":"","linkc":false,"linkd_name":"","linkd":false,"linke_name":"","linke":"","contact_layout":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":""}', 0, 10, 1, '', '', '', '', '', '*', '2014-02-26 18:54:19', 883, '', '2014-02-27 21:33:38', 883, '', '', '{"robots":"","rights":""}', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_content`
 --
 
-DROP TABLE IF EXISTS `asf_content`;
 CREATE TABLE IF NOT EXISTS `asf_content` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -413,27 +379,22 @@ CREATE TABLE IF NOT EXISTS `asf_content` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
--- Vider la table avant d'insérer `asf_content`
---
-
-TRUNCATE TABLE `asf_content`;
---
 -- Contenu de la table `asf_content`
 --
 
 INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `introtext`, `fulltext`, `state`, `sectionid`, `mask`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `parentid`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
-(1, 36, 'A propos de ce site', 'a-propos', '', '<p>Cette page a pour but de présenter brièvement le Blog et la personne qui l''écrit. </p>\r\n<p>Lorsque vous serez connecté, vous aurez la possibilité de modifier cette page en cliquant sur le lien «Modifier».</p>', '', 1, 0, 0, 2, '2012-01-04 16:10:42', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2012-01-04 16:10:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 3, '', '', 1, 8, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(1, 36, 'A propos de ce site', 'a-propos', '', '<p>Cette page a pour but de présenter brièvement le Blog et la personne qui l''écrit. </p>\r\n<p>Lorsque vous serez connecté, vous aurez la possibilité de modifier cette page en cliquant sur le lien «Modifier».</p>', '', 1, 0, 0, 2, '2012-01-04 16:10:42', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2012-01-04 16:10:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 3, '', '', 1, 17, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (2, 37, 'Travailler sur le site', 'travailler-sur-le-site', '', '<p style="text-align: justify;">Vous trouverez ici quelques astuces basiques pour travailler sur votre site.</p>\r\n<ul>\r\n<li style="text-align: justify;">Joomla! a une partie «Site» (ou frontale), que vous êtes en train de regarder, et une partie «Administration» (ou arrière) qui est l''endroit où vous effectuez le travail plus avancé comme régler les menus ou décider quels modules afficher. Vous devez vous connecter à l''administration séparément en utilisant le même identifiant et le même mot de passe que vous utilisez sur cette partie du site.</li>\r\n<li style="text-align: justify;">Une des premières choses que vous souhaiterez faire sera probablement de changer le titre du site ansi que sa description. Pour cela, connectez-vous à l''administration puis, dans le menu «Extensions», cliquez sur «Gestion des templates». Ce site est installé avec le template «Protostar» (actuellement utilisé) et le template «Beez3». Pour appliquer un template, cliquez sur l''étoile à droite de son titre, la couleur jaune indique que le template est celui utilisé. En cliquant sur le nom du template, un formulaire est affiché vous permettant de modifier les paramètres selon vos souhaits. Vous pouvez expérimenter les différents paramètres proposés.</li>\r\n<li style="text-align: justify;">Vous souhaitez probablement installer un nouveau template pour changer l''aspect du site. Pour cela, dans le menu «Extension», cliquez sur «Gestion des extensions», vous accédez à l''onglet «Installation».<br />Il existe de nombreux templates gratuits et commerciaux pour Joomla!</li>\r\n<li style="text-align: justify;">Comme vous l''avez déjà vu, vous pouvez contrôler qui peut voir les différentes parties de votre site. Quand vous travaillez aves des modules, articles ou liens web, régler le niveau d''accès sur «Enregistré» signifie que seuls les utilisateurs identifiés sur le site pourront y accéder.</li>\r\n<li style="text-align: justify;">Quand vous créez un nouvel article ou un autre type de contenu, vous pouvez également l''enregistrer comme «Publié» ou «Non-publié». S''il est «Non-publié», les visiteurs du site ne pourront pas le voir, mais vous oui.</li>\r\n<li style="text-align: justify;">Vous pouvez en apprendre d''avantage sur comment travailler avec Joomla! en consultant le <a href="http://docs.joomla.org">site de documentation Joomla</a> et obtenir de l''aide des autres utilisateurs en consultant les <a href="http://forum.joomla.org">forums Joomla.org</a> (en anglais) et les <a href="http://forum.joomla.fr">forums Joomla.fr</a> (en français).<br />Dans l''administration, un bouton «Aide» est disponible dans toutes les interfaces, vous apportant des informations détaillées sur leur utilisation.</li>\r\n</ul>', '', 1, 0, 0, 2, '2012-01-04 16:48:38', 883, '', '2012-01-17 16:02:30', 42, 0, '0000-00-00 00:00:00', '2012-01-04 16:48:38', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 2, '', '', 3, 7, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (3, 38, 'Bienvenue sur votre Blog', 'bienvenue-sur-votre-blog', '', '<p style="text-align: justify;">Ce site est un exemple d''affichage d''articles sous forme de Blog.</p>\r\n<p style="text-align: justify;">Si vous vous connectez sur le site (le lien «Connexion ''Auteur''» se trouve dans le «Menu bas») vous pourrez modifier cet article ainsi que tous les autres. Vous pourrez également créer un nouvel article.</p>\r\n<p style="text-align: justify;">En ajoutant et en modifiant vos articles, vous verrez les changements effectués sur votre site et vous pourrez le personnaliser de différentes façons.</p>\r\n<p style="text-align: justify;">Vous pouvez y aller sans crainte, vous ne casserez rien.</p>', '', 1, 0, 0, 9, '2012-01-04 16:55:36', 883, '', '2012-01-17 16:03:05', 42, 0, '0000-00-00 00:00:00', '2012-01-04 16:55:36', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 7, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(4, 39, 'A propos de la page d''accueil', 'a-propos-de-la-page-accueil', '', '<p style="text-align: justify;">La page d''accueil est paramétrée pour afficher les quatres articles les plus récents de la catégorie «Blog», sous forme de colonne. Il y a ensuite les liens vers les 4 articles précédents. Vous pouvez changer ces nombres en éditant les paramètres de contenu, onglet Blog/En vedette, dans l''administration du site. Vous trouverez un lien vers votre administration dans le menu haut.</p>\r\n<p style="text-align: justify;">Si vous souhaitez avoir vos articles de Blog divisés en deux parties, une introduction et ensuite une page enière, utilisez le bouton «Lire la suite» pour insérer une séparation (tel ci-dessous).</p>\r\n', '\r\n<p style="text-align: justify;">Sur la page entière vous verrez l''introduction ainsi que le reste de l''article. Vous pouvez changer les réglages afin de cacher le texte d''introduction si vous le souhaitez.</p>', 1, 0, 0, 9, '2012-01-04 17:47:03', 883, '', '2012-01-04 18:16:23', 42, 0, '0000-00-00 00:00:00', '2012-01-04 17:47:03', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 6, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(5, 40, 'Vos modules', 'vos-modules', '', '<p style="text-align: justify;">Votre site possède quelques modules communs déjà pré-configurés. Cela inclut :</p>\r\n<ul style="text-align: justify;">\r\n<li>Le «Module image» qui affiche l''image sous le menu. C''est un module de type «Contenu personnalisé» que vous pouvez modifier pour changer l''image.</li>\r\n<li>Le module «Liens de Blog» qui vous permet d''afficher des liens vers d''autres Blogs. Nous avons mis trois exemples, mais vous pouvez en ajouter ou en supprimer. Quand vous êtes connecté, cliquez sur «Gestion des liens» pour afficher la liste des liens et leur icône de modification.</li>\r\n<li>Le module «Articles les plus lus» liste les articles, basé sur le nombre de fois qu''ils ont été affichés.</li>\r\n<li>Le module «Anciens articles» liste les articles par mois.</li>\r\n<li>Le module «Lien de flux RSS» permet à vos lecteurs de lire vos articles dans un lecteur de flux (Fil d''actualité).</li>\r\n</ul>\r\n<p style="text-align: justify;">Chacun de ces modules possède de nombreux paramètres que vous pouvez expérimenter dans la «Gestion des modules» à partir de l''administration. Joomla inclut également de nombreux autres modules que vous pouvez incorporer à votre site. En développant votre site, vous souhaiterez sans doute ajouter d''autres modules, vous pourrez en trouver sur le site officiel des extensions de Joomla (<a href="http://extensions.joomla.org">JED - Joomla Extensions Directory)</a> ou sur le site officiel des extensions en français pour Joomla (<a href="http://extensions.joomla.fr" target="_blank">extensions.joomla.fr</a>).</p>', '', 1, 0, 0, 9, '2012-01-05 09:30:17', 883, '', '2012-01-17 12:23:56', 42, 0, '0000-00-00 00:00:00', '2012-01-05 09:30:17', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 5, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(6, 43, 'Notre action', 'notre-action', '', '<p>Moussa Thimbo et compagnie takké</p>', '', 1, 0, 0, 9, '2014-01-30 19:57:27', 883, '', '2014-01-30 19:59:20', 883, 0, '0000-00-00 00:00:00', '2014-01-30 19:57:27', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 4, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(7, 44, 'parrainer une famille', 'parrainer-une-famille', '', '<p>vvv</p>', '', 1, 0, 0, 9, '2014-01-30 20:25:54', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-01-30 20:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 3, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(8, 45, 'Faire un don', 'faire', '', '<p>vvv</p>', '', 1, 0, 0, 9, '2014-01-30 20:26:56', 883, '', '2014-01-30 20:46:15', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 2, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(4, 39, 'A propos de la page d''accueil', 'a-propos-de-la-page-accueil', '', '<p style="text-align: justify;">La page d''accueil est paramétrée pour afficher les quatres articles les plus récents de la catégorie «Blog», sous forme de colonne. Il y a ensuite les liens vers les 4 articles précédents. Vous pouvez changer ces nombres en éditant les paramètres de contenu, onglet Blog/En vedette, dans l''administration du site. Vous trouverez un lien vers votre administration dans le menu haut.</p>\r\n<p style="text-align: justify;">Si vous souhaitez avoir vos articles de Blog divisés en deux parties, une introduction et ensuite une page enière, utilisez le bouton «Lire la suite» pour insérer une séparation (tel ci-dessous).</p>\r\n', '\r\n<p style="text-align: justify;">Sur la page entière vous verrez l''introduction ainsi que le reste de l''article. Vous pouvez changer les réglages afin de cacher le texte d''introduction si vous le souhaitez.</p>', 1, 0, 0, 9, '2012-01-04 17:47:03', 883, '', '2012-01-04 18:16:23', 42, 0, '0000-00-00 00:00:00', '2012-01-04 17:47:03', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 6, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(5, 40, 'Vos modules', 'vos-modules', '', '<p style="text-align: justify;">Votre site possède quelques modules communs déjà pré-configurés. Cela inclut :</p>\r\n<ul style="text-align: justify;">\r\n<li>Le «Module image» qui affiche l''image sous le menu. C''est un module de type «Contenu personnalisé» que vous pouvez modifier pour changer l''image.</li>\r\n<li>Le module «Liens de Blog» qui vous permet d''afficher des liens vers d''autres Blogs. Nous avons mis trois exemples, mais vous pouvez en ajouter ou en supprimer. Quand vous êtes connecté, cliquez sur «Gestion des liens» pour afficher la liste des liens et leur icône de modification.</li>\r\n<li>Le module «Articles les plus lus» liste les articles, basé sur le nombre de fois qu''ils ont été affichés.</li>\r\n<li>Le module «Anciens articles» liste les articles par mois.</li>\r\n<li>Le module «Lien de flux RSS» permet à vos lecteurs de lire vos articles dans un lecteur de flux (Fil d''actualité).</li>\r\n</ul>\r\n<p style="text-align: justify;">Chacun de ces modules possède de nombreux paramètres que vous pouvez expérimenter dans la «Gestion des modules» à partir de l''administration. Joomla inclut également de nombreux autres modules que vous pouvez incorporer à votre site. En développant votre site, vous souhaiterez sans doute ajouter d''autres modules, vous pourrez en trouver sur le site officiel des extensions de Joomla (<a href="http://extensions.joomla.org">JED - Joomla Extensions Directory)</a> ou sur le site officiel des extensions en français pour Joomla (<a href="http://extensions.joomla.fr" target="_blank">extensions.joomla.fr</a>).</p>', '', 1, 0, 0, 9, '2012-01-05 09:30:17', 883, '', '2012-01-17 12:23:56', 42, 0, '0000-00-00 00:00:00', '2012-01-05 09:30:17', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 5, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(6, 43, 'Notre action', 'notre-action', '', '<p>Moussa Thimbo et compagnie takké</p>', '', 1, 0, 0, 9, '2014-01-30 19:57:27', 883, '', '2014-01-30 19:59:20', 883, 0, '0000-00-00 00:00:00', '2014-01-30 19:57:27', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 4, '', '', 1, 15, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(7, 44, 'parrainer une famille', 'parrainer-une-famille', '', '<p>vvv</p>', '', 1, 0, 0, 9, '2014-01-30 20:25:54', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-01-30 20:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 3, '', '', 1, 10, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(8, 45, 'Faire un don', 'faire', '', '<p>vvv</p>', '', 1, 0, 0, 9, '2014-01-30 20:26:56', 883, '', '2014-01-30 20:46:15', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 2, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (9, 46, 'Impliquez-vous', 'impliquez-vous', '', '<p>dd</p>', '', 1, 0, 0, 2, '2014-01-30 20:41:47', 883, '', '2014-01-30 20:45:34', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:41:47', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (10, 47, 'Faire un don', 'faire-un-don', '', '<p>ddd</p>', '', 1, 0, 0, 2, '2014-01-30 20:42:57', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-01-30 20:42:57', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (11, 48, 'Impliquez-vous', 'impliquez-vous', '', '<p>bbb</p>', '', 1, 0, 0, 9, '2014-01-30 20:48:59', 883, '', '2014-01-30 20:49:14', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:48:59', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(12, 49, 'blaaamamaa', 'blaaamamaa', '', '<p>ccccc</p>', '', 1, 0, 0, 9, '2014-01-30 20:52:29', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-01-30 20:52:29', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
+(12, 49, 'blaaamamaa', 'blaaamamaa', '', '<p>ccccc</p>', '', 1, 0, 0, 9, '2014-01-30 20:52:29', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-01-30 20:52:29', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 4, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
@@ -441,25 +402,18 @@ INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 -- Structure de la table `asf_content_frontpage`
 --
 
-DROP TABLE IF EXISTS `asf_content_frontpage`;
 CREATE TABLE IF NOT EXISTS `asf_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_content_frontpage`
---
-
-TRUNCATE TABLE `asf_content_frontpage`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_content_rating`
 --
 
-DROP TABLE IF EXISTS `asf_content_rating`;
 CREATE TABLE IF NOT EXISTS `asf_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
@@ -468,35 +422,23 @@ CREATE TABLE IF NOT EXISTS `asf_content_rating` (
   PRIMARY KEY (`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_content_rating`
---
-
-TRUNCATE TABLE `asf_content_rating`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_core_log_searches`
 --
 
-DROP TABLE IF EXISTS `asf_core_log_searches`;
 CREATE TABLE IF NOT EXISTS `asf_core_log_searches` (
   `search_term` varchar(128) NOT NULL DEFAULT '',
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_core_log_searches`
---
-
-TRUNCATE TABLE `asf_core_log_searches`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_extensions`
 --
 
-DROP TABLE IF EXISTS `asf_extensions`;
 CREATE TABLE IF NOT EXISTS `asf_extensions` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -519,13 +461,8 @@ CREATE TABLE IF NOT EXISTS `asf_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=804 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=811 ;
 
---
--- Vider la table avant d'insérer `asf_extensions`
---
-
-TRUNCATE TABLE `asf_extensions`;
 --
 -- Contenu de la table `asf_extensions`
 --
@@ -569,7 +506,7 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 (204, 'mod_breadcrumbs', 'module', 'mod_breadcrumbs', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_breadcrumbs","type":"module","creationDate":"July 2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_BREADCRUMBS_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (205, 'mod_custom', 'module', 'mod_custom', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_custom","type":"module","creationDate":"July 2004","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_CUSTOM_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (206, 'mod_feed', 'module', 'mod_feed', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_feed","type":"module","creationDate":"July 2005","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_FEED_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(207, 'mod_footer', 'module', 'mod_footer', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_footer","type":"module","creationDate":"July 2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_FOOTER_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(207, 'Pied de page', 'module', 'mod_footer', '', 0, 1, 1, 1, '{"legacy":false,"name":"Pied de page","type":"module","creationDate":"Unknown","author":"Moussa Thimbo","copyright":"","authorEmail":"","authorUrl":"","version":"1.0.0","description":"Module footer pour ASF CANADA.","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (208, 'mod_login', 'module', 'mod_login', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_login","type":"module","creationDate":"July 2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_LOGIN_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (209, 'mod_menu', 'module', 'mod_menu', '', 0, 1, 1, 1, '{"legacy":false,"name":"mod_menu","type":"module","creationDate":"July 2004","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_MENU_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (210, 'mod_articles_news', 'module', 'mod_articles_news', '', 0, 1, 1, 0, '{"legacy":false,"name":"mod_articles_news","type":"module","creationDate":"July 2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"MOD_ARTICLES_NEWS_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -625,9 +562,9 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 (423, 'plg_system_p3p', 'plugin', 'p3p', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_p3p","type":"plugin","creationDate":"September 2010","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_P3P_XML_DESCRIPTION","group":""}', '{"headers":"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"}', '', '', 0, '0000-00-00 00:00:00', 2, 0),
 (424, 'plg_system_cache', 'plugin', 'cache', 'system', 0, 0, 1, 1, '{"legacy":false,"name":"plg_system_cache","type":"plugin","creationDate":"February 2007","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_CACHE_XML_DESCRIPTION","group":""}', '{"browsercache":"0","cachetime":"15"}', '', '', 0, '0000-00-00 00:00:00', 9, 0),
 (425, 'plg_system_debug', 'plugin', 'debug', 'system', 0, 1, 1, 0, '{"legacy":false,"name":"plg_system_debug","type":"plugin","creationDate":"December 2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_DEBUG_XML_DESCRIPTION","group":""}', '{"profile":"1","queries":"1","memory":"1","language_files":"1","language_strings":"1","strip-first":"1","strip-prefix":"","strip-suffix":""}', '', '', 0, '0000-00-00 00:00:00', 4, 0),
-(426, 'plg_system_log', 'plugin', 'log', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_log","type":"plugin","creationDate":"April 2007","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_LOG_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 5, 0);
+(426, 'plg_system_log', 'plugin', 'log', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_log","type":"plugin","creationDate":"April 2007","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_LOG_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 5, 0),
+(427, 'plg_system_redirect', 'plugin', 'redirect', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_redirect","type":"plugin","creationDate":"April 2009","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_REDIRECT_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 6, 0);
 INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
-(427, 'plg_system_redirect', 'plugin', 'redirect', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_redirect","type":"plugin","creationDate":"April 2009","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_REDIRECT_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 6, 0),
 (428, 'plg_system_remember', 'plugin', 'remember', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_remember","type":"plugin","creationDate":"April 2007","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_REMEMBER_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 7, 0),
 (429, 'plg_system_sef', 'plugin', 'sef', 'system', 0, 1, 1, 0, '{"legacy":false,"name":"plg_system_sef","type":"plugin","creationDate":"December 2007","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_SEF_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 8, 0),
 (430, 'plg_system_logout', 'plugin', 'logout', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_logout","type":"plugin","creationDate":"April 2009","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"PLG_SYSTEM_LOGOUT_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 3, 0),
@@ -661,8 +598,11 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 (700, 'files_joomla', 'file', 'joomla', '', 0, 1, 1, 1, '{"legacy":false,"name":"files_joomla","type":"file","creationDate":"December 2013","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.17","description":"FILES_JOOMLA_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (800, 'PKG_JOOMLA', 'package', 'pkg_joomla', '', 0, 1, 1, 1, '{"legacy":false,"name":"PKG_JOOMLA","type":"package","creationDate":"2006","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"http:\\/\\/www.joomla.org","version":"2.5.0","description":"PKG_JOOMLA_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (801, 'plg_system_jsntplframework', 'plugin', 'jsntplframework', 'system', 0, 1, 1, 1, '{"legacy":false,"name":"plg_system_jsntplframework","type":"plugin","creationDate":"01\\/14\\/2014","author":"JoomlaShine.com","copyright":"Copyright (C) 2012 JoomlaShine.com. All Rights Reserved.","authorEmail":"admin@joomlashine.com","authorUrl":"www.joomlashine.com","version":"2.1.4","description":"","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 9999, 0),
-(802, 'jsn_decor_free', 'template', 'jsn_decor_free', '', 0, 1, 1, 0, '{"legacy":false,"name":"jsn_decor_free","type":"template","creationDate":"01\\/14\\/2014","author":"JoomlaShine.com","copyright":"Copyright (c) 2008 - 2013 - JoomlaShine.com","authorEmail":"support@joomlashine.com","authorUrl":"http:\\/\\/www.joomlashine.com","version":"3.0.1","description":"TPL_JSN_DECOR_FREE_XML_DESCRIPTION","group":"jsntemplate"}', '[]', 'jsntemplate', '', 0, '0000-00-00 00:00:00', 0, 0),
-(803, 'tk_gen_free_ii', 'template', 'tk_gen_free_ii', '', 0, 1, 1, 0, '{"legacy":false,"name":"tk_gen_free_ii","type":"template","creationDate":"August 2012","author":"ThemeKat","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@themekat.com","authorUrl":"http:\\/\\/themekat.com","version":"2.0.0","description":"TK Gen Free II is a Joomla 2.5 template designed by ThemeKat (themekat.com) and powered by the Warp Theme Framework (yootheme.com)","group":""}', '{"config":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(803, 'tk_gen_free_ii', 'template', 'tk_gen_free_ii', '', 0, 1, 1, 0, '{"legacy":false,"name":"tk_gen_free_ii","type":"template","creationDate":"August 2012","author":"ThemeKat","copyright":"Copyright (C) YOOtheme GmbH","authorEmail":"info@themekat.com","authorUrl":"http:\\/\\/themekat.com","version":"2.0.0","description":"TK Gen Free II is a Joomla 2.5 template designed by ThemeKat (themekat.com) and powered by the Warp Theme Framework (yootheme.com)","group":""}', '{"config":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(805, 'jaxstorm-blue', 'template', 'jaxstorm-blue', '', 0, 1, 1, 0, '{"legacy":false,"name":"jaxstorm-blue","type":"template","creationDate":"2013-06-25","author":"Hurricane Media","copyright":"HurricaneMedia 2011-2013","authorEmail":"info@hurricanemedia.net","authorUrl":"http:\\/\\/www.hurricanemedia.net","version":"1.8","description":"\\n\\t\\t<div style=\\"text-align:left\\"><span style=\\"font-weight:bold;font-size:1.1em;color:#000\\">--- JaxStorm-Blue HM03J ---<br \\/><hr style=\\"border:0;color:rgb(226,226,226);background-color:rgb(226,226,226);height:1px\\" \\/>Template for Joomla designed by Hurricane Media<br \\/><span style=\\"color: #e70000\\">Get the lastest version of this template, visit <a href=\\"http:\\/\\/www.hurricanemedia.net\\" target=\\"_blank\\">www.hurricanemedia.net<\\/a><\\/span>.<br \\/><br \\/>Position Layout:<br \\/><\\/span>\\n\\t\\t<br \\/>\\n\\t\\t<div style=\\"border: 1px solid #c3c3c3;width:340px;overflow:auto;font-weight:normal;font-size:11px;background-color:#f8f8f8\\">\\n\\n\\t\\t\\t<div style=\\"float:right;width:200px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;text-align:right\\">position-13 (top navigation)<\\/div>\\t\\n\\t\\t\\t<div style=\\"float:right;clear:both;width:240px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-1 (topmenu)<\\/div>\\n\\t\\t\\t<div style=\\"clear:both;width:328px;height:60px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-15 (slideshow)<\\/div>\\n\\t\\t\\t<div style=\\"clear:both;width:328px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-2 (breadcrumbs)<\\/div>\\n\\n\\t\\t\\t<div style=\\"float:left;width:70px;margin:0;padding:0\\">\\n\\n\\t\\t\\t\\t<div style=\\"float:left;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-7<\\/div>\\n\\t\\t\\t\\t<div style=\\"float:left;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-4<\\/div>\\n\\t\\t\\t\\t<div style=\\"float:left;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-5<\\/div>\\n\\n\\t\\t\\t<\\/div>\\n\\n\\t\\t\\t<div style=\\"float:left;width:198px;margin:0;padding:0\\">\\n\\t\\t\\t\\t<div style=\\"float:left;width:198px;margin:0;padding:0\\">\\n\\t\\t\\t\\t\\t<div style=\\"border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:188px;height:16px\\">position-12<\\/div>\\n\\t\\t\\t\\t<\\/div>\\n\\t\\t\\t\\t<div style=\\"float:left;width:198px;margin:0;padding:0\\">\\n\\t\\t\\t\\t\\t<div style=\\"border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:188px;height:160px\\">content (message\\/component)<\\/div>\\n\\t\\t\\t\\t<\\/div>\\n\\t\\t\\t<\\/div>\\n\\n\\t\\t\\t<div style=\\"float:right;width:70px;margin:0;padding:0\\">\\n\\n\\t\\t\\t\\t<div style=\\"float:right;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-6<\\/div>\\n\\t\\t\\t\\t<div style=\\"float:right;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-8<\\/div>\\n\\t\\t\\t\\t<div style=\\"float:right;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6;width:60px;height:30px\\">position-3<\\/div>\\n\\n\\t\\t\\t<\\/div>\\n\\n\\t\\t\\t<div style=\\"clear:both;width:328px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-14 (footer)<\\/div>\\n\\t\\t\\t\\n\\t\\t\\t<div style=\\"float:left;;width:101px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-9 (box 1)<\\/div>\\n\\t\\t\\t<div style=\\"float:left;;width:101px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-10 (box 2)<\\/div>\\n\\t\\t\\t<div style=\\"float:left;;width:101px;border: 1px solid #c3c3c3;margin:2px;padding:3px;background-color:#e6e6e6\\">position-11 (box 3)<\\/div>\\n\\n\\t\\t\\t<\\/div>\\n\\t\\t<\\/div>\\n\\t","group":""}', '{"logoimage":"1","logo":"","sitetitle":"JaxStormBlue","sitedescription":"Designed by Hurricane Media","slides":"1","slideseffect":"0","slidesimage1":"","slideslink1":"","slidesimage2":"","slideslink2":"","slidesimage3":"","slideslink3":"","slidesimage4":"","slideslink4":"","slidesimage5":"","slideslink5":"","slidesimage6":"","slideslink6":"","socialposition":"1","socialicon1":"1","sociallink1":"http:\\/\\/www.facebook.com\\/","socialicon2":"11","sociallink2":"http:\\/\\/twitter.com\\/","socialicon3":"3","sociallink3":"http:\\/\\/plus.google.com","socialicon4":"0","sociallink4":"","socialicon5":"0","sociallink5":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(808, 'asfc_template', 'template', 'asfc_template', '', 0, 1, 1, 0, '{"legacy":false,"name":"asfc_template","type":"template","creationDate":"Fevrier 2014","author":"Moussa","copyright":"Copyright (C) asfcanada","authorEmail":"","authorUrl":"","version":"1.0","description":"Template pour le site de asfcanada","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(809, 'JM Slideshow Responsive', 'module', 'mod_jmslideshow', '', 0, 1, 0, 0, '{"legacy":false,"name":"JM Slideshow Responsive","type":"module","creationDate":"Sep 2013","author":"JoomlaMan.com","copyright":"\\u00a9 2012-2014 JoomlaMan.com","authorEmail":"info@joomlaman.com","authorUrl":"www.joomlaman.com","version":"2.0.1","description":"\\n        \\n    ","group":""}', '{"jmslideshow_responsive":"1","jmslideshow_width":"700","jmslideshow_image_width":"700","jmslideshow_image_height":"400","jmslideshow_image_style":"1","class_sfx":"","slider_source":"0","jmslideshow_k2_categories":"","jmslideshow_hikashop_categories":"","jmslideshow_image_source":"0","jmslideshow_article_image_source":"3","jmslideshow_ordering":"0","jmslideshow_orderby":"0","jmslideshow_count":"5","jmslideshow_layout":"default","jmslideshow_effect":"fade","jmslideshow_speed":"500","jmslideshow_auto":"1","jmslideshow_timeout":"5000","jmslideshow_caption_position":"topleft","jmslideshow_caption_left":"30","jmslideshow_caption_top":"30","jmslideshow_caption_right":"30","jmslideshow_caption_bottom":"30","jmslideshow_caption_width":"500","jmslideshow_desc_length":"150","jmslideshow_desc_html":"","jmslideshow_readmore_text":"Read more","jmslideshow_show_nav_buttons":"1","jmslideshow_show_pager":"1","jmslideshow_pager_type":"1","jmslideshow_pager_position":"bottomleft","jmslideshow_image_thumbnail_width":"100","jmslideshow_image_thumbnail_height":"65","jmslideshow_pager_left":"30","jmslideshow_pager_top":"30","jmslideshow_pager_right":"30","jmslideshow_pager_bottom":"30","jmslideshow_include_jquery":"2","jmslideshow_about":"MOD_JMSLIDESHOW_ABOUT_TAB_DESC","jmslideshow_update":"UPDATE will be revealed later!"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(810, 'Slideshow CK', 'module', 'mod_slideshowck', '', 0, 1, 0, 0, '{"legacy":false,"name":"Slideshow CK","type":"module","creationDate":"Avril 2012","author":"C\\u00e9dric KEIFLIN","copyright":"C\\u00e9dric KEIFLIN","authorEmail":"ced1870@gmail.com","authorUrl":"http:\\/\\/www.joomlack.fr","version":"1.3.11","description":"MOD_SLIDESHOWCK_XML_DESCRIPTION","group":""}', '{"slides":"[{|qq|imgname|qq|:|qq|modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/bridge.jpg|qq|,|qq|imgcaption|qq|:|qq|This is a bridge|qq|,|qq|imgthumb|qq|:|qq|..\\\\\\/modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/bridge.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|},{|qq|imgname|qq|:|qq|modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/road.jpg|qq|,|qq|imgcaption|qq|:|qq|This slideshow uses the JQuery script from <a href=|dq|http:\\\\\\/\\\\\\/www.pixedelic.com\\\\\\/plugins\\\\\\/camera\\\\\\/|dq|>Pixedelic<\\\\\\/a>|qq|,|qq|imgthumb|qq|:|qq|..\\\\\\/modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/road.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|},{|qq|imgname|qq|:|qq|modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/big_bunny_fake.jpg|qq|,|qq|imgcaption|qq|:|qq|This is a Video slide|qq|,|qq|imgthumb|qq|:|qq|..\\\\\\/modules\\\\\\/mod_slideshowck\\\\\\/images\\\\\\/slides\\\\\\/big_bunny_fake.jpg|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http:\\\\\\/\\\\\\/player.vimeo.com\\\\\\/video\\\\\\/2203727|qq|,|qq|slideselect|qq|:|qq|video|qq|}]","skin":"camera_amber_skin","alignment":"center","loader":"pie","width":"auto","height":"400","navigation":"2","thumbnails":"1","thumbnailwidth":"100","thumbnailheight":"75","pagination":"1","effect":"random","time":"7000","transperiod":"1500","captioneffect":"random","portrait":"0","autoAdvance":"1","hover":"1","displayorder":"normal","limitslides":"","fullpage":"0","imagetarget":"_parent","usemobileimage":"0","mobileimageresolution":"640","loadjquery":"1","loadjqueryeasing":"1","loadjquerymobile":"1","cache":"1","cache_time":"900","cachemode":"itemid","articlelength":"150","articlelink":"readmore","articletitle":"h3","showarticletitle":"1","captionstylesusefont":"1","captionstylestextgfont":"Droid Sans","captionstylesfontsize":"12px","captionstylesfontcolor":"","captionstylesfontweight":"normal","captionstylesdescfontsize":"10px","captionstylesdescfontcolor":"","captionstylesusemargin":"1","captionstylesmargintop":"0","captionstylesmarginright":"0","captionstylesmarginbottom":"0","captionstylesmarginleft":"0","captionstylespaddingtop":"0","captionstylespaddingright":"0","captionstylespaddingbottom":"0","captionstylespaddingleft":"0","captionstylesusebackground":"1","captionstylesbgcolor1":"","captionstylesbgpositionx":"left","captionstylesbgpositiony":"top","captionstylesbgimagerepeat":"repeat","captionstylesusegradient":"1","captionstylesbgcolor2":"","captionstylesuseroundedcorners":"1","captionstylesroundedcornerstl":"5","captionstylesroundedcornerstr":"5","captionstylesroundedcornersbr":"5","captionstylesroundedcornersbl":"5","captionstylesuseshadow":"1","captionstylesshadowcolor":"","captionstylesshadowblur":"3","captionstylesshadowspread":"0","captionstylesshadowoffsetx":"0","captionstylesshadowoffsety":"0","captionstylesshadowinset":"0","captionstylesuseborders":"1","captionstylesbordercolor":"","captionstylesborderwidth":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -670,7 +610,6 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 -- Structure de la table `asf_finder_filters`
 --
 
-DROP TABLE IF EXISTS `asf_finder_filters`;
 CREATE TABLE IF NOT EXISTS `asf_finder_filters` (
   `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -689,18 +628,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_filters` (
   PRIMARY KEY (`filter_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_finder_filters`
---
-
-TRUNCATE TABLE `asf_finder_filters`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links` (
   `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
@@ -730,18 +663,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links` (
   KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_finder_links`
---
-
-TRUNCATE TABLE `asf_finder_links`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms0`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms0`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -751,18 +678,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms0` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms0`
---
-
-TRUNCATE TABLE `asf_finder_links_terms0`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms1`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms1`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -772,18 +693,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms1` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms1`
---
-
-TRUNCATE TABLE `asf_finder_links_terms1`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms2`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms2`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -793,18 +708,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms2` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms2`
---
-
-TRUNCATE TABLE `asf_finder_links_terms2`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms3`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms3`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -814,18 +723,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms3` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms3`
---
-
-TRUNCATE TABLE `asf_finder_links_terms3`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms4`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms4`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -835,18 +738,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms4` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms4`
---
-
-TRUNCATE TABLE `asf_finder_links_terms4`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms5`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms5`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -856,18 +753,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms5` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms5`
---
-
-TRUNCATE TABLE `asf_finder_links_terms5`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms6`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms6`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -877,18 +768,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms6` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms6`
---
-
-TRUNCATE TABLE `asf_finder_links_terms6`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms7`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms7`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -898,18 +783,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms7` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms7`
---
-
-TRUNCATE TABLE `asf_finder_links_terms7`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms8`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms8`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -919,18 +798,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms8` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms8`
---
-
-TRUNCATE TABLE `asf_finder_links_terms8`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_terms9`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_terms9`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -940,18 +813,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms9` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_terms9`
---
-
-TRUNCATE TABLE `asf_finder_links_terms9`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termsa`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termsa`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -961,18 +828,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsa` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termsa`
---
-
-TRUNCATE TABLE `asf_finder_links_termsa`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termsb`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termsb`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -982,18 +843,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsb` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termsb`
---
-
-TRUNCATE TABLE `asf_finder_links_termsb`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termsc`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termsc`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1003,18 +858,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsc` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termsc`
---
-
-TRUNCATE TABLE `asf_finder_links_termsc`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termsd`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termsd`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1024,18 +873,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsd` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termsd`
---
-
-TRUNCATE TABLE `asf_finder_links_termsd`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termse`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termse`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1045,18 +888,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termse` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termse`
---
-
-TRUNCATE TABLE `asf_finder_links_termse`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_links_termsf`
 --
 
-DROP TABLE IF EXISTS `asf_finder_links_termsf`;
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1066,18 +903,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsf` (
   KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_links_termsf`
---
-
-TRUNCATE TABLE `asf_finder_links_termsf`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_taxonomy`
 --
 
-DROP TABLE IF EXISTS `asf_finder_taxonomy`;
 CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1094,11 +925,6 @@ CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Vider la table avant d'insérer `asf_finder_taxonomy`
---
-
-TRUNCATE TABLE `asf_finder_taxonomy`;
---
 -- Contenu de la table `asf_finder_taxonomy`
 --
 
@@ -1111,7 +937,6 @@ INSERT INTO `asf_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`
 -- Structure de la table `asf_finder_taxonomy_map`
 --
 
-DROP TABLE IF EXISTS `asf_finder_taxonomy_map`;
 CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
@@ -1120,18 +945,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy_map` (
   KEY `node_id` (`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_taxonomy_map`
---
-
-TRUNCATE TABLE `asf_finder_taxonomy_map`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_terms`
 --
 
-DROP TABLE IF EXISTS `asf_finder_terms`;
 CREATE TABLE IF NOT EXISTS `asf_finder_terms` (
   `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `term` varchar(75) NOT NULL,
@@ -1148,18 +967,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_terms` (
   KEY `idx_soundex_phrase` (`soundex`,`phrase`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_finder_terms`
---
-
-TRUNCATE TABLE `asf_finder_terms`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_terms_common`
 --
 
-DROP TABLE IF EXISTS `asf_finder_terms_common`;
 CREATE TABLE IF NOT EXISTS `asf_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL,
@@ -1167,11 +980,6 @@ CREATE TABLE IF NOT EXISTS `asf_finder_terms_common` (
   KEY `idx_lang` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_terms_common`
---
-
-TRUNCATE TABLE `asf_finder_terms_common`;
 --
 -- Contenu de la table `asf_finder_terms_common`
 --
@@ -1299,7 +1107,6 @@ INSERT INTO `asf_finder_terms_common` (`term`, `language`) VALUES
 -- Structure de la table `asf_finder_tokens`
 --
 
-DROP TABLE IF EXISTS `asf_finder_tokens`;
 CREATE TABLE IF NOT EXISTS `asf_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
@@ -1311,18 +1118,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_tokens` (
   KEY `idx_context` (`context`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_tokens`
---
-
-TRUNCATE TABLE `asf_finder_tokens`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_tokens_aggregate`
 --
 
-DROP TABLE IF EXISTS `asf_finder_tokens_aggregate`;
 CREATE TABLE IF NOT EXISTS `asf_finder_tokens_aggregate` (
   `term_id` int(10) unsigned NOT NULL,
   `map_suffix` char(1) NOT NULL,
@@ -1338,18 +1139,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_tokens_aggregate` (
   KEY `keyword_id` (`term_id`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_finder_tokens_aggregate`
---
-
-TRUNCATE TABLE `asf_finder_tokens_aggregate`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_finder_types`
 --
 
-DROP TABLE IF EXISTS `asf_finder_types`;
 CREATE TABLE IF NOT EXISTS `asf_finder_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -1358,18 +1153,12 @@ CREATE TABLE IF NOT EXISTS `asf_finder_types` (
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_finder_types`
---
-
-TRUNCATE TABLE `asf_finder_types`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_languages`
 --
 
-DROP TABLE IF EXISTS `asf_languages`;
 CREATE TABLE IF NOT EXISTS `asf_languages` (
   `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `lang_code` char(7) NOT NULL,
@@ -1393,11 +1182,6 @@ CREATE TABLE IF NOT EXISTS `asf_languages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Vider la table avant d'insérer `asf_languages`
---
-
-TRUNCATE TABLE `asf_languages`;
---
 -- Contenu de la table `asf_languages`
 --
 
@@ -1411,7 +1195,6 @@ INSERT INTO `asf_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `s
 -- Structure de la table `asf_menu`
 --
 
-DROP TABLE IF EXISTS `asf_menu`;
 CREATE TABLE IF NOT EXISTS `asf_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
@@ -1446,19 +1229,14 @@ CREATE TABLE IF NOT EXISTS `asf_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
 
---
--- Vider la table avant d'insérer `asf_menu`
---
-
-TRUNCATE TABLE `asf_menu`;
 --
 -- Contenu de la table `asf_menu`
 --
 
 INSERT INTO `asf_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `ordering`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 71, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 73, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 15, 24, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 16, 17, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 18, 19, 0, '*', 1),
@@ -1493,7 +1271,8 @@ INSERT INTO `asf_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `lin
 (111, 'mainmenu', 'Notre action', 'menu-haut', '', 'menu-haut', 'index.php?option=com_content&view=article&id=6', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 63, 64, 0, '*', 0),
 (112, 'mainmenu', 'Parrainer une famille', 'parrainer-une-famille', '', 'parrainer-une-famille', 'index.php?option=com_content&view=article&id=7', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 65, 66, 0, '*', 0),
 (113, 'mainmenu', 'Faire un don', 'faire-un-don', '', 'faire-un-don', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 67, 68, 0, '*', 0),
-(114, 'mainmenu', 'Impliquez-vous', 'impliquez-vous', '', 'impliquez-vous', 'index.php?option=com_content&view=article&id=12', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 69, 70, 0, '*', 0);
+(114, 'mainmenu', 'Impliquez-vous', 'impliquez-vous', '', 'impliquez-vous', 'index.php?option=com_content&view=article&id=12', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 69, 70, 0, '*', 0),
+(115, 'asf-contact', 'Contactez-nous', 'contactez-nous', '', 'contactez-nous', 'index.php?option=com_contact&view=contact&id=1', 'component', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 71, 72, 0, '*', 0);
 
 -- --------------------------------------------------------
 
@@ -1501,7 +1280,6 @@ INSERT INTO `asf_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `lin
 -- Structure de la table `asf_menu_types`
 --
 
-DROP TABLE IF EXISTS `asf_menu_types`;
 CREATE TABLE IF NOT EXISTS `asf_menu_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL,
@@ -1509,13 +1287,8 @@ CREATE TABLE IF NOT EXISTS `asf_menu_types` (
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_menutype` (`menutype`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
---
--- Vider la table avant d'insérer `asf_menu_types`
---
-
-TRUNCATE TABLE `asf_menu_types`;
 --
 -- Contenu de la table `asf_menu_types`
 --
@@ -1524,7 +1297,8 @@ INSERT INTO `asf_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 (1, 'mainmenu', 'Menu principal', 'Menu principal de ce site'),
 (2, 'authormenu', 'Menu auteurs', 'Menu pour auteurs'),
 (3, 'bottommenu', 'Menu bas', 'Menu bas de page'),
-(4, 'menu-haut', 'Notre action', '');
+(4, 'menu-haut', 'Notre action', ''),
+(6, 'asf-contact', 'Menu contact', 'contact');
 
 -- --------------------------------------------------------
 
@@ -1532,7 +1306,6 @@ INSERT INTO `asf_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 -- Structure de la table `asf_messages`
 --
 
-DROP TABLE IF EXISTS `asf_messages`;
 CREATE TABLE IF NOT EXISTS `asf_messages` (
   `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1547,18 +1320,12 @@ CREATE TABLE IF NOT EXISTS `asf_messages` (
   KEY `useridto_state` (`user_id_to`,`state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_messages`
---
-
-TRUNCATE TABLE `asf_messages`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_messages_cfg`
 --
 
-DROP TABLE IF EXISTS `asf_messages_cfg`;
 CREATE TABLE IF NOT EXISTS `asf_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
@@ -1566,18 +1333,12 @@ CREATE TABLE IF NOT EXISTS `asf_messages_cfg` (
   UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_messages_cfg`
---
-
-TRUNCATE TABLE `asf_messages_cfg`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_modules`
 --
 
-DROP TABLE IF EXISTS `asf_modules`;
 CREATE TABLE IF NOT EXISTS `asf_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -1600,19 +1361,14 @@ CREATE TABLE IF NOT EXISTS `asf_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=89 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=93 ;
 
---
--- Vider la table avant d'insérer `asf_modules`
---
-
-TRUNCATE TABLE `asf_modules`;
 --
 -- Contenu de la table `asf_modules`
 --
 
 INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
-(1, 'Menu pricipal', '', '', 2, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 0, '{"menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+(1, 'Menu pricipal', '', '', 1, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
 (2, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 'Articles populaires', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
 (4, 'Articles ajoutés récemment', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{"count":"5","ordering":"c_dsc","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
@@ -1623,7 +1379,7 @@ INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (13, 'Sous-menu administration', '', '', 1, 'submenu', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_submenu', 3, 1, '', 1, '*'),
 (14, 'Statut utilisateur', '', '', 2, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_status', 3, 1, '', 1, '*'),
 (15, 'Titre', '', '', 1, 'title', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_title', 3, 1, '', 1, '*'),
-(16, 'Formulaire de connexion', '', '', 7, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_login', 1, 1, '{"greeting":"1","name":"0"}', 0, '*'),
+(16, 'Formulaire de connexion', '', '', 7, 'position-7', 883, '2014-02-26 21:39:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_login', 1, 1, '{"greeting":"1","name":"0"}', 0, '*'),
 (17, 'Fil de navigation', '', '', 1, 'position-2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_breadcrumbs', 1, 1, '{"moduleclass_sfx":"","showHome":"1","homeText":"Accueil","showComponent":"1","separator":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
 (79, 'Status multilingue', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (80, 'Menu auteur', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 3, 0, '{"menutype":"authormenu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
@@ -1634,7 +1390,11 @@ INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (85, 'Anciens articles', '', '', 3, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_articles_category', 1, 1, '{"mode":"normal","show_on_article_page":"1","show_front":"show","count":"0","category_filtering_type":"1","catid":["9"],"show_child_category_articles":"0","levels":"1","author_filtering_type":"1","created_by":[""],"author_alias_filtering_type":"1","created_by_alias":[""],"excluded_articles":"","date_filtering":"off","date_field":"a.created","start_date_range":"","end_date_range":"","relative_date":"30","article_ordering":"a.title","article_ordering_direction":"ASC","article_grouping":"month_year","article_grouping_direction":"krsort","month_year_format":"F Y","item_heading":"4","link_titles":"1","show_date":"1","show_date_field":"created","show_date_format":"Y-m-d H:i:s","show_category":"0","show_hits":"0","show_author":"0","show_introtext":"0","introtext_limit":"100","show_readmore":"0","show_readmore_title":"1","readmore_limit":"15","layout":"_:default","moduleclass_sfx":"","owncache":"1","cache_time":"900"}', 0, '*'),
 (86, 'Menu bas', '', '', 8, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 0, '{"menutype":"bottommenu","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
 (87, 'Recherche', '', '', 1, 'position-0', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"20","text":"","button":"","button_pos":"right","imagebutton":"","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
-(88, 'En-tête', '', '<div style="padding: 0px 0px 10px 5px; border-bottom: 1px dotted #c0c0c0;">\r\n<div style="color: #095197; font-size: 15px; font-family: ''Titillium Maps'',Arial; padding-bottom: 10px;">Module « En-tête du Blog »</div>\r\n<div>Module personnalisé au contenu rédigé par vos soins. Vous pouvez y intégrer des images ou autres types de média.</div>\r\n</div>', 1, 'position-12', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*');
+(88, 'En-tête', '', '<div style="padding: 0px 0px 10px 5px; border-bottom: 1px dotted #c0c0c0;">\r\n<div style="color: #095197; font-size: 15px; font-family: ''Titillium Maps'',Arial; padding-bottom: 10px;">Module « En-tête du Blog »</div>\r\n<div>Module personnalisé au contenu rédigé par vos soins. Vous pouvez y intégrer des images ou autres types de média.</div>\r\n</div>', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_custom', 1, 0, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static"}', 0, '*'),
+(89, 'Menu contact', '', '', 1, 'position-13', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"asf-contact","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+(90, 'Footer', '', '', 1, 'position-9', 883, '2014-02-27 01:20:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_footer', 1, 0, '', 0, '*'),
+(91, 'JM Slideshow Responsive', '', '', 1, 'position-15', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jmslideshow', 1, 1, '{"jmslideshow_responsive":"1","jmslideshow_width":"700","jmslideshow_image_width":"700","jmslideshow_image_height":"400","jmslideshow_image_style":"fill","class_sfx":"","slider_source":"9","jmslideshow_article_ids":"","jmslideshow_k2_ids":"","jmslideshow_hikashop_ids":"","jmslideshow_file_image_url":"","jmslideshow_file_image_title":"","jmslideshow_file_image_title_link":"","jmslideshow_file_image_desc":"","jmslideshow_file_image":"[{\\"url\\":\\"images\\/slides\\/102_3546.JPG\\",\\"title\\":\\"Partager%20L","jmslideshow_foder_image":"","jmslideshow_image_source":"0","jmslideshow_article_image_source":"3","jmslideshow_ordering":"ASC","jmslideshow_orderby":"1","jmslideshow_count":"5","jmslideshow_layout":"default","jmslideshow_effect":"fade","jmslideshow_speed":"500","jmslideshow_auto":"1","jmslideshow_timeout":"5000","jmslideshow_caption_position":"bottomright","jmslideshow_caption_left":"30","jmslideshow_caption_top":"30","jmslideshow_caption_right":"30","jmslideshow_caption_bottom":"30","jmslideshow_caption_width":"500","jmslideshow_show_desc":"1","jmslideshow_desc_length":"150","jmslideshow_desc_html":"","jmslideshow_readmore_text":"Read more","jmslideshow_show_nav_buttons":"1","jmslideshow_show_pager":"0","jmslideshow_pager_type":"1","jmslideshow_pager_position":"bottomleft","jmslideshow_image_thumbnail_width":"100","jmslideshow_image_thumbnail_height":"65","jmslideshow_pager_left":"30","jmslideshow_pager_top":"30","jmslideshow_pager_right":"30","jmslideshow_pager_bottom":"30","jmslideshow_include_jquery":"2"}', 0, '*'),
+(92, 'Slideshow CK', '', '', 1, 'position-15', 883, '2014-02-27 06:27:52', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_slideshowck', 1, 1, '{"slides":"[{|qq|imgname|qq|:|qq|images\\/slides\\/102_3546.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3546.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/102_3983.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3983.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF0303.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF0303.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http:\\/\\/player.vimeo.com\\/video\\/2203727|qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF4134.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF4134.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSC_0043.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSC_0043.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|}]","theme":"default","skin":"camera_amber_skin","alignment":"center","loader":"none","width":"auto","height":"400","navigation":"2","thumbnails":"0","thumbnailwidth":"100","thumbnailheight":"75","pagination":"0","effect":["random"],"time":"7000","transperiod":"1500","captioneffect":"moveFromLeft","portrait":"0","autoAdvance":"1","hover":"0","displayorder":"normal","limitslides":"","fullpage":"0","imagetarget":"_parent","usemobileimage":"0","mobileimageresolution":"640","loadjquery":"1","loadjqueryeasing":"1","loadjquerymobile":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","articlelength":"150","articlelink":"readmore","articletitle":"h3","showarticletitle":"1","captionstylesusefont":"1","captionstylestextgfont":"Droid Sans","captionstylesfontsize":"12px","captionstylesfontcolor":"","captionstylesfontweight":"normal","captionstylesdescfontsize":"10px","captionstylesdescfontcolor":"","captionstylesusemargin":"1","captionstylesmargintop":"0","captionstylesmarginright":"0","captionstylesmarginbottom":"0","captionstylesmarginleft":"0","captionstylespaddingtop":"0","captionstylespaddingright":"0","captionstylespaddingbottom":"0","captionstylespaddingleft":"0","captionstylesusebackground":"1","captionstylesbgcolor1":"","captionstylesbgimage":"","captionstylesbgpositionx":"left","captionstylesbgpositiony":"top","captionstylesbgimagerepeat":"repeat","captionstylesusegradient":"1","captionstylesbgcolor2":"","captionstylesuseroundedcorners":"1","captionstylesroundedcornerstl":"5","captionstylesroundedcornerstr":"5","captionstylesroundedcornersbr":"5","captionstylesroundedcornersbl":"5","captionstylesuseshadow":"1","captionstylesshadowcolor":"","captionstylesshadowblur":"3","captionstylesshadowspread":"0","captionstylesshadowoffsetx":"0","captionstylesshadowoffsety":"0","captionstylesshadowinset":"0","captionstylesuseborders":"1","captionstylesbordercolor":"","captionstylesborderwidth":"1"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1642,18 +1402,12 @@ INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 -- Structure de la table `asf_modules_menu`
 --
 
-DROP TABLE IF EXISTS `asf_modules_menu`;
 CREATE TABLE IF NOT EXISTS `asf_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`moduleid`,`menuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_modules_menu`
---
-
-TRUNCATE TABLE `asf_modules_menu`;
 --
 -- Contenu de la table `asf_modules_menu`
 --
@@ -1683,7 +1437,12 @@ INSERT INTO `asf_modules_menu` (`moduleid`, `menuid`) VALUES
 (85, 0),
 (86, 0),
 (87, 0),
-(88, 0);
+(88, 0),
+(89, 0),
+(90, 0),
+(91, 0),
+(92, 101),
+(92, 111);
 
 -- --------------------------------------------------------
 
@@ -1691,7 +1450,6 @@ INSERT INTO `asf_modules_menu` (`moduleid`, `menuid`) VALUES
 -- Structure de la table `asf_newsfeeds`
 --
 
-DROP TABLE IF EXISTS `asf_newsfeeds`;
 CREATE TABLE IF NOT EXISTS `asf_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -1730,18 +1488,12 @@ CREATE TABLE IF NOT EXISTS `asf_newsfeeds` (
   KEY `idx_xreference` (`xreference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_newsfeeds`
---
-
-TRUNCATE TABLE `asf_newsfeeds`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_overrider`
 --
 
-DROP TABLE IF EXISTS `asf_overrider`;
 CREATE TABLE IF NOT EXISTS `asf_overrider` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
@@ -1750,18 +1502,12 @@ CREATE TABLE IF NOT EXISTS `asf_overrider` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_overrider`
---
-
-TRUNCATE TABLE `asf_overrider`;
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `asf_redirect_links`
 --
 
-DROP TABLE IF EXISTS `asf_redirect_links`;
 CREATE TABLE IF NOT EXISTS `asf_redirect_links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `old_url` varchar(255) NOT NULL,
@@ -1775,13 +1521,8 @@ CREATE TABLE IF NOT EXISTS `asf_redirect_links` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_link_old` (`old_url`),
   KEY `idx_link_modifed` (`modified_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Vider la table avant d'insérer `asf_redirect_links`
---
-
-TRUNCATE TABLE `asf_redirect_links`;
 --
 -- Contenu de la table `asf_redirect_links`
 --
@@ -1789,7 +1530,8 @@ TRUNCATE TABLE `asf_redirect_links`;
 INSERT INTO `asf_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `comment`, `hits`, `published`, `created_date`, `modified_date`) VALUES
 (1, 'http://localhost/trunk123111/index.php/create-a-post/login', '', 'http://localhost/trunk123111/index.php/login', '', 0, 0, '2012-01-04 15:48:49', '0000-00-00 00:00:00'),
 (2, 'http://localhost/trunk123111/index.php/create-an-article', '', 'http://localhost/trunk123111/index.php/creating-your-site', '', 0, 0, '2012-01-05 02:01:07', '0000-00-00 00:00:00'),
-(3, 'http://localhost/joomla-cms/index.php/using-joomla', '', 'http://localhost/joomla-cms/', '', 0, 0, '2012-01-17 06:21:35', '0000-00-00 00:00:00');
+(3, 'http://localhost/joomla-cms/index.php/using-joomla', '', 'http://localhost/joomla-cms/', '', 0, 0, '2012-01-17 06:21:35', '0000-00-00 00:00:00'),
+(4, 'http://localhost/asfcanada/index.php/contacter-nous', '', '', '', 1, 0, '2014-02-27 20:16:03', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1797,18 +1539,12 @@ INSERT INTO `asf_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `commen
 -- Structure de la table `asf_schemas`
 --
 
-DROP TABLE IF EXISTS `asf_schemas`;
 CREATE TABLE IF NOT EXISTS `asf_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL,
   PRIMARY KEY (`extension_id`,`version_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Vider la table avant d'insérer `asf_schemas`
---
-
-TRUNCATE TABLE `asf_schemas`;
 --
 -- Contenu de la table `asf_schemas`
 --
@@ -1822,7 +1558,6 @@ INSERT INTO `asf_schemas` (`extension_id`, `version_id`) VALUES
 -- Structure de la table `asf_session`
 --
 
-DROP TABLE IF EXISTS `asf_session`;
 CREATE TABLE IF NOT EXISTS `asf_session` (
   `session_id` varchar(200) NOT NULL DEFAULT '',
   `client_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1839,18 +1574,12 @@ CREATE TABLE IF NOT EXISTS `asf_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Vider la table avant d'insérer `asf_session`
---
-
-TRUNCATE TABLE `asf_session`;
---
 -- Contenu de la table `asf_session`
 --
 
 INSERT INTO `asf_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('3f476c4ddd2d26c5356a150886cee883', 1, 0, '1392416559', '__default|a:8:{s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36";s:15:"session.counter";i:36;s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:7:"install";O:8:"stdClass":1:{s:17:"install_directory";s:22:"C:\\wamp\\www\\joomla/tmp";}}s:13:"com_templates";O:8:"stdClass":2:{s:6:"styles";O:8:"stdClass":4:{s:10:"limitstart";i:0;s:6:"filter";O:8:"stdClass":3:{s:6:"search";s:4:"epic";s:8:"template";s:1:"0";s:9:"client_id";s:1:"*";}s:8:"ordercol";s:10:"a.template";s:9:"orderdirn";s:3:"asc";}s:4:"edit";O:8:"stdClass":1:{s:6:"source";O:8:"stdClass":2:{s:2:"id";N;s:4:"data";N;}}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:20;}}s:6:"editor";O:8:"stdClass":1:{s:6:"source";O:8:"stdClass":1:{s:6:"syntax";s:3:"php";}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"883";s:4:"name";s:17:"Super Utilisateur";s:8:"username";s:5:"admin";s:5:"email";s:18:"soulgaye@gmail.com";s:8:"password";s:65:"ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h";s:14:"password_clear";s:0:"";s:8:"usertype";s:10:"deprecated";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-01-24 02:15:41";s:13:"lastvisitDate";s:19:"2014-02-14 20:31:43";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"899dc5f067f871544341683d40d5ec2c";s:19:"session.timer.start";i:1392414989;s:18:"session.timer.last";i:1392416557;s:17:"session.timer.now";i:1392416557;}', 883, 'admin', ''),
-('cui2pstils5g7kvgsjqpgs3df0', 0, 1, '1392831331', '__default|a:7:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1392831306;s:18:"session.timer.last";i:1392831306;s:17:"session.timer.now";i:1392831306;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '', ''),
-('ehf1378tt967ghp6kfmmj0vke1', 0, 1, '1392831338', '__default|a:7:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1392831306;s:18:"session.timer.last";i:1392831306;s:17:"session.timer.now";i:1392831306;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '', '');
+('436653b9a6f0f2691d357f23533a96f0', 0, 1, '1393536835', '__default|a:9:{s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:15:"session.counter";i:14;s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:16:"com_mailto.links";a:4:{s:40:"8b6b650285a3c2d015a8cd7801c6e93be5da351c";O:8:"stdClass":2:{s:4:"link";s:63:"http://localhost/asfcanada/index.php/3-bienvenue-sur-votre-blog";s:6:"expiry";i:1393536531;}s:40:"4a2c1480e7178616f8f48b014b79e300fdc76eab";O:8:"stdClass":2:{s:4:"link";s:66:"http://localhost/asfcanada/index.php/4-a-propos-de-la-page-accueil";s:6:"expiry";i:1393536531;}s:40:"5dee32a6ed1d652a3b2b53f63eb518df6fc85b3f";O:8:"stdClass":2:{s:4:"link";s:50:"http://localhost/asfcanada/index.php/5-vos-modules";s:6:"expiry";i:1393536531;}s:40:"35d709b0bc8f3b6690f080de361c972d4f761f3f";O:8:"stdClass":2:{s:4:"link";s:46:"http://localhost/asfcanada/index.php/menu-haut";s:6:"expiry";i:1393536531;}}s:19:"session.timer.start";i:1393535398;s:18:"session.timer.last";i:1393536775;s:17:"session.timer.now";i:1393536834;s:13:"session.token";s:32:"8a7a78e46b45df0711850bcab967b6de";}', 0, '', ''),
+('ubrgpaefa9igluoiu0ptsmmsg5', 1, 1, '1393536828', '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1393536827;s:18:"session.timer.last";i:1393536827;s:17:"session.timer.now";i:1393536827;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";N;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";N;s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"7412b3fa0bc905d365b063c15139bff3";}', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -1858,7 +1587,6 @@ INSERT INTO `asf_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `
 -- Structure de la table `asf_template_styles`
 --
 
-DROP TABLE IF EXISTS `asf_template_styles`;
 CREATE TABLE IF NOT EXISTS `asf_template_styles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `template` varchar(50) NOT NULL DEFAULT '',
@@ -1869,13 +1597,8 @@ CREATE TABLE IF NOT EXISTS `asf_template_styles` (
   PRIMARY KEY (`id`),
   KEY `idx_template` (`template`),
   KEY `idx_home` (`home`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
---
--- Vider la table avant d'insérer `asf_template_styles`
---
-
-TRUNCATE TABLE `asf_template_styles`;
 --
 -- Contenu de la table `asf_template_styles`
 --
@@ -1887,87 +1610,10 @@ INSERT INTO `asf_template_styles` (`id`, `template`, `client_id`, `home`, `title
 (5, 'hathor', 1, '1', 'Hathor - Défault', '{"showSiteName":"0","colourChoice":"","boldText":"0"}'),
 (6, 'beez5', 0, '0', 'Beez5 - Défault', '{"wrapperSmall":"53","wrapperLarge":"72","logo":"images\\/sampledata\\/fruitshop\\/fruits.gif","sitetitle":"Joomla!","sitedescription":"Open Source Content Management","navposition":"left","html5":"0"}'),
 (7, 'jsn_decor_free', 0, '0', 'JSN Decor FREE - Par défaut', '[]'),
-(8, 'tk_gen_free_ii', 0, '1', 'tk_gen_free_ii - Par défaut', '{"config":""}');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_update_categories`
---
-
-DROP TABLE IF EXISTS `asf_update_categories`;
-CREATE TABLE IF NOT EXISTS `asf_update_categories` (
-  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT '',
-  `description` text NOT NULL,
-  `parent` int(11) DEFAULT '0',
-  `updatesite` int(11) DEFAULT '0',
-  PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
-
---
--- Vider la table avant d'insérer `asf_update_categories`
---
-
-TRUNCATE TABLE `asf_update_categories`;
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_update_sites`
---
-
-DROP TABLE IF EXISTS `asf_update_sites`;
-CREATE TABLE IF NOT EXISTS `asf_update_sites` (
-  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT '',
-  `type` varchar(20) DEFAULT '',
-  `location` text NOT NULL,
-  `enabled` int(11) DEFAULT '0',
-  `last_check_timestamp` bigint(20) DEFAULT '0',
-  PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=4 ;
-
---
--- Vider la table avant d'insérer `asf_update_sites`
---
-
-TRUNCATE TABLE `asf_update_sites`;
---
--- Contenu de la table `asf_update_sites`
---
-
-INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1392415005),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1392415005),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1392415005);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_update_sites_extensions`
---
-
-DROP TABLE IF EXISTS `asf_update_sites_extensions`;
-CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
-  `update_site_id` int(11) NOT NULL DEFAULT '0',
-  `extension_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`update_site_id`,`extension_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
-
---
--- Vider la table avant d'insérer `asf_update_sites_extensions`
---
-
-TRUNCATE TABLE `asf_update_sites_extensions`;
---
--- Contenu de la table `asf_update_sites_extensions`
---
-
-INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
-(1, 700),
-(2, 700),
-(3, 600),
-(4, 602);
+(8, 'tk_gen_free_ii', 0, '0', 'tk_gen_free_ii - Par défaut', '{"config":""}'),
+(9, 'jaxstorm-blue', 0, '1', 'jaxstorm-blue - Par défaut', '{"logoimage":"1","logo":"","sitetitle":"JaxStormBlue","sitedescription":"Designed by Hurricane Media","slides":"1","slideseffect":"0","slidesimage1":"","slideslink1":"","slidesimage2":"","slideslink2":"","slidesimage3":"","slideslink3":"","slidesimage4":"","slideslink4":"","slidesimage5":"","slideslink5":"","slidesimage6":"","slideslink6":"","socialposition":"1","socialicon1":"1","sociallink1":"http:\\/\\/www.facebook.com\\/","socialicon2":"11","sociallink2":"http:\\/\\/twitter.com\\/","socialicon3":"3","sociallink3":"http:\\/\\/plus.google.com","socialicon4":"0","sociallink4":"","socialicon5":"0","sociallink5":""}'),
+(10, 'jaxstorm-blue', 0, '0', 'jaxstorm-blue - Par défaut', '{"logoimage":"1","logo":"","sitetitle":"JaxStormBlue","sitedescription":"Designed by Hurricane Media","slides":"1","slideseffect":"0","slidesimage1":"","slideslink1":"","slidesimage2":"","slideslink2":"","slidesimage3":"","slideslink3":"","slidesimage4":"","slideslink4":"","slidesimage5":"","slideslink5":"","slidesimage6":"","slideslink6":"","socialposition":"1","socialicon1":"1","sociallink1":"http:\\/\\/www.facebook.com\\/","socialicon2":"11","sociallink2":"http:\\/\\/twitter.com\\/","socialicon3":"3","sociallink3":"http:\\/\\/plus.google.com","socialicon4":"0","sociallink4":"","socialicon5":"0","sociallink5":""}'),
+(13, 'asfc_template', 0, '0', 'asfc_template - Par défaut', '{}');
 
 -- --------------------------------------------------------
 
@@ -1975,7 +1621,6 @@ INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VAL
 -- Structure de la table `asf_updates`
 --
 
-DROP TABLE IF EXISTS `asf_updates`;
 CREATE TABLE IF NOT EXISTS `asf_updates` (
   `update_id` int(11) NOT NULL AUTO_INCREMENT,
   `update_site_id` int(11) DEFAULT '0',
@@ -1992,13 +1637,8 @@ CREATE TABLE IF NOT EXISTS `asf_updates` (
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
   PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=116 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=232 ;
 
---
--- Vider la table avant d'insérer `asf_updates`
---
-
-TRUNCATE TABLE `asf_updates`;
 --
 -- Contenu de la table `asf_updates`
 --
@@ -2118,85 +1758,189 @@ INSERT INTO `asf_updates` (`update_id`, `update_site_id`, `extension_id`, `categ
 (112, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
 (113, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
 (114, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
-(115, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
+(115, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(116, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(117, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(118, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(119, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(120, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(121, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(122, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(123, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(124, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(125, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(126, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(127, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(128, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(129, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(130, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(131, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(132, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(133, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(134, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(135, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(136, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(137, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(138, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(139, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(140, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(141, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(142, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(143, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(144, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(145, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(146, 3, 0, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '2.5.0.1', '', 'http://update.joomla.org/language/details/bn-BD_details.xml', ''),
+(147, 3, 0, 0, 'Bengali', '', 'pkg_bn-BD', 'package', '', 0, '2.5.0.1', '', 'http://update.joomla.org/language/details/bn-BD_details.xml', ''),
+(148, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(149, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(150, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(151, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(152, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(153, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(154, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(155, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(156, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(157, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(158, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(159, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(160, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(161, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(162, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(163, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(164, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(165, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(166, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(167, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(168, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(169, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(170, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(171, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(172, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(173, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(174, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(175, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(176, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(177, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(178, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(179, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(180, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(181, 3, 0, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-YU_details.xml', ''),
+(182, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(183, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(184, 3, 0, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-RS_details.xml', ''),
+(185, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(186, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(187, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(188, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(189, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(190, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(191, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(192, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(193, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(194, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(195, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(196, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(197, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(198, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(199, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(200, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(201, 3, 0, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-YU_details.xml', ''),
+(202, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(203, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(204, 3, 0, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-RS_details.xml', ''),
+(205, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(206, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(207, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(208, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(209, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(210, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(211, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(212, 3, 0, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/da-DK_details.xml', ''),
+(213, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(214, 3, 0, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/es-ES_details.xml', ''),
+(215, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(216, 3, 0, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sk-SK_details.xml', ''),
+(217, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(218, 3, 0, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '2.5.17.2', '', 'http://update.joomla.org/language/details/et-EE_details.xml', ''),
+(219, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(220, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(221, 3, 0, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-YU_details.xml', ''),
+(222, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(223, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(224, 3, 0, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sr-RS_details.xml', ''),
+(225, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(226, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(227, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(228, 3, 0, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ca-ES_details.xml', ''),
+(229, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(230, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(231, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.18.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_notes`
+-- Structure de la table `asf_update_categories`
 --
 
-DROP TABLE IF EXISTS `asf_user_notes`;
-CREATE TABLE IF NOT EXISTS `asf_user_notes` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
-  `subject` varchar(100) NOT NULL DEFAULT '',
-  `body` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) unsigned NOT NULL,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_category_id` (`catid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `asf_update_categories` (
+  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT '',
+  `description` text NOT NULL,
+  `parent` int(11) DEFAULT '0',
+  `updatesite` int(11) DEFAULT '0',
+  PRIMARY KEY (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `asf_user_notes`
---
-
-TRUNCATE TABLE `asf_user_notes`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_profiles`
+-- Structure de la table `asf_update_sites`
 --
 
-DROP TABLE IF EXISTS `asf_user_profiles`;
-CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
-  `user_id` int(11) NOT NULL,
-  `profile_key` varchar(100) NOT NULL,
-  `profile_value` varchar(255) NOT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
+CREATE TABLE IF NOT EXISTS `asf_update_sites` (
+  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT '',
+  `type` varchar(20) DEFAULT '',
+  `location` text NOT NULL,
+  `enabled` int(11) DEFAULT '0',
+  `last_check_timestamp` bigint(20) DEFAULT '0',
+  PRIMARY KEY (`update_site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=6 ;
 
 --
--- Vider la table avant d'insérer `asf_user_profiles`
+-- Contenu de la table `asf_update_sites`
 --
 
-TRUNCATE TABLE `asf_user_profiles`;
+INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1393362266),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1393362266),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 0, 1393362266),
+(4, 'JM Slideshow Responsive', 'extension', 'http://extensions.joomlaman.com/jmslideshow/update.xml', 1, 1393533892),
+(5, 'Slideshow CK Update', 'extension', 'http://update.joomlack.fr/mod_slideshowck_update.xml', 1, 1393533892);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_usergroup_map`
+-- Structure de la table `asf_update_sites_extensions`
 --
 
-DROP TABLE IF EXISTS `asf_user_usergroup_map`;
-CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
-  PRIMARY KEY (`user_id`,`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
+  `update_site_id` int(11) NOT NULL DEFAULT '0',
+  `extension_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`update_site_id`,`extension_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
 
 --
--- Vider la table avant d'insérer `asf_user_usergroup_map`
+-- Contenu de la table `asf_update_sites_extensions`
 --
 
-TRUNCATE TABLE `asf_user_usergroup_map`;
---
--- Contenu de la table `asf_user_usergroup_map`
---
-
-INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
-(883, 8);
+INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
+(1, 700),
+(2, 700),
+(3, 600),
+(4, 602),
+(4, 809),
+(5, 810);
 
 -- --------------------------------------------------------
 
@@ -2204,7 +1948,6 @@ INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- Structure de la table `asf_usergroups`
 --
 
-DROP TABLE IF EXISTS `asf_usergroups`;
 CREATE TABLE IF NOT EXISTS `asf_usergroups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
@@ -2218,11 +1961,6 @@ CREATE TABLE IF NOT EXISTS `asf_usergroups` (
   KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
---
--- Vider la table avant d'insérer `asf_usergroups`
---
-
-TRUNCATE TABLE `asf_usergroups`;
 --
 -- Contenu de la table `asf_usergroups`
 --
@@ -2243,7 +1981,6 @@ INSERT INTO `asf_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- Structure de la table `asf_users`
 --
 
-DROP TABLE IF EXISTS `asf_users`;
 CREATE TABLE IF NOT EXISTS `asf_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -2268,16 +2005,71 @@ CREATE TABLE IF NOT EXISTS `asf_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=884 ;
 
 --
--- Vider la table avant d'insérer `asf_users`
---
-
-TRUNCATE TABLE `asf_users`;
---
 -- Contenu de la table `asf_users`
 --
 
 INSERT INTO `asf_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-02-14 21:56:40', '0', '', '0000-00-00 00:00:00', 0);
+(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-02-27 21:33:47', '0', '', '0000-00-00 00:00:00', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_user_notes`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `subject` varchar(100) NOT NULL DEFAULT '',
+  `body` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_user_id` int(10) unsigned NOT NULL,
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_category_id` (`catid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_user_profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
+  `user_id` int(11) NOT NULL,
+  `profile_key` varchar(100) NOT NULL,
+  `profile_value` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_user_usergroup_map`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
+  PRIMARY KEY (`user_id`,`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `asf_user_usergroup_map`
+--
+
+INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
+(883, 8);
 
 -- --------------------------------------------------------
 
@@ -2285,7 +2077,6 @@ INSERT INTO `asf_users` (`id`, `name`, `username`, `email`, `password`, `usertyp
 -- Structure de la table `asf_viewlevels`
 --
 
-DROP TABLE IF EXISTS `asf_viewlevels`;
 CREATE TABLE IF NOT EXISTS `asf_viewlevels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -2295,11 +2086,6 @@ CREATE TABLE IF NOT EXISTS `asf_viewlevels` (
   UNIQUE KEY `idx_assetgroup_title_lookup` (`title`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Vider la table avant d'insérer `asf_viewlevels`
---
-
-TRUNCATE TABLE `asf_viewlevels`;
 --
 -- Contenu de la table `asf_viewlevels`
 --
@@ -2315,7 +2101,6 @@ INSERT INTO `asf_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Structure de la table `asf_weblinks`
 --
 
-DROP TABLE IF EXISTS `asf_weblinks`;
 CREATE TABLE IF NOT EXISTS `asf_weblinks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `catid` int(11) NOT NULL DEFAULT '0',
@@ -2358,11 +2143,6 @@ CREATE TABLE IF NOT EXISTS `asf_weblinks` (
   KEY `idx_xreference` (`xreference`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Vider la table avant d'insérer `asf_weblinks`
---
-
-TRUNCATE TABLE `asf_weblinks`;
 --
 -- Contenu de la table `asf_weblinks`
 --
