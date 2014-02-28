@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Pied de page</name>
+    <author>Moussa Thimbo</author>
+    <version>1.0.0</version>
+    <description>Module footer pour ASF CANADA.</description>
+    <files>
+        <filename>mod_footer.xml</filename>
+        <filename module="mod_footer">mod_footer.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+		<filename>images/index.html</filename>
+		<filename>images/instagram.png</filename>
+		<filename>images/twitter-bird-light-bgs.png</filename>
+		<filename>images/pinterest-icon.png</filename>
+    </files>
+    <config>
+    </config>
+</extension>

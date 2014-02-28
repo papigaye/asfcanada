@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template" client="site">
+	<name>asfc_template</name>
+	<creationDate>Fevrier 2014</creationDate>
+	<author>Moussa</author>
+	<copyright>Copyright (C) asfcanada</copyright>
+	<license>GNU General Public License</license>
+	<version>1.0</version>
+	<description>Template pour le site de asfcanada</description>
+	<files>
+		<folder>css</folder>
+		<folder>images</folder>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<positions>
+		<position>contact</position>
+		<position>menu</position>
+		<position>centre</position>
+		<position>bas</position>
+	</positions>
+</extension>

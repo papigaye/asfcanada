@@ -1,0 +1,13 @@
+diff a/configuration.php b/configuration.php	(rejected hunks)
+@@ -53,8 +53,8 @@
+ 	public $sef_suffix = '0';
+ 	public $unicodeslugs = '0';
+ 	public $feed_limit = '10';
+-	public $log_path = 'C:\\wamp\\www\\joomla/logs';
+-	public $tmp_path = 'C:\\wamp\\www\\joomla/tmp';
++	public $log_path = 'C:\\wamp\\www\\asfcanada\\logs';
++	public $tmp_path = 'C:\\wamp\\www\\asfcanada\\tmp';
+ 	public $lifetime = '15';
+ 	public $session_handler = 'database';
+ }
+\ No newline at end of file
