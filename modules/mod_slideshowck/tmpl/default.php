@@ -54,7 +54,9 @@ $width = ($params->get('width') AND $params->get('width') != 'auto') ? ' style="
 			}
 			if (($item->imgcaption || $item->article) && (($params->get('lightboxcaption', 'caption') != 'title' || $imgtarget != 'lightbox') || !$item->imglink)) {
 				echo '<div class="camera_caption ' . $params->get('captioneffect', 'moveFromBottom') . '">';
+                                echo '<span>';
 				echo $datacaption;
+                                echo '<span>';
 				echo '</div>';
 			}
 			?>
