@@ -57,9 +57,9 @@ $width = ($params->get('width') AND $params->get('width') != 'auto') ? ' style="
                                
 				echo '</div>';
                                 echo '<div class="camera_caption suite">';
-                                echo '<span>';
+                                echo '<span class="head">';
 				echo $datacaption;
-                                echo '<span>';
+                                echo '<br/></span><span>vivre une reussite</span>';
                                 echo '</div>';
 			}
 			?>
