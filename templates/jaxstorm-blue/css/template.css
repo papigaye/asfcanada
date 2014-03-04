@@ -517,9 +517,9 @@ hr {
 	position: absolute;
 	font-family: 'Droid Sans', sans-serif, Helvetica, Arial;
 	font-size: 12px;
-	width: 162px;
+	width: 147px;
 	left: -999em; /* "display: none" not seen by screen readers */
-	border: 0;
+	border: 1px solid #f79320;
 	margin-left: 10px;
 	z-index:100;
 	
@@ -533,13 +533,12 @@ hr {
 
 #topmenu li li a,
 #topmenu li.active li a {
-	width: 162px;
-	background-color: #909090;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	width: 107px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin: 0;
-	border-top: 1px solid #b9b9b9;
-	color: #ffffff;
+	color: #fff;
+	background-color:#f79320;
 }
 
 #topmenu li li:first-child a {
@@ -547,13 +546,13 @@ hr {
 }
 
 #topmenu li ul a {
-	width: 162px;
+	width: 107px;
 }
 
 #topmenu li li a:hover {
-	color: #fff;
+	color: #f79320;
 	text-decoration: none;
-	background-color: #626262;
+	background-color: #fff;
 }
 
 /*
