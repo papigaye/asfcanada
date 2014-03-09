@@ -765,11 +765,16 @@ hr {
 }
 
 #content-w3 {  /** no menu visible **/
-	width: 900px;
+	
 	float: left;
 	padding-top: 20px;
 	overflow: hidden;
 	margin-bottom: 30px;
+}
+.leading-0, .leading-1, .leading-2{
+	width:200px;
+	display:inline-block;
+	padding:12px;
 }
 
 #content-w1 h3,
