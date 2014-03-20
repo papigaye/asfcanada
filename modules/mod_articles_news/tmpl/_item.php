@@ -12,7 +12,6 @@ $item_heading = $params->get('item_heading', 'h4');
 ?>
 <?php if ($params->get('item_title')) : ?>
 
-	<<?php echo $item_heading; ?> class="newsflash-title<?php echo $params->get('moduleclass_sfx'); ?>">
 	<?php if ($params->get('link_titles') && $item->link != '') : ?>
 		<a href="<?php echo $item->link;?>">
 			<?php echo $item->title;?></a>
@@ -22,9 +21,12 @@ $item_heading = $params->get('item_heading', 'h4');
 	</<?php echo $item_heading; ?>>
 
 <?php endif; ?>
+<<?php echo $item_heading; ?> class="newsflash-title<?php echo $params->get('moduleclass_sfx'); ?>">
+
 
 <?php if (!$params->get('intro_only')) :
 	echo $item->afterDisplayTitle;
+        
 endif; ?>
 
 <?php echo $item->beforeDisplayContent; ?>

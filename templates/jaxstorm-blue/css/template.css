@@ -774,7 +774,20 @@ hr {
 .leading-0, .leading-1, .leading-2{
 	width:200px;
 	display:inline-block;
-	padding:12px;
+	padding: 5px;
+}
+.leading-0 h2,
+.leading-1 h2,
+.leading-2 h2 {
+    height: 50px;
+    text-align: center;
+}
+.leading-0 h2 a,
+.leading-1 h2 a,
+.leading-2 h2 a{
+    color: #6B7272; 
+    text-decoration: none;
+    
 }
 
 #content-w1 h3,
@@ -913,7 +926,8 @@ legend.hidelabeltxt {
 
 .items-leading {
 	margin-bottom: 20px;
-	margin-left: 152px;
+        margin-left: 150px;
+        margin-right: 70px;
 }
 
 .newsfeed ol li {
