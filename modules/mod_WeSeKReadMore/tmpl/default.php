@@ -26,8 +26,9 @@ $readMore				= $params->get('readMore', 'ReadMore');
 	<div class="wesekReadMore">
 		<div class="readMore">                   
 			<div class="mask">
-			<div class="news_img"><div class="jaune_trans"></div><img src="<?php echo $Directory; ?>"/></div>
+			<div class="jaune_trans"><div class="news_img"><img src="<?php echo $Directory; ?>"/></div></div>
 				<a href="<?php echo $link; ?>" class="info"><h2 class="news_h2"><?php echo $title; ?></a></h2>
+                                <div class="trait"><hr style=" margin-top: 2px;"></div>
 				<div class="news_desc"><?php echo $description; ?></div>
 			</div>
 		</div>  

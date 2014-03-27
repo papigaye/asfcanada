@@ -2130,26 +2130,65 @@ STYLE ARTICLE PREVIEW
 *****************************************************/
 .news_h2{
   text-decoration:none;
+  padding-top:15px;
+  /*width:100px;
+  /*word-wrap:break-word;*/
   text-align: center;
-  padding:5px;
 }
 .news_h2 a{
   text-decoration:none;
   text-align: center;
+  height:5px;
 }
 .news_h2 a:hover{
-  border-bottom:2px solid #f79320;
+  border-bottom:5px solid #f79320;
   text-align: center;
 }
 .news_img{
-  height: 200px;
-  width: 153px;
+  height: 150px;
+  width: 200px;
+ 
 }
 .news_img:hover{
-  cursor:pointer;
+  /*cursor:pointer;
+  height:150px;
+  width:200px;*/
+ /* background-color:  #f79320;
+  z-index: 2;*/
+  	/*color: #fff;*/
+        /*bottom: 30px;
+	display: block;
+	/*position: absolute;
+        /*z-index: 1000;*/
+        cursor: pointer;
+        width: 200px;
+        height: 150px;
+        background-color: #f79320;
+       /* border:0px solid #f79320;*/
+       position: absolute;
+       display: block;
+        opacity: 0.7;
+        z-index: 1000;
+  
 }
-.jaune_transp{
+.jaune_trans:hover{
+  /*cursor:pointer;
+  position:absolute;
   height:200px;
   width:200px;
+  color: #f79320;
+  z-index: 2;*/
+  cursor: pointer;
+  bottom: 0px;
+  width: 200px;
+  height: 150px;
   background-color: #f79320;
+  display: block;
+  position: relative;
+  z-index: 1005;
+  opacity: 3;
+  
+ 
+  
+  
 }
