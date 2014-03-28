@@ -160,17 +160,8 @@ endif; ?>
 	src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
 </div>
 <?php endif; ?>
-<?php // code pour le titre?>
-<?php if ($params->get('show_title')) : ?>
-	<h2>
-	<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
-		<a href="<?php echo $this->item->readmore_link; ?>">
-		<?php echo $this->escape($this->item->title); ?></a>
-	<?php else : ?>
-		<?php echo $this->escape($this->item->title); ?>
-	<?php endif; ?>
-	</h2>
-<?php endif; ?>
+
+
 
 <?php
 if (!empty($this->item->pagination) AND $this->item->pagination AND !$this->item->paginationposition AND !$this->item->paginationrelative):
@@ -186,8 +177,19 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item-
 <?php if (isset($urls) AND ((!empty($urls->urls_position)  AND ($urls->urls_position=='1')) OR ( $params->get('urls_position')=='1') )): ?>
 <?php echo $this->loadTemplate('links'); ?>
 <?php endif; ?>
-	<?php //optional teaser intro text for guests ?>
-<?php elseif ($params->get('show_noauth') == true and  $user->get('guest') ) : ?>
+<?php // code pour le titre?>
+<?php if ($params->get('show_title')) : ?>
+	<h2>
+	<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
+		<a href="<?php echo $this->item->readmore_link; ?>">
+		<?php echo $this->escape($this->item->title); ?></a>
+	<?php else : ?>
+		<?php echo $this->escape($this->item->title); ?>
+	<?php endif; ?>
+	</h2>
+<?php endif; ?>
+
+
 	<?php echo $this->item->introtext; ?>
 	<?php //Optional link to let them register to see the whole article. ?>
 	<?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
@@ -213,6 +215,12 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item-
 		</p>
 	<?php endif; ?>
 <?php endif; ?>
+
+
+	<?php //optional teaser intro text for guests ?>
+<?php elseif ($params->get('show_noauth') == true and  $user->get('guest') ) : ?>
+
+
 <?php
 if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND $this->item->paginationrelative):
 	 echo $this->item->pagination;?>
