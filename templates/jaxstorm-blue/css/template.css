@@ -2191,8 +2191,8 @@ STYLE ARTICLE PREVIEW
   position: relative;
   z-index: 1005;
   opacity: 3;
-  
- 
-  
-  
+}
+.news_img img{
+	width:201px;
+	height:152px;
 }
