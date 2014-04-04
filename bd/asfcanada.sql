@@ -2,10 +2,10 @@
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Sam 22 Mars 2014 à 05:14
--- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.12
+-- Host: localhost
+-- Generation Time: Mar 29, 2014 at 06:53 PM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `asfcanada`
+-- Database: `asfcanada`
 --
 CREATE DATABASE IF NOT EXISTS `asfcanada` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `asfcanada`;
@@ -25,7 +25,7 @@ USE `asfcanada`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_assets`
+-- Table structure for table `asf_assets`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_assets` (
@@ -41,61 +41,61 @@ CREATE TABLE IF NOT EXISTS `asf_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
 --
--- Contenu de la table `asf_assets`
+-- Dumping data for table `asf_assets`
 --
 
 INSERT INTO `asf_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 1, 127, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 1, 171, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
 (7, 1, 13, 18, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(8, 1, 19, 76, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(9, 1, 77, 78, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 79, 80, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
-(11, 1, 81, 82, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(12, 1, 83, 84, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 85, 86, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 87, 88, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 89, 90, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
-(16, 1, 91, 92, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(17, 1, 93, 94, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 95, 96, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 97, 100, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 101, 102, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 103, 104, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 105, 106, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 107, 108, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 109, 112, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.own":{"6":1},"core.edit.state":[]}'),
-(25, 1, 113, 118, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 119, 120, 1, 'com_wrapper', 'com_wrapper', '{}'),
-(27, 8, 20, 65, 2, 'com_content.category.2', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(8, 1, 19, 120, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(9, 1, 121, 122, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 123, 124, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
+(11, 1, 125, 126, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(12, 1, 127, 128, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 129, 130, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 131, 132, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 133, 134, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
+(16, 1, 135, 136, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(17, 1, 137, 138, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
+(18, 1, 139, 140, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 141, 144, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 145, 146, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 147, 148, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 149, 150, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 151, 152, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 153, 156, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.own":{"6":1},"core.edit.state":[]}'),
+(25, 1, 157, 162, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 163, 164, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(27, 8, 20, 115, 2, 'com_content.category.2', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 98, 99, 2, 'com_newsfeeds.category.5', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 114, 115, 2, 'com_weblinks.category.6', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 110, 111, 1, 'com_users.category.7', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 121, 122, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 25, 116, 117, 2, 'com_weblinks.category.8', 'Liens de Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(35, 8, 66, 75, 2, 'com_content.category.9', 'Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(30, 19, 142, 143, 2, 'com_newsfeeds.category.5', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 158, 159, 2, 'com_weblinks.category.6', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 154, 155, 1, 'com_users.category.7', 'Non catégorisé', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 165, 166, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 25, 160, 161, 2, 'com_weblinks.category.8', 'Liens de Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(35, 8, 116, 119, 2, 'com_content.category.9', 'Blog', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (36, 27, 21, 22, 3, 'com_content.article.1', 'A propos de ce site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (37, 27, 23, 24, 3, 'com_content.article.2', 'Travailler sur le site', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(38, 35, 67, 68, 3, 'com_content.article.3', 'PROJET HAITI 2012-2018', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(39, 35, 69, 70, 3, 'com_content.article.4', 'LE DÉFI', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(40, 35, 71, 72, 3, 'com_content.article.5', 'NOS ACTIVITÉS AU CANADA', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(41, 1, 123, 124, 1, 'com_users.notes.category.10', 'Non catégorisé', ''),
-(42, 1, 125, 126, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(38, 27, 65, 66, 3, 'com_content.article.3', 'PROJET HAITI 2012-2018', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(39, 27, 69, 70, 3, 'com_content.article.4', 'LE DÉFI', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(40, 27, 67, 68, 3, 'com_content.article.5', 'NOS ACTIVITÉS AU CANADA', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(41, 1, 167, 168, 1, 'com_users.notes.category.10', 'Non catégorisé', ''),
+(42, 1, 169, 170, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
 (43, 27, 51, 52, 3, 'com_content.article.6', 'Notre action', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (44, 27, 33, 34, 3, 'com_content.article.7', 'parrainer une famille', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (45, 27, 31, 32, 3, 'com_content.article.8', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (46, 27, 25, 26, 3, 'com_content.article.9', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (47, 27, 27, 28, 3, 'com_content.article.10', 'Faire un don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(48, 35, 73, 74, 3, 'com_content.article.11', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(48, 35, 117, 118, 3, 'com_content.article.11', 'Impliquez-vous', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (49, 27, 29, 30, 3, 'com_content.article.12', 'Mission, objectifs et valeurs', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (50, 7, 16, 17, 2, 'com_contact.category.10', 'asf-contact', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (51, 27, 47, 48, 3, 'com_content.article.13', 'Historique', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
@@ -111,12 +111,34 @@ INSERT INTO `asf_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `tit
 (61, 27, 41, 42, 3, 'com_content.article.23', 'Carriéres', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (62, 27, 39, 40, 3, 'com_content.article.24', 'Développement social', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (63, 27, 61, 62, 3, 'com_content.article.25', 'Santé psychosociale', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(64, 27, 63, 64, 3, 'com_content.article.26', 'Santé psychosociale', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
+(64, 27, 63, 64, 3, 'com_content.article.26', 'Santé psychosociale', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(65, 27, 71, 72, 3, 'com_content.article.27', 'Notre organisme', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(66, 27, 73, 74, 3, 'com_content.article.28', 'Nos axes d’intervention', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(67, 27, 75, 76, 3, 'com_content.article.29', 'Missions, objectifs et valeurs', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(68, 27, 77, 78, 3, 'com_content.article.30', 'Rigueur et transparence (transparence financière)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(69, 27, 79, 80, 3, 'com_content.article.31', 'Notre équipe', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(70, 27, 81, 82, 3, 'com_content.article.32', 'Actualités ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(71, 27, 83, 84, 3, 'com_content.article.33', 'Nouvelles', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(72, 27, 85, 86, 3, 'com_content.article.34', 'Agenda des évènements', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(73, 27, 87, 88, 3, 'com_content.article.35', 'Le Blog de l’équipe', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(74, 27, 89, 90, 3, 'com_content.article.36', 'S’inscrire à la Newsletter', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(75, 27, 91, 92, 3, 'com_content.article.37', 'Agir ensemble', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(76, 27, 93, 94, 3, 'com_content.article.38', 'Donner', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(77, 27, 95, 96, 3, 'com_content.article.39', 'Faire un Don', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(78, 27, 97, 98, 3, 'com_content.article.40', 'Demander une brochure', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(79, 27, 99, 100, 3, 'com_content.article.41', 'Offrir un cadeau solidaire ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(80, 27, 101, 102, 3, 'com_content.article.42', '(crayons/stylos, matériel pédagogique, etc. pour nos missions)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(81, 27, 103, 104, 3, 'com_content.article.43', 'Offrir du matériel informatique (fournitures de bureau etc. pour l’ASF)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(82, 27, 105, 106, 3, 'com_content.article.44', 'Nos partenaires', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(83, 27, 107, 108, 3, 'com_content.article.45', 'Le bénévolat humanitaire (devenir intervenant)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(84, 27, 109, 110, 3, 'com_content.article.46', 'Offres de stages/bénévolat', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(85, 27, 111, 112, 3, 'com_content.article.47', 'Contact ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(86, 27, 113, 114, 3, 'com_content.article.48', 'Infos (infos, google maps, réseaux sociaux, etc.)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_associations`
+-- Table structure for table `asf_associations`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_associations` (
@@ -130,50 +152,7 @@ CREATE TABLE IF NOT EXISTS `asf_associations` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_banner_clients`
---
-
-CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `contact` varchar(255) NOT NULL DEFAULT '',
-  `email` varchar(255) NOT NULL DEFAULT '',
-  `extrainfo` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `metakey` text NOT NULL,
-  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
-  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
-  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-  PRIMARY KEY (`id`),
-  KEY `idx_own_prefix` (`own_prefix`),
-  KEY `idx_metakey_prefix` (`metakey_prefix`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banner_tracks`
---
-
-CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
-  `track_date` datetime NOT NULL,
-  `track_type` int(10) unsigned NOT NULL,
-  `banner_id` int(10) unsigned NOT NULL,
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
-  KEY `idx_track_date` (`track_date`),
-  KEY `idx_track_type` (`track_type`),
-  KEY `idx_banner_id` (`banner_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banners`
+-- Table structure for table `asf_banners`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_banners` (
@@ -217,7 +196,50 @@ CREATE TABLE IF NOT EXISTS `asf_banners` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_categories`
+-- Table structure for table `asf_banner_clients`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `contact` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `extrainfo` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `metakey` text NOT NULL,
+  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
+  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`id`),
+  KEY `idx_own_prefix` (`own_prefix`),
+  KEY `idx_metakey_prefix` (`metakey_prefix`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asf_banner_tracks`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
+  `track_date` datetime NOT NULL,
+  `track_type` int(10) unsigned NOT NULL,
+  `banner_id` int(10) unsigned NOT NULL,
+  `count` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
+  KEY `idx_track_date` (`track_date`),
+  KEY `idx_track_type` (`track_type`),
+  KEY `idx_banner_id` (`banner_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asf_categories`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_categories` (
@@ -258,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `asf_categories` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Contenu de la table `asf_categories`
+-- Dumping data for table `asf_categories`
 --
 
 INSERT INTO `asf_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`) VALUES
@@ -276,7 +298,7 @@ INSERT INTO `asf_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `leve
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_contact_details`
+-- Table structure for table `asf_contact_details`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_contact_details` (
@@ -334,7 +356,7 @@ CREATE TABLE IF NOT EXISTS `asf_contact_details` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Contenu de la table `asf_contact_details`
+-- Dumping data for table `asf_contact_details`
 --
 
 INSERT INTO `asf_contact_details` (`id`, `name`, `alias`, `con_position`, `address`, `suburb`, `state`, `country`, `postcode`, `telephone`, `fax`, `misc`, `image`, `imagepos`, `email_to`, `default_con`, `published`, `checked_out`, `checked_out_time`, `ordering`, `params`, `user_id`, `catid`, `access`, `mobile`, `webpage`, `sortname1`, `sortname2`, `sortname3`, `language`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `metakey`, `metadesc`, `metadata`, `featured`, `xreference`, `publish_up`, `publish_down`) VALUES
@@ -343,7 +365,7 @@ INSERT INTO `asf_contact_details` (`id`, `name`, `alias`, `con_position`, `addre
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_content`
+-- Table structure for table `asf_content`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_content` (
@@ -390,44 +412,67 @@ CREATE TABLE IF NOT EXISTS `asf_content` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
--- Contenu de la table `asf_content`
+-- Dumping data for table `asf_content`
 --
 
 INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `introtext`, `fulltext`, `state`, `sectionid`, `mask`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `parentid`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
-(1, 36, 'A propos de ce site', 'a-propos', '', '<p>Cette page a pour but de présenter brièvement le Blog et la personne qui l''écrit.</p>\r\n<p>Lorsque vous serez connecté, vous aurez la possibilité de modifier cette page en cliquant sur le lien «Modifier».</p>', '', 1, 0, 0, 2, '2012-01-04 16:10:42', 883, '', '2014-03-11 20:08:05', 883, 0, '0000-00-00 00:00:00', '2012-01-04 16:10:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 3, '', '', 1, 49, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
-(2, 37, 'Travailler sur le site', 'travailler-sur-le-site', '', '<p style="text-align: justify;">Vous trouverez ici quelques astuces basiques pour travailler sur votre site.</p>\r\n<ul>\r\n<li style="text-align: justify;">Joomla! a une partie «Site» (ou frontale), que vous êtes en train de regarder, et une partie «Administration» (ou arrière) qui est l''endroit où vous effectuez le travail plus avancé comme régler les menus ou décider quels modules afficher. Vous devez vous connecter à l''administration séparément en utilisant le même identifiant et le même mot de passe que vous utilisez sur cette partie du site.</li>\r\n<li style="text-align: justify;">Une des premières choses que vous souhaiterez faire sera probablement de changer le titre du site ansi que sa description. Pour cela, connectez-vous à l''administration puis, dans le menu «Extensions», cliquez sur «Gestion des templates». Ce site est installé avec le template «Protostar» (actuellement utilisé) et le template «Beez3». Pour appliquer un template, cliquez sur l''étoile à droite de son titre, la couleur jaune indique que le template est celui utilisé. En cliquant sur le nom du template, un formulaire est affiché vous permettant de modifier les paramètres selon vos souhaits. Vous pouvez expérimenter les différents paramètres proposés.</li>\r\n<li style="text-align: justify;">Vous souhaitez probablement installer un nouveau template pour changer l''aspect du site. Pour cela, dans le menu «Extension», cliquez sur «Gestion des extensions», vous accédez à l''onglet «Installation».<br />Il existe de nombreux templates gratuits et commerciaux pour Joomla!</li>\r\n<li style="text-align: justify;">Comme vous l''avez déjà vu, vous pouvez contrôler qui peut voir les différentes parties de votre site. Quand vous travaillez aves des modules, articles ou liens web, régler le niveau d''accès sur «Enregistré» signifie que seuls les utilisateurs identifiés sur le site pourront y accéder.</li>\r\n<li style="text-align: justify;">Quand vous créez un nouvel article ou un autre type de contenu, vous pouvez également l''enregistrer comme «Publié» ou «Non-publié». S''il est «Non-publié», les visiteurs du site ne pourront pas le voir, mais vous oui.</li>\r\n<li style="text-align: justify;">Vous pouvez en apprendre d''avantage sur comment travailler avec Joomla! en consultant le <a href="http://docs.joomla.org">site de documentation Joomla</a> et obtenir de l''aide des autres utilisateurs en consultant les <a href="http://forum.joomla.org">forums Joomla.org</a> (en anglais) et les <a href="http://forum.joomla.fr">forums Joomla.fr</a> (en français).<br />Dans l''administration, un bouton «Aide» est disponible dans toutes les interfaces, vous apportant des informations détaillées sur leur utilisation.</li>\r\n</ul>', '', 1, 0, 0, 2, '2012-01-04 16:48:38', 883, '', '2012-01-17 16:02:30', 42, 0, '0000-00-00 00:00:00', '2012-01-04 16:48:38', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 2, '', '', 3, 7, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(3, 38, 'PROJET HAITI 2012-2018', 'projet-haiti-2012-2018', '', '<p><span style="text-align: justify; line-height: 1.3em;">Ce site est un exemple d''affichage d''articles sous forme de Blog.</span><span style="line-height: 1.3em;">Si vous vous connectez sur le site (le lien «Connexion ''Auteur''» se trouve dans le «Menu bas») vous pourrez modifier cet article ainsi que tous</span></p>\r\n', '\r\n<p style="text-align: justify;"><span><span> les </span>autres. Vous pourrez également créer un nouvel article.</span><span>En ajoutant et en modifiant vos articles, vous verrez les changements effectués sur votre site et vous pourrez le personnaliser de différentes façons.</span><span>Vous pouvez y aller sans crainte, vous nel </span><span style="line-height: 1.3em;">a suite de l''article blsssss</span></p>\r\n<p style="text-align: justify;"> </p>\r\n<p style="text-align: justify;"> </p>', 0, 0, 0, 9, '2012-01-04 16:55:36', 883, '', '2014-03-21 21:05:07', 883, 0, '0000-00-00 00:00:00', '2012-01-04 16:55:36', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/100_6582.JPG","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"none","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"1","link_titles":"1","show_intro":"1","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"jaxstorm-blue:misenpagearticleaccueil","show_publishing_options":"0","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 42, 0, 21, '', '', 1, 19, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
-(4, 39, 'LE DÉFI', 'le-defi', '', '<p style="text-align: justify;">La page d''accueil est paramétrée pour afficher les quatres articles les plus récents de la catégorie «Blog», sous forme de colonne. Il y a ensuite les liens vers les 4 articles précédents. Vous pouvez changer </p>\r\n', '\r\n<p><span>ces </span>nombres en éditant les paramètres de contenu, onglet Blog/En vedette, dans l''administration du site. Vous trouverez un lien vers votre administration dans le menu haut.<span style="line-height: 1.3em;">Si vous souhaitez avoir vos articles de Blog divisés en deux parties, une introduction et ensuite une page enière, utilisez le bouton «Lire la suite» pour insérer une séparation (tel ci-dessous).</span></p>\r\n<p style="text-align: justify;">s<span style="line-height: 1.3em;">ur la page entière vous verrez l''introduction ainsi que le reste de l''article. Vous pouvez changer les réglages afin de cacher le texte d''introduction si vous le souhaitez.</span></p>', 0, 0, 0, 9, '2012-01-04 17:47:03', 883, '', '2014-03-21 21:16:12', 883, 0, '0000-00-00 00:00:00', '2012-01-04 17:47:03', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/40prod_c.jpg","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"jaxstorm-blue:misenpagearticleaccueil","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 13, 0, 20, '', '', 1, 9, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
-(5, 40, 'NOS ACTIVITÉS AU CANADA', 'nos-activites-au-canada', '', '<p style="text-align: justify;">Votre site possède quelques modules communs déjà pré-configurés. Cela inclut :</p>\r\n<p style="text-align: justify;"><span style="line-height: 1.3em;">Le «Module image» qui affiche l''image sous le menu. C''est un module de type «Contenu </span></p>\r\n', '\r\n<p> </p>\r\n<ul>\r\n<li>personnalisé» que vous pouvez modifier pour changer l''image.</li>\r\n<li>Le module «Liens de Blog» qui vous permet d''afficher des liens vers d''autres Blogs. Nous avons mis trois exemples, mais vous pouvez en ajouter ou en supprimer. Quand vous êtes connecté, cliquez sur «Gestion des liens» pour afficher la liste des liens et leur icône de modification.</li>\r\n</ul>\r\n<ul style="text-align: justify;">\r\n<li>Le module «Articles les plus lus» liste les articles, basé sur le nombre de fois qu''ils ont été affichés.</li>\r\n<li>Le module «Anciens articles» liste les articles par mois.</li>\r\n<li>Le module «Lien de flux RSS» permet à vos lecteurs de lire vos articles dans un lecteur de flux (Fil d''actualité).</li>\r\n</ul>\r\n<p style="text-align: justify;">Chacun de ces modules possède de nombreux paramètres que vous pouvez expérimenter dans la «Gestion des modules» à partir de l''administration. Joomla inclut également de nombreux autres modules que vous pouvez incorporer à votre site. En développant votre site, vous souhaiterez sans doute ajouter d''autres modules, vous pourrez en trouver sur le site officiel des extensions de Joomla (<a href="http://extensions.joomla.org">JED - Joomla Extensions Directory)</a> ou sur le site officiel des extensions en français pour Joomla (<a href="http://extensions.joomla.fr" target="_blank">extensions.joomla.fr</a>).</p>\r\n<p> </p>', 0, 0, 0, 9, '2012-01-05 09:30:17', 883, '', '2014-03-21 21:21:20', 883, 0, '0000-00-00 00:00:00', '2012-01-05 09:30:17', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/100_3739.JPG","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"jaxstorm-blue:misenpagearticleaccueil","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 12, 0, 19, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
-(6, 43, 'Notre action', 'notre-action', '', '<p>Notre action</p>', '', 1, 0, 0, 2, '2014-01-30 19:57:27', 883, '', '2014-03-11 20:00:47', 883, 0, '0000-00-00 00:00:00', '2014-01-30 19:57:27', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 18, '', '', 1, 47, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(7, 44, 'parrainer une famille', 'parrainer-une-famille', '', '<p>vvv</p>', '', 1, 0, 0, 2, '2014-01-30 20:25:54', 883, '', '2014-03-11 20:02:14', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 17, '', '', 1, 16, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(8, 45, 'Faire un don', 'faire', '', '<p>Faire un don à asfcanada :</p>\r\n<p><a href="https://www.canadahelps.org/CharityProfilePage.aspx?Language=fr&amp;CharityID=d94303"><img src="http://www.canadahelps.org/image/DonateNowLink/fr/Donate1.png" border="0" alt="Faire un don maintenant par CanadaHelps.org!" /></a></p>', '', 1, 0, 0, 2, '2014-01-30 20:26:56', 883, '', '2014-03-11 19:55:49', 883, 883, '2014-03-22 05:09:26', '2014-01-30 20:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 16, '', '', 1, 14, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(1, 36, 'A propos de ce site', 'a-propos', '', '<p>Cette page a pour but de présenter brièvement le Blog et la personne qui l''écrit.</p>\r\n<p>Lorsque vous serez connecté, vous aurez la possibilité de modifier cette page en cliquant sur le lien «Modifier».</p>', '', 1, 0, 0, 2, '2012-01-04 16:10:42', 883, '', '2014-03-11 20:08:05', 883, 0, '0000-00-00 00:00:00', '2012-01-04 16:10:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 26, '', '', 1, 53, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
+(2, 37, 'Travailler sur le site', 'travailler-sur-le-site', '', '<p style="text-align: justify;">Vous trouverez ici quelques astuces basiques pour travailler sur votre site.</p>\r\n<ul>\r\n<li style="text-align: justify;">Joomla! a une partie «Site» (ou frontale), que vous êtes en train de regarder, et une partie «Administration» (ou arrière) qui est l''endroit où vous effectuez le travail plus avancé comme régler les menus ou décider quels modules afficher. Vous devez vous connecter à l''administration séparément en utilisant le même identifiant et le même mot de passe que vous utilisez sur cette partie du site.</li>\r\n<li style="text-align: justify;">Une des premières choses que vous souhaiterez faire sera probablement de changer le titre du site ansi que sa description. Pour cela, connectez-vous à l''administration puis, dans le menu «Extensions», cliquez sur «Gestion des templates». Ce site est installé avec le template «Protostar» (actuellement utilisé) et le template «Beez3». Pour appliquer un template, cliquez sur l''étoile à droite de son titre, la couleur jaune indique que le template est celui utilisé. En cliquant sur le nom du template, un formulaire est affiché vous permettant de modifier les paramètres selon vos souhaits. Vous pouvez expérimenter les différents paramètres proposés.</li>\r\n<li style="text-align: justify;">Vous souhaitez probablement installer un nouveau template pour changer l''aspect du site. Pour cela, dans le menu «Extension», cliquez sur «Gestion des extensions», vous accédez à l''onglet «Installation».<br />Il existe de nombreux templates gratuits et commerciaux pour Joomla!</li>\r\n<li style="text-align: justify;">Comme vous l''avez déjà vu, vous pouvez contrôler qui peut voir les différentes parties de votre site. Quand vous travaillez aves des modules, articles ou liens web, régler le niveau d''accès sur «Enregistré» signifie que seuls les utilisateurs identifiés sur le site pourront y accéder.</li>\r\n<li style="text-align: justify;">Quand vous créez un nouvel article ou un autre type de contenu, vous pouvez également l''enregistrer comme «Publié» ou «Non-publié». S''il est «Non-publié», les visiteurs du site ne pourront pas le voir, mais vous oui.</li>\r\n<li style="text-align: justify;">Vous pouvez en apprendre d''avantage sur comment travailler avec Joomla! en consultant le <a href="http://docs.joomla.org">site de documentation Joomla</a> et obtenir de l''aide des autres utilisateurs en consultant les <a href="http://forum.joomla.org">forums Joomla.org</a> (en anglais) et les <a href="http://forum.joomla.fr">forums Joomla.fr</a> (en français).<br />Dans l''administration, un bouton «Aide» est disponible dans toutes les interfaces, vous apportant des informations détaillées sur leur utilisation.</li>\r\n</ul>', '', 1, 0, 0, 2, '2012-01-04 16:48:38', 883, '', '2012-01-17 16:02:30', 42, 0, '0000-00-00 00:00:00', '2012-01-04 16:48:38', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":"","urlatext":"","targeta":"","urlb":"","urlbtext":"","targetb":"","urlc":"","urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 23, '', '', 3, 7, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(3, 38, 'PROJET HAITI 2012-2018', 'projet-haiti-2012-2018', '', '<p><span style="text-align: justify; line-height: 1.3em;">Ce site est un exemple d''affichage d''articles sous forme de Blog.</span><span style="line-height: 1.3em;">Si vous vous connectez sur le site (le lien «Connexion ''Auteur''» se trouve dans le «Menu bas») vous pourrez modifier cet article ainsi que tous</span><span style="text-align: justify; line-height: 1.3em;">les autres. Vous pourrez également créer un nouvel article.</span><span style="text-align: justify; line-height: 1.3em;">En ajoutant et en modifiant vos articles, vous verrez les changements effectués sur votre site et vous pourrez le personnaliser de différentes façons.</span><span style="text-align: justify; line-height: 1.3em;">Vous pouvez y aller sans crainte, vous nel </span><span style="line-height: 1.3em;">a suite de l''article blsssss</span></p>\r\n<p style="text-align: justify;"> </p>\r\n<p style="text-align: justify;"> </p>', '', 1, 0, 0, 2, '2012-01-04 16:55:36', 883, '', '2014-03-28 18:54:34', 883, 0, '0000-00-00 00:00:00', '2012-01-04 16:55:36', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/100_6582.JPG","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"none","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"1","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"0","show_article_options":"0","show_urls_images_backend":"","show_urls_images_frontend":""}', 46, 0, 43, '', '', 1, 25, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
+(4, 39, 'LE DÉFI', 'le-defi', '', '<p style="text-align: justify;">La page d''accueil est paramétrée pour afficher les quatres articles les plus récents de la catégorie «Blog», sous forme de colonne. Il y a ensuite les liens vers les 4 articles précédents. Vous pouvez changer <span style="line-height: 1.3em;">ces </span><span style="line-height: 1.3em;">nombres en éditant les paramètres de contenu, onglet Blog/En vedette, dans l''administration du site. Vous trouverez un lien vers votre administration dans le menu haut.</span><span style="line-height: 1.3em;">Si vous souhaitez avoir vos articles de Blog divisés en deux parties, une introduction et ensuite une page enière, utilisez le bouton «Lire la suite» pour insérer une séparation (tel ci-dessous).</span></p>\r\n<p style="text-align: justify;">s<span style="line-height: 1.3em;">ur la page entière vous verrez l''introduction ainsi que le reste de l''article. Vous pouvez changer les réglages afin de cacher le texte d''introduction si vous le souhaitez.</span></p>', '', 1, 0, 0, 2, '2012-01-04 17:47:03', 883, '', '2014-03-28 19:17:35', 883, 0, '0000-00-00 00:00:00', '2012-01-04 17:47:03', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/40prod_c.jpg","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"1","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"0","show_article_options":"0","show_urls_images_backend":"0","show_urls_images_frontend":""}', 21, 0, 42, '', '', 1, 20, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
+(5, 40, 'NOS ACTIVITÉS AU CANADA', 'nos-activites-au-canada', '', '<p style="text-align: justify;">Votre site possède quelques modules communs déjà pré-configurés. Cela inclut :</p>\r\n<p style="text-align: justify;"><span style="line-height: 1.3em;">Le «Module image» qui affiche l''image sous le menu. C''est un module de type «Contenu </span></p>\r\n<ul>\r\n<li>personnalisé» que vous pouvez modifier pour changer l''image.</li>\r\n<li>Le module «Liens de Blog» qui vous permet d''afficher des liens vers d''autres Blogs. Nous avons mis trois exemples, mais vous pouvez en ajouter ou en supprimer. Quand vous êtes connecté, cliquez sur «Gestion des liens» pour afficher la liste des liens et leur icône de modification.</li>\r\n</ul>\r\n<ul style="text-align: justify;">\r\n<li>Le module «Articles les plus lus» liste les articles, basé sur le nombre de fois qu''ils ont été affichés.</li>\r\n<li>Le module «Anciens articles» liste les articles par mois.</li>\r\n<li>Le module «Lien de flux RSS» permet à vos lecteurs de lire vos articles dans un lecteur de flux (Fil d''actualité).</li>\r\n</ul>\r\n<p style="text-align: justify;">Chacun de ces modules possède de nombreux paramètres que vous pouvez expérimenter dans la «Gestion des modules» à partir de l''administration. Joomla inclut également de nombreux autres modules que vous pouvez incorporer à votre site. En développant votre site, vous souhaiterez sans doute ajouter d''autres modules, vous pourrez en trouver sur le site officiel des extensions de Joomla (<a href="http://extensions.joomla.org">JED - Joomla Extensions Directory)</a> ou sur le site officiel des extensions en français pour Joomla (<a href="http://extensions.joomla.fr" target="_blank">extensions.joomla.fr</a>).</p>\r\n<p> </p>', '', 1, 0, 0, 2, '2012-01-05 09:30:17', 883, '', '2014-03-28 19:52:21', 883, 0, '0000-00-00 00:00:00', '2012-01-05 09:30:17', '0000-00-00 00:00:00', '{"image_intro":"images\\/Photos_articles\\/100_3739.JPG","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"1","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 16, 0, 41, '', '', 1, 6, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
+(6, 43, 'Notre action', 'notre-action', '', '<p>Notre action</p>', '', 1, 0, 0, 2, '2014-01-30 19:57:27', 883, '', '2014-03-11 20:00:47', 883, 0, '0000-00-00 00:00:00', '2014-01-30 19:57:27', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 40, '', '', 1, 52, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(7, 44, 'parrainer une famille', 'parrainer-une-famille', '', '<p>vvv</p>', '', 1, 0, 0, 2, '2014-01-30 20:25:54', 883, '', '2014-03-11 20:02:14', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 39, '', '', 1, 18, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(8, 45, 'Faire un don', 'faire', '', '<p>Faire un don à asfcanada :</p>\r\n<p><a href="https://www.canadahelps.org/CharityProfilePage.aspx?Language=fr&amp;CharityID=d94303"><img src="http://www.canadahelps.org/image/DonateNowLink/fr/Donate1.png" border="0" alt="Faire un don maintenant par CanadaHelps.org!" /></a></p>', '', 1, 0, 0, 2, '2014-01-30 20:26:56', 883, '', '2014-03-11 19:55:49', 883, 883, '2014-03-29 18:24:41', '2014-01-30 20:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, 38, '', '', 1, 16, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (9, 46, 'Impliquez-vous', 'impliquez-vous', '', '<p>dd</p>', '', -2, 0, 0, 2, '2014-01-30 20:41:47', 883, '', '2014-01-30 20:45:34', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:41:47', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (10, 47, 'Faire un don', 'faire-un-don', '', '<p>Faire un don:</p>\r\n<p><a href="https://www.canadahelps.org/CharityProfilePage.aspx?Language=fr&amp;CharityID=d94303"><img src="http://www.canadahelps.org/image/DonateNowLink/fr/Donate1.png" border="0" alt="Faire un don maintenant par CanadaHelps.org!" /></a>  </p>\r\n<p> </p>', '', -2, 0, 0, 2, '2014-01-30 20:42:57', 883, '', '2014-03-06 20:21:46', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:42:57', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (11, 48, 'Impliquez-vous', 'impliquez-vous', '', '<p>bbb</p>', '', -2, 0, 0, 9, '2014-01-30 20:48:59', 883, '', '2014-03-05 01:04:41', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:48:59', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 15, '', '', 1, 4, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(12, 49, 'Mission, objectifs et valeurs', 'mission-d-asf-canada', '', '<p><strong>Mssion D''ASF canada</strong></p>\r\n<p><strong> </strong></p>\r\n<p><strong>bbaklala<br /></strong></p>', '', 1, 0, 0, 2, '2014-01-30 20:52:29', 883, '', '2014-03-11 19:52:42', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:52:29', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 0, 14, '', '', 1, 31, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(13, 51, 'Historique', 'historique', '', '<p>Historique</p>', '', 1, 0, 0, 2, '2014-03-04 05:53:54', 883, '', '2014-03-11 20:00:02', 883, 0, '0000-00-00 00:00:00', '2014-03-04 05:53:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 4, 0, 13, '', '', 1, 4, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(14, 52, 'Empowerment', 'empowerment', '', '<p>Empowerment</p>', '', 1, 0, 0, 2, '2014-03-04 06:19:52', 883, '', '2014-03-11 19:57:21', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:19:52', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 12, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(15, 53, 'Développement communautaire', 'developpement-communautaire', '', '<p>Développement communautaire</p>', '', 1, 0, 0, 2, '2014-03-04 06:31:59', 883, '', '2014-03-11 19:58:09', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:31:59', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 11, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(16, 54, 'Publication', 'publication', '', '<p>Publication</p>', '', 1, 0, 0, 2, '2014-03-04 06:39:35', 883, '', '2014-03-11 20:03:16', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:39:35', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 10, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(17, 55, 'Notre_action_au_quebec', 'notre-action-au-quebec', '', '<p>Notre action au quebec</p>', '', 1, 0, 0, 2, '2014-03-05 00:08:46', 883, '', '2014-03-11 20:01:44', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:08:46', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 9, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(18, 56, 'Notre_action_au_canada', 'notre-action-au-canada', '', '<p>Notre action au canada</p>', '', 1, 0, 0, 2, '2014-03-05 00:09:40', 883, '', '2014-03-11 20:01:23', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:09:40', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 8, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(19, 57, 'Notre_action_a_l''internationnal', 'notre-action-a-l-internationnal', '', '<p>Notre action a l''internationnal</p>', '', 1, 0, 0, 2, '2014-03-05 00:10:44', 883, '', '2014-03-11 20:02:36', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:10:44', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 7, '', '', 1, 5, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(20, 58, 'impliquer-vous', 'impliquer-vous', '', '<p>Impliquer-vous</p>', '', 1, 0, 0, 2, '2014-03-05 00:45:54', 883, '', '2014-03-11 20:00:21', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:45:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 6, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(21, 59, 'Familles et individus', 'familles-et-individus', '', '<p>Familles et individus</p>', '', 1, 0, 0, 2, '2014-03-05 00:47:17', 883, '', '2014-03-11 19:59:39', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:47:17', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 5, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(22, 60, 'Entreprises', 'entreprises', '', '<p>Entreprises</p>', '', 1, 0, 0, 2, '2014-03-05 00:47:42', 883, '', '2014-03-11 19:59:15', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:47:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 4, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(23, 61, 'Carriéres', 'carrieres', '', '<p>Carriéres</p>', '', 1, 0, 0, 2, '2014-03-05 00:48:01', 883, '', '2014-03-11 19:58:54', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:48:01', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 3, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(24, 62, 'Développement social', 'developpement-social', '', '<p>Développement social</p>', '', 1, 0, 0, 2, '2014-03-05 01:12:49', 883, '', '2014-03-11 19:58:30', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:12:49', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 2, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(25, 63, 'Santé psychosociale', 'sante-psychosociale', '', '<p>Santé psychosociale</p>', '', 1, 0, 0, 2, '2014-03-05 01:14:05', 883, '', '2014-03-11 20:05:20', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:14:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(26, 64, 'Santé psychosociale', 'sante', '', '<p>santé psychosociale</p>', '', -2, 0, 0, 2, '2014-03-05 01:25:10', 883, '', '2014-03-11 20:59:50', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:25:10', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
+(12, 49, 'Mission, objectifs et valeurs', 'mission-d-asf-canada', '', '<p><strong>Mssion D''ASF canada</strong></p>\r\n<p><strong> </strong></p>\r\n<p><strong>bbaklala<br /></strong></p>', '', 1, 0, 0, 2, '2014-01-30 20:52:29', 883, '', '2014-03-11 19:52:42', 883, 0, '0000-00-00 00:00:00', '2014-01-30 20:52:29', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 0, 37, '', '', 1, 32, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(13, 51, 'Historique', 'historique', '', '<p>Historique</p>', '', 1, 0, 0, 2, '2014-03-04 05:53:54', 883, '', '2014-03-11 20:00:02', 883, 0, '0000-00-00 00:00:00', '2014-03-04 05:53:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 4, 0, 36, '', '', 1, 5, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(14, 52, 'Empowerment', 'empowerment', '', '<p>Empowerment</p>', '', 1, 0, 0, 2, '2014-03-04 06:19:52', 883, '', '2014-03-11 19:57:21', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:19:52', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 35, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(15, 53, 'Développement communautaire', 'developpement-communautaire', '', '<p>Développement communautaire</p>', '', 1, 0, 0, 2, '2014-03-04 06:31:59', 883, '', '2014-03-11 19:58:09', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:31:59', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_vote":"0","show_hits":"0","show_noauth":"0","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 34, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(16, 54, 'Publication', 'publication', '', '<p>Publication</p>', '', 1, 0, 0, 2, '2014-03-04 06:39:35', 883, '', '2014-03-11 20:03:16', 883, 0, '0000-00-00 00:00:00', '2014-03-04 06:39:35', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 33, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(17, 55, 'Notre_action_au_quebec', 'notre-action-au-quebec', '', '<p>Notre action au quebec</p>', '', 1, 0, 0, 2, '2014-03-05 00:08:46', 883, '', '2014-03-11 20:01:44', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:08:46', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 32, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(18, 56, 'Notre_action_au_canada', 'notre-action-au-canada', '', '<p>Notre action au canada</p>', '', 1, 0, 0, 2, '2014-03-05 00:09:40', 883, '', '2014-03-28 19:20:34', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:09:40', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 31, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(19, 57, 'Notre_action_a_l''internationnal', 'notre-action-a-l-internationnal', '', '<p>Notre action a l''internationnal</p>', '', 1, 0, 0, 2, '2014-03-05 00:10:44', 883, '', '2014-03-11 20:02:36', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:10:44', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 30, '', '', 1, 6, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(20, 58, 'impliquer-vous', 'impliquer-vous', '', '<p>Impliquer-vous</p>', '', 1, 0, 0, 2, '2014-03-05 00:45:54', 883, '', '2014-03-11 20:00:21', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:45:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 29, '', '', 1, 5, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(21, 59, 'Familles et individus', 'familles-et-individus', '', '<p>Familles et individus</p>', '', 1, 0, 0, 2, '2014-03-05 00:47:17', 883, '', '2014-03-11 19:59:39', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:47:17', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 28, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(22, 60, 'Entreprises', 'entreprises', '', '<p>Entreprises</p>', '', 1, 0, 0, 2, '2014-03-05 00:47:42', 883, '', '2014-03-11 19:59:15', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:47:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 27, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(23, 61, 'Carriéres', 'carrieres', '', '<p>Carriéres</p>', '', 1, 0, 0, 2, '2014-03-05 00:48:01', 883, '', '2014-03-11 19:58:54', 883, 0, '0000-00-00 00:00:00', '2014-03-05 00:48:01', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 25, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(24, 62, 'Développement social', 'developpement-social', '', '<p>Développement social</p>', '', 1, 0, 0, 2, '2014-03-05 01:12:49', 883, '', '2014-03-11 19:58:30', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:12:49', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 24, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(25, 63, 'Santé psychosociale', 'sante-psychosociale', '', '<p>Santé psychosociale</p>', '', 1, 0, 0, 2, '2014-03-05 01:14:05', 883, '', '2014-03-11 20:05:20', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:14:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 22, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(26, 64, 'Santé psychosociale', 'sante', '', '<p>santé psychosociale</p>', '', -2, 0, 0, 2, '2014-03-05 01:25:10', 883, '', '2014-03-11 20:59:50', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:25:10', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(27, 65, 'Notre organisme', 'notre-organisme', '', '<p>Notre organisme...</p>', '', 1, 0, 0, 2, '2014-03-29 17:23:47', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:23:47', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 21, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(28, 66, 'Nos axes d’intervention', 'nos-axes-d-intervention', '', '<p>Nos axes d’intervention...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:06', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:06', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 20, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(29, 67, 'Missions, objectifs et valeurs', 'missions-objectifs-et-valeurs', '', '<p>Missions, objectifs et valeurs...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:19', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:19', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 19, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(30, 68, 'Rigueur et transparence (transparence financière)', 'rigueur-et-transparence', '', '<p>Rigueur et transparence (transparence financière)...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:42', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 18, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(31, 69, 'Notre équipe', 'notre-equipe', '', '<p>Notre équipe...</p>', '', 1, 0, 0, 2, '2014-03-29 17:25:00', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:25:00', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 17, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(32, 70, 'Actualités ', 'actualites', '', '<p><span style="text-decoration: underline;">Actualités</span>...</p>', '', 1, 0, 0, 2, '2014-03-29 17:25:54', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 16, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(33, 71, 'Nouvelles', 'nouvelles', '', '<p>Nouvelles</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:06', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:06', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 15, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(34, 72, 'Agenda des évènements', 'agenda-des-evenements', '', '<p>Agenda des évènements...</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:19', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:19', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 14, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(35, 73, 'Le Blog de l’équipe', 'le-blog-de-l-equipe', '', '<p>Le Blog de l’équipe...</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:38', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:38', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 13, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
+INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `introtext`, `fulltext`, `state`, `sectionid`, `mask`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `parentid`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
+(36, 74, 'S’inscrire à la Newsletter', 's-inscrire-a-la-newsletter', '', '<p>S’inscrire à la Newsletter...</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:56', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 12, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(37, 75, 'Agir ensemble', 'agir-ensemble', '', '<p><span style="text-decoration: underline;">Agir ensemble</span>...</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:09', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:09', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 11, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(38, 76, 'Donner', 'donner', '', '<p>Donner...</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:21', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:21', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 10, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(39, 77, 'Faire un Don', 'faire-don', '', '<p>Faire un Don..</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:49', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:49', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 9, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(40, 78, 'Demander une brochure', 'demander-une-brochure', '', '<p>Demander une brochure...</p>', '', 1, 0, 0, 2, '2014-03-29 17:28:07', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:28:07', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 8, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(41, 79, 'Offrir un cadeau solidaire ', 'offrir-un-cadeau-solidaire', '', '<p>Offrir un cadeau solidaire...</p>', '', 1, 0, 0, 2, '2014-03-29 17:28:18', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:28:18', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 7, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(42, 80, '(crayons/stylos, matériel pédagogique, etc. pour nos missions)', 'cadeau-materiel', '', '<p>(crayons/stylos, matériel pédagogique, etc. pour nos missions)....</p>', '', 1, 0, 0, 2, '2014-03-29 17:28:53', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:28:53', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 6, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(43, 81, 'Offrir du matériel informatique (fournitures de bureau etc. pour l’ASF)', 'materiel-informatique', '', '<p>Offrir du matériel informatique (fournitures de bureau etc. pour l’ASF)</p>', '', 1, 0, 0, 2, '2014-03-29 17:29:12', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:29:12', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 5, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(44, 82, 'Nos partenaires', 'nos-partenaires', '', '<p>Nos partenaires...</p>', '', 1, 0, 0, 2, '2014-03-29 17:29:29', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:29:29', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 4, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(45, 83, 'Le bénévolat humanitaire (devenir intervenant)', 'le-benevolat-humanitaire', '', '<p>Le bénévolat humanitaire (devenir intervenant)...</p>', '', 1, 0, 0, 2, '2014-03-29 17:29:48', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:29:48', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 3, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(46, 84, 'Offres de stages/bénévolat', 'offres-de-stages-benevolat', '', '<p>Offres de stages/bénévolat...</p>', '', 1, 0, 0, 2, '2014-03-29 17:30:03', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:30:03', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 2, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(47, 85, 'Contact ', 'contact', '', '<p><span style="text-decoration: underline;">Contact</span>...</p>', '', 1, 0, 0, 2, '2014-03-29 17:30:18', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:30:18', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(48, 86, 'Infos (infos, google maps, réseaux sociaux, etc.)', 'infos', '', '<p>Infos (infos, google maps, réseaux sociaux, etc.)...</p>', '', 1, 0, 0, 2, '2014-03-29 17:30:36', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:30:36', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_content_frontpage`
+-- Table structure for table `asf_content_frontpage`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_content_frontpage` (
@@ -437,7 +482,7 @@ CREATE TABLE IF NOT EXISTS `asf_content_frontpage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_content_frontpage`
+-- Dumping data for table `asf_content_frontpage`
 --
 
 INSERT INTO `asf_content_frontpage` (`content_id`, `ordering`) VALUES
@@ -449,7 +494,7 @@ INSERT INTO `asf_content_frontpage` (`content_id`, `ordering`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_content_rating`
+-- Table structure for table `asf_content_rating`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_content_rating` (
@@ -463,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `asf_content_rating` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_core_log_searches`
+-- Table structure for table `asf_core_log_searches`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_core_log_searches` (
@@ -474,7 +519,7 @@ CREATE TABLE IF NOT EXISTS `asf_core_log_searches` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_extensions`
+-- Table structure for table `asf_extensions`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_extensions` (
@@ -502,7 +547,7 @@ CREATE TABLE IF NOT EXISTS `asf_extensions` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=813 ;
 
 --
--- Contenu de la table `asf_extensions`
+-- Dumping data for table `asf_extensions`
 --
 
 INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
@@ -527,7 +572,7 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 (19, 'com_search', 'component', 'com_search', '', 1, 1, 1, 1, '{"legacy":false,"name":"com_search","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\n\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_SEARCH_XML_DESCRIPTION","group":""}', '{"enabled":"0","show_date":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (20, 'com_templates', 'component', 'com_templates', '', 1, 1, 1, 1, '{"legacy":false,"name":"com_templates","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_TEMPLATES_XML_DESCRIPTION","group":""}', '{"template_positions_display":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (21, 'com_weblinks', 'component', 'com_weblinks', '', 1, 1, 1, 0, '{"legacy":false,"name":"com_weblinks","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\n\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_WEBLINKS_XML_DESCRIPTION","group":""}', '{"show_comp_description":"1","comp_description":"","show_link_hits":"1","show_link_description":"1","show_other_cats":"0","show_headings":"0","show_numbers":"0","show_report":"1","count_clicks":"1","target":"0","link_icons":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(22, 'com_content', 'component', 'com_content', '', 1, 1, 0, 1, '{"legacy":false,"name":"com_content","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_CONTENT_XML_DESCRIPTION","group":""}', '{"article_layout":"_:default","show_title":"1","link_titles":"1","show_intro":"1","show_category":"1","link_category":"1","show_parent_category":"0","link_parent_category":"0","show_author":"1","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"1","show_item_navigation":"1","show_vote":"0","show_readmore":"1","show_readmore_title":"1","readmore_limit":"100","show_icons":"1","show_print_icon":"1","show_email_icon":"1","show_hits":"1","show_noauth":"0","urls_position":"0","show_publishing_options":"1","show_article_options":"1","show_urls_images_frontend":"1","show_urls_images_backend":"1","targeta":0,"targetb":0,"targetc":0,"float_intro":"left","float_fulltext":"left","category_layout":"_:blog","show_category_heading_title_text":"0","show_category_title":"0","show_description":"0","show_description_image":"1","maxLevel":"1","show_empty_categories":"0","show_no_articles":"1","show_subcat_desc":"1","show_cat_num_articles":"0","show_base_description":"1","maxLevelcat":"-1","show_empty_categories_cat":"0","show_subcat_desc_cat":"0","show_cat_num_articles_cat":"0","num_leading_articles":"1","num_intro_articles":"4","num_columns":"3","num_links":"4","multi_column_order":"1","show_subcategory_content":"0","show_pagination_limit":"1","filter_field":"hide","show_headings":"1","list_show_date":"0","date_format":"","list_show_hits":"1","list_show_author":"1","orderby_pri":"order","orderby_sec":"rdate","order_date":"published","show_pagination":"2","show_pagination_results":"1","show_feed_link":"1","feed_summary":"0","feed_show_readmore":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(22, 'com_content', 'component', 'com_content', '', 1, 1, 0, 1, '{"legacy":false,"name":"com_content","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_CONTENT_XML_DESCRIPTION","group":""}', '{"article_layout":"_:default","show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_readmore":"0","show_readmore_title":"0","readmore_limit":"100","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"0","show_publishing_options":"1","show_article_options":"1","show_urls_images_frontend":"1","show_urls_images_backend":"1","targeta":0,"targetb":0,"targetc":0,"float_intro":"left","float_fulltext":"left","category_layout":"_:blog","show_category_heading_title_text":"0","show_category_title":"0","show_description":"0","show_description_image":"1","maxLevel":"1","show_empty_categories":"0","show_no_articles":"1","show_subcat_desc":"1","show_cat_num_articles":"0","show_base_description":"1","maxLevelcat":"-1","show_empty_categories_cat":"0","show_subcat_desc_cat":"0","show_cat_num_articles_cat":"0","num_leading_articles":"1","num_intro_articles":"4","num_columns":"3","num_links":"4","multi_column_order":"1","show_subcategory_content":"0","show_pagination_limit":"1","filter_field":"hide","show_headings":"1","list_show_date":"0","date_format":"","list_show_hits":"1","list_show_author":"1","orderby_pri":"order","orderby_sec":"rdate","order_date":"published","show_pagination":"2","show_pagination_results":"1","show_feed_link":"1","feed_summary":"0","feed_show_readmore":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (23, 'com_config', 'component', 'com_config', '', 1, 1, 0, 1, '{"legacy":false,"name":"com_config","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_CONFIG_XML_DESCRIPTION","group":""}', '{"filters":{"1":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"6":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"7":{"filter_type":"NONE","filter_tags":"","filter_attributes":""},"2":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"3":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"4":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"5":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"10":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"12":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"8":{"filter_type":"NONE","filter_tags":"","filter_attributes":""}}}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (24, 'com_redirect', 'component', 'com_redirect', '', 1, 1, 0, 1, '{"legacy":false,"name":"com_redirect","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_REDIRECT_XML_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (25, 'com_users', 'component', 'com_users', '', 1, 1, 0, 1, '{"legacy":false,"name":"com_users","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2013 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"2.5.0","description":"COM_USERS_XML_DESCRIPTION","group":""}', '{"allowUserRegistration":"1","new_usertype":"2","guest_usergroup":"1","sendpassword":"1","useractivation":"2","mail_to_admin":"1","captcha":"","frontend_userparams":"1","site_language":"0","change_login_name":"0","reset_count":"10","reset_time":"1","mailSubjectPrefix":"","mailBodySuffix":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -647,7 +692,7 @@ INSERT INTO `asf_extensions` (`extension_id`, `name`, `type`, `element`, `folder
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_filters`
+-- Table structure for table `asf_finder_filters`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_filters` (
@@ -671,7 +716,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_filters` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links`
+-- Table structure for table `asf_finder_links`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links` (
@@ -706,7 +751,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms0`
+-- Table structure for table `asf_finder_links_terms0`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms0` (
@@ -721,7 +766,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms0` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms1`
+-- Table structure for table `asf_finder_links_terms1`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms1` (
@@ -736,7 +781,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms1` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms2`
+-- Table structure for table `asf_finder_links_terms2`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms2` (
@@ -751,7 +796,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms2` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms3`
+-- Table structure for table `asf_finder_links_terms3`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms3` (
@@ -766,7 +811,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms3` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms4`
+-- Table structure for table `asf_finder_links_terms4`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms4` (
@@ -781,7 +826,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms4` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms5`
+-- Table structure for table `asf_finder_links_terms5`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms5` (
@@ -796,7 +841,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms5` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms6`
+-- Table structure for table `asf_finder_links_terms6`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms6` (
@@ -811,7 +856,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms6` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms7`
+-- Table structure for table `asf_finder_links_terms7`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms7` (
@@ -826,7 +871,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms7` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms8`
+-- Table structure for table `asf_finder_links_terms8`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms8` (
@@ -841,7 +886,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms8` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_terms9`
+-- Table structure for table `asf_finder_links_terms9`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_terms9` (
@@ -856,7 +901,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_terms9` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termsa`
+-- Table structure for table `asf_finder_links_termsa`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsa` (
@@ -871,7 +916,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsa` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termsb`
+-- Table structure for table `asf_finder_links_termsb`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsb` (
@@ -886,7 +931,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsb` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termsc`
+-- Table structure for table `asf_finder_links_termsc`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsc` (
@@ -901,7 +946,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsc` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termsd`
+-- Table structure for table `asf_finder_links_termsd`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsd` (
@@ -916,7 +961,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsd` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termse`
+-- Table structure for table `asf_finder_links_termse`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termse` (
@@ -931,7 +976,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termse` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_links_termsf`
+-- Table structure for table `asf_finder_links_termsf`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_links_termsf` (
@@ -946,7 +991,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_links_termsf` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_taxonomy`
+-- Table structure for table `asf_finder_taxonomy`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy` (
@@ -965,7 +1010,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Contenu de la table `asf_finder_taxonomy`
+-- Dumping data for table `asf_finder_taxonomy`
 --
 
 INSERT INTO `asf_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, `ordering`) VALUES
@@ -974,7 +1019,7 @@ INSERT INTO `asf_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_taxonomy_map`
+-- Table structure for table `asf_finder_taxonomy_map`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy_map` (
@@ -988,7 +1033,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_taxonomy_map` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_terms`
+-- Table structure for table `asf_finder_terms`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_terms` (
@@ -1010,7 +1055,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_terms` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_terms_common`
+-- Table structure for table `asf_finder_terms_common`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_terms_common` (
@@ -1021,7 +1066,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_terms_common` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_finder_terms_common`
+-- Dumping data for table `asf_finder_terms_common`
 --
 
 INSERT INTO `asf_finder_terms_common` (`term`, `language`) VALUES
@@ -1144,7 +1189,7 @@ INSERT INTO `asf_finder_terms_common` (`term`, `language`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_tokens`
+-- Table structure for table `asf_finder_tokens`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_tokens` (
@@ -1161,7 +1206,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_tokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_tokens_aggregate`
+-- Table structure for table `asf_finder_tokens_aggregate`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_tokens_aggregate` (
@@ -1182,7 +1227,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_tokens_aggregate` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_finder_types`
+-- Table structure for table `asf_finder_types`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_finder_types` (
@@ -1196,7 +1241,7 @@ CREATE TABLE IF NOT EXISTS `asf_finder_types` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_languages`
+-- Table structure for table `asf_languages`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_languages` (
@@ -1222,7 +1267,7 @@ CREATE TABLE IF NOT EXISTS `asf_languages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Contenu de la table `asf_languages`
+-- Dumping data for table `asf_languages`
 --
 
 INSERT INTO `asf_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
@@ -1232,7 +1277,7 @@ INSERT INTO `asf_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `s
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_menu`
+-- Table structure for table `asf_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_menu` (
@@ -1269,68 +1314,99 @@ CREATE TABLE IF NOT EXISTS `asf_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=129 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=160 ;
 
 --
--- Contenu de la table `asf_menu`
+-- Dumping data for table `asf_menu`
 --
 
 INSERT INTO `asf_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `ordering`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 99, 0, '*', 0),
-(2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 41, 50, 0, '*', 1),
-(3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 42, 43, 0, '*', 1),
-(4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 44, 45, 0, '*', 1),
-(5, 'menu', 'com_banners_clients', 'Clients', '', 'Banners/Clients', 'index.php?option=com_banners&view=clients', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-clients', 0, '', 46, 47, 0, '*', 1),
-(6, 'menu', 'com_banners_tracks', 'Tracks', '', 'Banners/Tracks', 'index.php?option=com_banners&view=tracks', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-tracks', 0, '', 48, 49, 0, '*', 1),
-(7, 'menu', 'com_contact', 'Contacts', '', 'Contacts', 'index.php?option=com_contact', 'component', 0, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 51, 56, 0, '*', 1),
-(8, 'menu', 'com_contact', 'Contacts', '', 'Contacts/Contacts', 'index.php?option=com_contact', 'component', 0, 7, 2, 8, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 52, 53, 0, '*', 1),
-(9, 'menu', 'com_contact_categories', 'Categories', '', 'Contacts/Categories', 'index.php?option=com_categories&extension=com_contact', 'component', 0, 7, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact-cat', 0, '', 54, 55, 0, '*', 1),
-(10, 'menu', 'com_messages', 'Messaging', '', 'Messaging', 'index.php?option=com_messages', 'component', 0, 1, 1, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages', 0, '', 57, 62, 0, '*', 1),
-(11, 'menu', 'com_messages_add', 'New Private Message', '', 'Messaging/New Private Message', 'index.php?option=com_messages&task=message.add', 'component', 0, 10, 2, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-add', 0, '', 58, 59, 0, '*', 1),
-(12, 'menu', 'com_messages_read', 'Read Private Message', '', 'Messaging/Read Private Message', 'index.php?option=com_messages', 'component', 0, 10, 2, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-read', 0, '', 60, 61, 0, '*', 1),
-(13, 'menu', 'com_newsfeeds', 'News Feeds', '', 'News Feeds', 'index.php?option=com_newsfeeds', 'component', 0, 1, 1, 17, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 63, 68, 0, '*', 1),
-(14, 'menu', 'com_newsfeeds_feeds', 'Feeds', '', 'News Feeds/Feeds', 'index.php?option=com_newsfeeds', 'component', 0, 13, 2, 17, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 64, 65, 0, '*', 1),
-(15, 'menu', 'com_newsfeeds_categories', 'Categories', '', 'News Feeds/Categories', 'index.php?option=com_categories&extension=com_newsfeeds', 'component', 0, 13, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds-cat', 0, '', 66, 67, 0, '*', 1),
-(16, 'menu', 'com_redirect', 'Redirect', '', 'Redirect', 'index.php?option=com_redirect', 'component', 0, 1, 1, 24, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:redirect', 0, '', 81, 82, 0, '*', 1),
-(17, 'menu', 'com_search', 'Basic Search', '', 'Basic Search', 'index.php?option=com_search', 'component', 0, 1, 1, 19, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:search', 0, '', 73, 74, 0, '*', 1),
-(18, 'menu', 'com_weblinks', 'Weblinks', '', 'Weblinks', 'index.php?option=com_weblinks', 'component', 0, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks', 0, '', 75, 80, 0, '*', 1),
-(19, 'menu', 'com_weblinks_links', 'Links', '', 'Weblinks/Links', 'index.php?option=com_weblinks', 'component', 0, 18, 2, 21, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks', 0, '', 76, 77, 0, '*', 1),
-(20, 'menu', 'com_weblinks_categories', 'Categories', '', 'Weblinks/Categories', 'index.php?option=com_categories&extension=com_weblinks', 'component', 0, 18, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks-cat', 0, '', 78, 79, 0, '*', 1),
-(21, 'menu', 'com_finder', 'Smart Search', '', 'Smart Search', 'index.php?option=com_finder', 'component', 0, 1, 1, 27, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:finder', 0, '', 71, 72, 0, '*', 1),
-(22, 'menu', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 0, 1, 1, 28, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 69, 70, 0, '*', 1),
-(101, 'mainmenu', 'Accueil', 'accueil', '', 'accueil', 'index.php?option=com_content&view=category&layout=blog&id=9', 'component', 1, 1, 1, 22, 0, 883, '2014-03-22 01:22:07', 0, 1, '', 0, '{"layout_type":"blog","show_category_heading_title_text":"0","show_category_title":"0","show_description":"0","show_description_image":"0","maxLevel":"0","show_empty_categories":"0","show_no_articles":"0","show_subcat_desc":"0","show_cat_num_articles":"0","page_subheading":"","num_leading_articles":"3","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"0","show_subcategory_content":"0","orderby_pri":"none","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"1","link_titles":"1","show_intro":"1","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_readmore":"0","show_readmore_title":"1","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 1, 2, 1, '*', 0),
-(102, 'bottommenu', 'Connexion ''Auteur''', 'connexion', '', 'connexion', 'index.php?option=com_users&view=login', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 3, '{"login_redirect_url":"index.php?Itemid=101","logindescription_show":"1","login_description":"","login_image":"","logout_redirect_url":"","logoutdescription_show":"1","logout_description":"","logout_image":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 83, 84, 0, '*', 0),
-(103, 'authormenu', 'Modifier votre Profil', 'modifier-votre-profil', '', 'modifier-votre-profil', 'index.php?option=com_users&view=profile&layout=edit', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 2, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 27, 28, 0, '*', 0),
-(104, 'authormenu', 'Créer un article', 'creer-un-article', '', 'creer-un-article', 'index.php?option=com_content&view=form&layout=edit', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 3, '', 0, '{"enable_category":"1","catid":"9","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 29, 30, 0, '*', 0),
-(105, 'authormenu', 'Ajouter un lien', 'ajouter-un-lien', '', 'ajouter-un-lien', 'index.php?option=com_weblinks&view=form&layout=edit', 'component', 1, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 3, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 31, 32, 0, '*', 0),
-(106, 'authormenu', 'Administration du site', '2012-01-04-15-46-42', '', '2012-01-04-15-46-42', 'administrator', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 1, 3, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 37, 38, 0, '*', 0),
-(107, 'authormenu', 'Déconnexion', 'deconnexion', '', 'deconnexion', 'index.php?option=com_users&view=login', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"login_redirect_url":"","logindescription_show":"1","login_description":"","login_image":"","logout_redirect_url":"","logoutdescription_show":"1","logout_description":"","logout_image":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 39, 40, 0, '*', 0),
-(108, 'mainmenu', 'A propos de ce site', 'a-propos-de-ce-site', '', 'a-propos-de-ce-site', 'index.php?option=com_content&view=article&id=1', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 3, 14, 0, '*', 0),
-(109, 'authormenu', 'Travailler sur votre site', 'travailler-sur-votre-site', '', 'travailler-sur-votre-site', 'index.php?option=com_content&view=article&id=2', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 35, 36, 0, '*', 0),
-(110, 'authormenu', 'Gestion des liens', 'gestion-des-liens', '', 'gestion-des-liens', 'index.php?option=com_weblinks&view=category&id=8', 'component', 1, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_subcat_desc":"","show_cat_num_links":"","show_pagination_limit":"","show_headings":"","show_link_description":"","show_link_hits":"","show_pagination":"","show_pagination_results":"","show_feed_link":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 33, 34, 0, '*', 0),
-(111, 'mainmenu', 'Notre action', 'notre-action', '', 'notre-action', 'index.php?option=com_content&view=article&id=6', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 15, 26, 0, '*', 0),
-(112, 'mainmenu', 'Parrainer une famille', 'parrainer-une-famille', '', 'parrainer-une-famille', 'index.php?option=com_content&view=article&id=7', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 85, 86, 0, '*', 0),
-(113, 'mainmenu', 'Faire un don', 'faire-un-don', '', 'faire-un-don', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 87, 88, 0, '*', 0),
-(114, 'mainmenu', 'Impliquez-vous', 'impliquez-vous', '', 'impliquez-vous', 'index.php?option=com_content&view=article&id=20', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 89, 96, 0, '*', 0),
-(115, 'asf-contact', 'Contactez-nous', 'contactez-nous', '', 'contactez-nous', 'index.php?option=com_contact&view=contact&id=1', 'component', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 97, 98, 0, '*', 0),
-(116, 'mainmenu', 'Mission, objectifs et valeurs', 'mission-objectifs-et-valeurs', '', 'a-propos-de-ce-site/mission-objectifs-et-valeurs', 'index.php?option=com_content&view=article&id=12', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"1","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 4, 5, 0, '*', 0),
-(117, 'mainmenu', 'Historique', 'historique', '', 'a-propos-de-ce-site/historique', 'index.php?option=com_content&view=article&id=13', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"background:yellow;","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 6, 7, 0, '*', 0),
-(118, 'mainmenu', 'Empowerment', 'empowerment', '', 'a-propos-de-ce-site/empowerment', 'index.php?option=com_content&view=article&id=14', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 8, 9, 0, '*', 0),
-(119, 'mainmenu', 'Développement communautaire', 'developpement-communautaire', '', 'a-propos-de-ce-site/developpement-communautaire', 'index.php?option=com_content&view=article&id=15', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 12, 13, 0, '*', 0),
-(120, 'mainmenu', 'Publication', 'publication', '', 'a-propos-de-ce-site/publication', 'index.php?option=com_content&view=article&id=16', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 10, 11, 0, '*', 0),
-(121, 'mainmenu', 'Au Québec', 'au-quebec', '', 'notre-action/au-quebec', 'index.php?option=com_content&view=article&id=17', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 16, 17, 0, '*', 0),
-(122, 'mainmenu', 'Au Canada', 'notre-action-au-canada', '', 'notre-action/notre-action-au-canada', 'index.php?option=com_content&view=article&id=18', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 18, 19, 0, '*', 0),
-(123, 'mainmenu', 'A l''internationnal', 'a-l-internationnal', '', 'notre-action/a-l-internationnal', 'index.php?option=com_content&view=article&id=19', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 20, 25, 0, '*', 0),
-(124, 'mainmenu', 'Familles et individus', 'familles-et-individus', '', 'impliquez-vous/familles-et-individus', 'index.php?option=com_content&view=article&id=21', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 90, 91, 0, '*', 0),
-(125, 'mainmenu', 'Entreprises', 'entreprises', '', 'impliquez-vous/entreprises', 'index.php?option=com_content&view=article&id=22', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 92, 93, 0, '*', 0),
-(126, 'mainmenu', 'Carriéres', 'carrieres', '', 'impliquez-vous/carrieres', 'index.php?option=com_content&view=article&id=23', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 94, 95, 0, '*', 0),
-(127, 'mainmenu', 'Développement social', 'developpement-social', '', 'notre-action/a-l-internationnal/developpement-social', 'index.php?option=com_content&view=article&id=24', 'component', 1, 123, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 21, 22, 0, '*', 0),
-(128, 'mainmenu', 'Santé psychosociale', 'sante-psychosociale', '', 'notre-action/a-l-internationnal/sante-psychosociale', 'index.php?option=com_content&view=article&id=25', 'component', 1, 123, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 23, 24, 0, '*', 0);
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 159, 0, '*', 0),
+(2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 39, 48, 0, '*', 1),
+(3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 40, 41, 0, '*', 1),
+(4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 42, 43, 0, '*', 1),
+(5, 'menu', 'com_banners_clients', 'Clients', '', 'Banners/Clients', 'index.php?option=com_banners&view=clients', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-clients', 0, '', 44, 45, 0, '*', 1),
+(6, 'menu', 'com_banners_tracks', 'Tracks', '', 'Banners/Tracks', 'index.php?option=com_banners&view=tracks', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-tracks', 0, '', 46, 47, 0, '*', 1),
+(7, 'menu', 'com_contact', 'Contacts', '', 'Contacts', 'index.php?option=com_contact', 'component', 0, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 49, 54, 0, '*', 1),
+(8, 'menu', 'com_contact', 'Contacts', '', 'Contacts/Contacts', 'index.php?option=com_contact', 'component', 0, 7, 2, 8, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact', 0, '', 50, 51, 0, '*', 1),
+(9, 'menu', 'com_contact_categories', 'Categories', '', 'Contacts/Categories', 'index.php?option=com_categories&extension=com_contact', 'component', 0, 7, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:contact-cat', 0, '', 52, 53, 0, '*', 1),
+(10, 'menu', 'com_messages', 'Messaging', '', 'Messaging', 'index.php?option=com_messages', 'component', 0, 1, 1, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages', 0, '', 55, 60, 0, '*', 1),
+(11, 'menu', 'com_messages_add', 'New Private Message', '', 'Messaging/New Private Message', 'index.php?option=com_messages&task=message.add', 'component', 0, 10, 2, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-add', 0, '', 56, 57, 0, '*', 1),
+(12, 'menu', 'com_messages_read', 'Read Private Message', '', 'Messaging/Read Private Message', 'index.php?option=com_messages', 'component', 0, 10, 2, 15, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:messages-read', 0, '', 58, 59, 0, '*', 1),
+(13, 'menu', 'com_newsfeeds', 'News Feeds', '', 'News Feeds', 'index.php?option=com_newsfeeds', 'component', 0, 1, 1, 17, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 61, 66, 0, '*', 1),
+(14, 'menu', 'com_newsfeeds_feeds', 'Feeds', '', 'News Feeds/Feeds', 'index.php?option=com_newsfeeds', 'component', 0, 13, 2, 17, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds', 0, '', 62, 63, 0, '*', 1),
+(15, 'menu', 'com_newsfeeds_categories', 'Categories', '', 'News Feeds/Categories', 'index.php?option=com_categories&extension=com_newsfeeds', 'component', 0, 13, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:newsfeeds-cat', 0, '', 64, 65, 0, '*', 1),
+(16, 'menu', 'com_redirect', 'Redirect', '', 'Redirect', 'index.php?option=com_redirect', 'component', 0, 1, 1, 24, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:redirect', 0, '', 79, 80, 0, '*', 1),
+(17, 'menu', 'com_search', 'Basic Search', '', 'Basic Search', 'index.php?option=com_search', 'component', 0, 1, 1, 19, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:search', 0, '', 71, 72, 0, '*', 1),
+(18, 'menu', 'com_weblinks', 'Weblinks', '', 'Weblinks', 'index.php?option=com_weblinks', 'component', 0, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks', 0, '', 73, 78, 0, '*', 1),
+(19, 'menu', 'com_weblinks_links', 'Links', '', 'Weblinks/Links', 'index.php?option=com_weblinks', 'component', 0, 18, 2, 21, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks', 0, '', 74, 75, 0, '*', 1),
+(20, 'menu', 'com_weblinks_categories', 'Categories', '', 'Weblinks/Categories', 'index.php?option=com_categories&extension=com_weblinks', 'component', 0, 18, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:weblinks-cat', 0, '', 76, 77, 0, '*', 1),
+(21, 'menu', 'com_finder', 'Smart Search', '', 'Smart Search', 'index.php?option=com_finder', 'component', 0, 1, 1, 27, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:finder', 0, '', 69, 70, 0, '*', 1),
+(22, 'menu', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 0, 1, 1, 28, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 67, 68, 0, '*', 1),
+(101, 'mainmenuv2', 'Accueil', 'accueil', '', 'accueil', 'index.php?option=com_content&view=category&layout=blog&id=9', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"layout_type":"blog","show_category_heading_title_text":"0","show_category_title":"0","show_description":"0","show_description_image":"0","maxLevel":"0","show_empty_categories":"0","show_no_articles":"0","show_subcat_desc":"0","show_cat_num_articles":"0","page_subheading":"","num_leading_articles":"3","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"0","show_subcategory_content":"0","orderby_pri":"none","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"1","link_titles":"1","show_intro":"1","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_readmore":"0","show_readmore_title":"1","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 97, 98, 1, '*', 0),
+(102, 'bottommenu', 'Connexion ''Auteur''', 'connexion', '', 'connexion', 'index.php?option=com_users&view=login', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 3, '{"login_redirect_url":"index.php?Itemid=101","logindescription_show":"1","login_description":"","login_image":"","logout_redirect_url":"","logoutdescription_show":"1","logout_description":"","logout_image":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 81, 82, 0, '*', 0),
+(103, 'authormenu', 'Modifier votre Profil', 'modifier-votre-profil', '', 'modifier-votre-profil', 'index.php?option=com_users&view=profile&layout=edit', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 2, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 25, 26, 0, '*', 0),
+(104, 'authormenu', 'Créer un article', 'creer-un-article', '', 'creer-un-article', 'index.php?option=com_content&view=form&layout=edit', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 3, '', 0, '{"enable_category":"1","catid":"9","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 27, 28, 0, '*', 0),
+(105, 'authormenu', 'Ajouter un lien', 'ajouter-un-lien', '', 'ajouter-un-lien', 'index.php?option=com_weblinks&view=form&layout=edit', 'component', 1, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 3, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 29, 30, 0, '*', 0),
+(106, 'authormenu', 'Administration du site', '2012-01-04-15-46-42', '', '2012-01-04-15-46-42', 'administrator', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 1, 3, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 35, 36, 0, '*', 0),
+(107, 'authormenu', 'Déconnexion', 'deconnexion', '', 'deconnexion', 'index.php?option=com_users&view=login', 'component', 1, 1, 1, 25, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"login_redirect_url":"","logindescription_show":"1","login_description":"","login_image":"","logout_redirect_url":"","logoutdescription_show":"1","logout_description":"","logout_image":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 37, 38, 0, '*', 0),
+(108, 'mainmenu', 'A propos de ce site', 'a-propos-de-ce-site', '', 'a-propos-de-ce-site', 'index.php?option=com_content&view=article&id=1', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 1, 12, 0, '*', 0),
+(109, 'authormenu', 'Travailler sur votre site', 'travailler-sur-votre-site', '', 'travailler-sur-votre-site', 'index.php?option=com_content&view=article&id=2', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 33, 34, 0, '*', 0),
+(110, 'authormenu', 'Gestion des liens', 'gestion-des-liens', '', 'gestion-des-liens', 'index.php?option=com_weblinks&view=category&id=8', 'component', 1, 1, 1, 21, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_subcat_desc":"","show_cat_num_links":"","show_pagination_limit":"","show_headings":"","show_link_description":"","show_link_hits":"","show_pagination":"","show_pagination_results":"","show_feed_link":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 31, 32, 0, '*', 0),
+(111, 'mainmenu', 'Notre action', 'notre-action', '', 'notre-action', 'index.php?option=com_content&view=article&id=6', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 13, 24, 0, '*', 0),
+(112, 'mainmenu', 'Parrainer une famille', 'parrainer-une-famille', '', 'parrainer-une-famille', 'index.php?option=com_content&view=article&id=7', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 83, 84, 0, '*', 0),
+(113, 'mainmenu', 'Faire un don', 'faire-un-don', '', 'faire-un-don', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 85, 86, 0, '*', 0),
+(114, 'mainmenu', 'Impliquez-vous', 'impliquez-vous', '', 'impliquez-vous', 'index.php?option=com_content&view=article&id=20', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 87, 94, 0, '*', 0),
+(115, 'asf-contact', 'Contactez-nous', 'contactez-nous', '', 'contactez-nous', 'index.php?option=com_contact&view=contact&id=1', 'component', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 95, 96, 0, '*', 0),
+(116, 'mainmenu', 'Mission, objectifs et valeurs', 'mission-objectifs-et-valeurs', '', 'a-propos-de-ce-site/mission-objectifs-et-valeurs', 'index.php?option=com_content&view=article&id=12', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"1","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 2, 3, 0, '*', 0),
+(117, 'mainmenu', 'Historique', 'historique', '', 'a-propos-de-ce-site/historique', 'index.php?option=com_content&view=article&id=13', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"background:yellow;","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 4, 5, 0, '*', 0),
+(118, 'mainmenu', 'Empowerment', 'empowerment', '', 'a-propos-de-ce-site/empowerment', 'index.php?option=com_content&view=article&id=14', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 6, 7, 0, '*', 0),
+(119, 'mainmenu', 'Développement communautaire', 'developpement-communautaire', '', 'a-propos-de-ce-site/developpement-communautaire', 'index.php?option=com_content&view=article&id=15', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 10, 11, 0, '*', 0),
+(120, 'mainmenu', 'Publication', 'publication', '', 'a-propos-de-ce-site/publication', 'index.php?option=com_content&view=article&id=16', 'component', 1, 108, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 8, 9, 0, '*', 0),
+(121, 'mainmenu', 'Au Québec', 'au-quebec', '', 'notre-action/au-quebec', 'index.php?option=com_content&view=article&id=17', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"","show_category":"0","link_category":"","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 14, 15, 0, '*', 0),
+(122, 'mainmenu', 'Au Canada', 'notre-action-au-canada', '', 'notre-action/notre-action-au-canada', 'index.php?option=com_content&view=article&id=18', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 16, 17, 0, '*', 0),
+(123, 'mainmenu', 'A l''internationnal', 'a-l-internationnal', '', 'notre-action/a-l-internationnal', 'index.php?option=com_content&view=article&id=19', 'component', 1, 111, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 18, 23, 0, '*', 0),
+(124, 'mainmenu', 'Familles et individus', 'familles-et-individus', '', 'impliquez-vous/familles-et-individus', 'index.php?option=com_content&view=article&id=21', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 88, 89, 0, '*', 0),
+(125, 'mainmenu', 'Entreprises', 'entreprises', '', 'impliquez-vous/entreprises', 'index.php?option=com_content&view=article&id=22', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 90, 91, 0, '*', 0),
+(126, 'mainmenu', 'Carriéres', 'carrieres', '', 'impliquez-vous/carrieres', 'index.php?option=com_content&view=article&id=23', 'component', 1, 114, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 92, 93, 0, '*', 0),
+(127, 'mainmenu', 'Développement social', 'developpement-social', '', 'notre-action/a-l-internationnal/developpement-social', 'index.php?option=com_content&view=article&id=24', 'component', 1, 123, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 19, 20, 0, '*', 0),
+(128, 'mainmenu', 'Santé psychosociale', 'sante-psychosociale', '', 'notre-action/a-l-internationnal/sante-psychosociale', 'index.php?option=com_content&view=article&id=25', 'component', 1, 123, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 21, 22, 0, '*', 0),
+(129, 'mainmenuv2', 'Notre organisme ', 'notre-organisme', '', 'notre-organisme', 'index.php?option=com_content&view=article&id=27', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 99, 110, 0, '*', 0),
+(130, 'mainmenuv2', 'Nos axes d’intervention', 'nos-axes-d-intervention', '', 'notre-organisme/nos-axes-d-intervention', 'index.php?option=com_content&view=article&id=28', 'component', 1, 129, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 100, 101, 0, '*', 0),
+(131, 'mainmenuv2', 'Missions, objectifs et valeurs', 'missions-objectifs-et-valeurs', '', 'notre-organisme/missions-objectifs-et-valeurs', 'index.php?option=com_content&view=article&id=29', 'component', 1, 129, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 102, 103, 0, '*', 0),
+(132, 'mainmenuv2', 'Rigueur et transparence (transparence financière)', 'rigueur-et-transparence-transparence-financiere', '', 'notre-organisme/rigueur-et-transparence-transparence-financiere', 'index.php?option=com_content&view=article&id=30', 'component', 1, 129, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 104, 105, 0, '*', 0),
+(133, 'mainmenuv2', 'Notre équipe', 'notre-equipe', '', 'notre-organisme/notre-equipe', 'index.php?option=com_content&view=article&id=31', 'component', 1, 129, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 106, 107, 0, '*', 0),
+(134, 'mainmenuv2', 'Historique', 'historique', '', 'notre-organisme/historique', 'index.php?option=com_content&view=article&id=13', 'component', 1, 129, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 108, 109, 0, '*', 0),
+(135, 'mainmenuv2', 'Actualités ', 'actualites', '', 'actualites', 'index.php?option=com_content&view=article&id=32', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 111, 120, 0, '*', 0),
+(136, 'mainmenuv2', 'Nouvelles', 'nouvelles', '', 'actualites/nouvelles', 'index.php?option=com_content&view=article&id=33', 'component', 1, 135, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 112, 113, 0, '*', 0),
+(137, 'mainmenuv2', 'Agenda des évènements', 'agenda-des-evenements', '', 'actualites/agenda-des-evenements', 'index.php?option=com_content&view=article&id=34', 'component', 1, 135, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 114, 115, 0, '*', 0),
+(138, 'mainmenuv2', 'Le Blog de l’équipe', 'le-blog-de-l-equipe', '', 'actualites/le-blog-de-l-equipe', 'index.php?option=com_content&view=article&id=35', 'component', 1, 135, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 116, 117, 0, '*', 0),
+(139, 'mainmenuv2', 'S’inscrire à la Newsletter', 's-inscrire-a-la-newsletter', '', 'actualites/s-inscrire-a-la-newsletter', 'index.php?option=com_content&view=article&id=36', 'component', 1, 135, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 118, 119, 0, '*', 0),
+(140, 'mainmenuv2', 'Agir ensemble ', 'agir-ensemble', '', 'agir-ensemble', 'index.php?option=com_content&view=article&id=37', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 121, 140, 0, '*', 0),
+(141, 'mainmenuv2', 'Donner', 'donner', '', 'agir-ensemble/donner', 'index.php?option=com_content&view=article&id=38', 'component', 1, 140, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 122, 133, 0, '*', 0),
+(142, 'mainmenuv2', 'Faire un Don', 'faire-un-don', '', 'agir-ensemble/donner/faire-un-don', 'index.php?option=com_content&view=article&id=39', 'component', 1, 141, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 123, 124, 0, '*', 0),
+(143, 'mainmenuv2', 'Demander une brochure', 'demander-une-brochure', '', 'agir-ensemble/donner/demander-une-brochure', 'index.php?option=com_content&view=article&id=40', 'component', 1, 141, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 125, 126, 0, '*', 0),
+(144, 'mainmenuv2', 'Offrir un cadeau solidaire ', 'offrir-un-cadeau-solidaire', '', 'agir-ensemble/donner/offrir-un-cadeau-solidaire', 'index.php?option=com_content&view=article&id=41', 'component', 1, 141, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 127, 132, 0, '*', 0),
+(145, 'mainmenuv2', '(crayons/stylos, matériel pédagogique, etc. pour nos missions)', 'crayons-stylos-materiel-pedagogique-etc-pour-nos-missions', '', 'agir-ensemble/donner/offrir-un-cadeau-solidaire/crayons-stylos-materiel-pedagogique-etc-pour-nos-missions', 'index.php?option=com_content&view=article&id=42', 'component', 1, 144, 4, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 128, 129, 0, '*', 0),
+(146, 'mainmenuv2', 'Offrir du matériel informatique (fournitures de bureau etc. pour l’ASF)', 'offrir-du-materiel-informatique-fournitures-de-bureau-etc-pour-l-asf', '', 'agir-ensemble/donner/offrir-un-cadeau-solidaire/offrir-du-materiel-informatique-fournitures-de-bureau-etc-pour-l-asf', 'index.php?option=com_content&view=article&id=43', 'component', 1, 144, 4, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 130, 131, 0, '*', 0),
+(147, 'mainmenuv2', 'Nos partenaires', 'nos-partenaires', '', 'agir-ensemble/nos-partenaires', 'index.php?option=com_content&view=article&id=44', 'component', 1, 140, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 134, 135, 0, '*', 0),
+(148, 'mainmenuv2', 'Le bénévolat humanitaire (devenir intervenant)', 'le-benevolat-humanitaire-devenir-intervenant', '', 'agir-ensemble/le-benevolat-humanitaire-devenir-intervenant', 'index.php?option=com_content&view=article&id=45', 'component', 1, 140, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 136, 137, 0, '*', 0),
+(149, 'mainmenuv2', 'Offres de stages/bénévolat', 'offres-de-stages-benevolat', '', 'agir-ensemble/offres-de-stages-benevolat', 'index.php?option=com_content&view=article&id=46', 'component', 1, 140, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 138, 139, 0, '*', 0),
+(150, 'mainmenuv2', 'Contact', 'contact', '', 'contact', 'index.php?option=com_content&view=article&id=47', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 141, 158, 0, '*', 0),
+(151, 'mainmenuv2', 'Infos ', 'infos', '', 'contact/infos', 'index.php?option=com_content&view=article&id=48', 'component', 1, 150, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 142, 143, 0, '*', 0),
+(152, 'mainmenuv2', 'Donner', 'donner', '', 'contact/donner', 'index.php?option=com_content&view=article&id=38', 'component', 1, 150, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 144, 155, 0, '*', 0),
+(153, 'mainmenuv2', 'Faire un Don', 'faire-un-don', '', 'contact/donner/faire-un-don', 'index.php?option=com_content&view=article&id=39', 'component', 1, 152, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 145, 146, 0, '*', 0);
+INSERT INTO `asf_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `ordering`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
+(154, 'mainmenuv2', 'Demander une brochure', 'demander-une-brochure', '', 'contact/donner/demander-une-brochure', 'index.php?option=com_content&view=article&id=40', 'component', 1, 152, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 147, 148, 0, '*', 0),
+(155, 'mainmenuv2', 'Offrir un cadeau solidaire ', 'offrir-un-cadeau-solidaire', '', 'contact/donner/offrir-un-cadeau-solidaire', 'index.php?option=com_content&view=article&id=41', 'component', 1, 152, 3, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 149, 154, 0, '*', 0),
+(156, 'mainmenuv2', '(crayons/stylos, matériel pédagogique, etc. pour nos missions)', 'crayons-stylos-materiel-pedagogique-etc-pour-nos-missions', '', 'contact/donner/offrir-un-cadeau-solidaire/crayons-stylos-materiel-pedagogique-etc-pour-nos-missions', 'index.php?option=com_content&view=article&id=42', 'component', 1, 155, 4, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 150, 151, 0, '*', 0),
+(157, 'mainmenuv2', 'Offrir du matériel informatique (fournitures de bureau etc. pour l’ASF)', 'offrir-du-materiel-informatique-fournitures-de-bureau-etc-pour-l-asf', '', 'contact/donner/offrir-un-cadeau-solidaire/offrir-du-materiel-informatique-fournitures-de-bureau-etc-pour-l-asf', 'index.php?option=com_content&view=article&id=43', 'component', 1, 155, 4, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 152, 153, 0, '*', 0),
+(158, 'mainmenuv2', 'Offres de stages/bénévolat', 'offres-de-stages-benevolat', '', 'contact/offres-de-stages-benevolat', 'index.php?option=com_content&view=article&id=46', 'component', 1, 150, 2, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 156, 157, 0, '*', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_menu_types`
+-- Table structure for table `asf_menu_types`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_menu_types` (
@@ -1340,22 +1416,23 @@ CREATE TABLE IF NOT EXISTS `asf_menu_types` (
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_menutype` (`menutype`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- Contenu de la table `asf_menu_types`
+-- Dumping data for table `asf_menu_types`
 --
 
 INSERT INTO `asf_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 (1, 'mainmenu', 'Menu principal', 'Menu principal de ce site'),
 (2, 'authormenu', 'Menu auteurs', 'Menu pour auteurs'),
 (3, 'bottommenu', 'Menu bas', 'Menu bas de page'),
-(6, 'asf-contact', 'Menu contact', 'contact');
+(6, 'asf-contact', 'Menu contact', 'contact'),
+(7, 'mainmenuv2', 'Menu pricipal V2', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_messages`
+-- Table structure for table `asf_messages`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_messages` (
@@ -1375,7 +1452,7 @@ CREATE TABLE IF NOT EXISTS `asf_messages` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_messages_cfg`
+-- Table structure for table `asf_messages_cfg`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_messages_cfg` (
@@ -1388,7 +1465,7 @@ CREATE TABLE IF NOT EXISTS `asf_messages_cfg` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_modules`
+-- Table structure for table `asf_modules`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_modules` (
@@ -1413,14 +1490,14 @@ CREATE TABLE IF NOT EXISTS `asf_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=99 ;
 
 --
--- Contenu de la table `asf_modules`
+-- Dumping data for table `asf_modules`
 --
 
 INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
-(1, 'Menu pricipal', '', '', 1, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+(1, 'Menu pricipal', '', '', 1, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_menu', 1, 1, '{"menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
 (2, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 'Articles populaires', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
 (4, 'Articles ajoutés récemment', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{"count":"5","ordering":"c_dsc","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
@@ -1447,16 +1524,17 @@ INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (90, 'Footer', '', '', 1, 'position-9', 883, '2014-02-27 01:20:47', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_footer', 1, 0, '', 0, '*'),
 (91, 'JM Slideshow Responsive', '', '', 1, 'position-15', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jmslideshow', 1, 1, '{"jmslideshow_responsive":"1","jmslideshow_width":"700","jmslideshow_image_width":"700","jmslideshow_image_height":"400","jmslideshow_image_style":"fill","class_sfx":"","slider_source":"9","jmslideshow_article_ids":"","jmslideshow_k2_ids":"","jmslideshow_hikashop_ids":"","jmslideshow_file_image_url":"","jmslideshow_file_image_title":"","jmslideshow_file_image_title_link":"","jmslideshow_file_image_desc":"","jmslideshow_file_image":"[{\\"url\\":\\"images\\/slides\\/102_3546.JPG\\",\\"title\\":\\"Partager%20L","jmslideshow_foder_image":"","jmslideshow_image_source":"0","jmslideshow_article_image_source":"3","jmslideshow_ordering":"ASC","jmslideshow_orderby":"1","jmslideshow_count":"5","jmslideshow_layout":"default","jmslideshow_effect":"fade","jmslideshow_speed":"500","jmslideshow_auto":"1","jmslideshow_timeout":"5000","jmslideshow_caption_position":"bottomright","jmslideshow_caption_left":"30","jmslideshow_caption_top":"30","jmslideshow_caption_right":"30","jmslideshow_caption_bottom":"30","jmslideshow_caption_width":"500","jmslideshow_show_desc":"1","jmslideshow_desc_length":"150","jmslideshow_desc_html":"","jmslideshow_readmore_text":"Read more","jmslideshow_show_nav_buttons":"1","jmslideshow_show_pager":"0","jmslideshow_pager_type":"1","jmslideshow_pager_position":"bottomleft","jmslideshow_image_thumbnail_width":"100","jmslideshow_image_thumbnail_height":"65","jmslideshow_pager_left":"30","jmslideshow_pager_top":"30","jmslideshow_pager_right":"30","jmslideshow_pager_bottom":"30","jmslideshow_include_jquery":"2"}', 0, '*'),
 (92, 'Slideshow CK', '', '', 1, 'position-15', 883, '2014-02-27 06:27:52', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_slideshowck', 1, 1, '{"slides":"[{|qq|imgname|qq|:|qq|images\\/slides\\/102_3546.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3546.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/102_3983.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3983.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF0303.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF0303.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http:\\/\\/player.vimeo.com\\/video\\/2203727|qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF4134.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF4134.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSC_0043.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSC_0043.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|}]","theme":"default","skin":"camera_amber_skin","alignment":"center","loader":"none","width":"auto","height":"400","navigation":"2","thumbnails":"0","thumbnailwidth":"100","thumbnailheight":"75","pagination":"0","effect":["random"],"time":"7000","transperiod":"1500","captioneffect":"moveFromLeft","portrait":"0","autoAdvance":"1","hover":"0","displayorder":"normal","limitslides":"","fullpage":"0","imagetarget":"_parent","usemobileimage":"0","mobileimageresolution":"640","loadjquery":"1","loadjqueryeasing":"1","loadjquerymobile":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","articlelength":"150","articlelink":"readmore","articletitle":"h3","showarticletitle":"1","captionstylesusefont":"1","captionstylestextgfont":"Droid Sans","captionstylesfontsize":"12px","captionstylesfontcolor":"","captionstylesfontweight":"normal","captionstylesdescfontsize":"10px","captionstylesdescfontcolor":"","captionstylesusemargin":"1","captionstylesmargintop":"0","captionstylesmarginright":"0","captionstylesmarginbottom":"0","captionstylesmarginleft":"0","captionstylespaddingtop":"0","captionstylespaddingright":"0","captionstylespaddingbottom":"0","captionstylespaddingleft":"0","captionstylesusebackground":"1","captionstylesbgcolor1":"","captionstylesbgimage":"","captionstylesbgpositionx":"left","captionstylesbgpositiony":"top","captionstylesbgimagerepeat":"repeat","captionstylesusegradient":"1","captionstylesbgcolor2":"","captionstylesuseroundedcorners":"1","captionstylesroundedcornerstl":"5","captionstylesroundedcornerstr":"5","captionstylesroundedcornersbr":"5","captionstylesroundedcornersbl":"5","captionstylesuseshadow":"1","captionstylesshadowcolor":"","captionstylesshadowblur":"3","captionstylesshadowspread":"0","captionstylesshadowoffsetx":"0","captionstylesshadowoffsety":"0","captionstylesshadowinset":"0","captionstylesuseborders":"1","captionstylesbordercolor":"","captionstylesborderwidth":"1"}', 0, '*'),
-(93, 'Maximenu CK', '', '', 2, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_maximenuck', 1, 1, '{"menutype":"mainmenu","menuid":"maximenuck","startLevel":"1","endLevel":"0","dependantitems":"1","zindexlevel":"10","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","imagerollprefix":"_hover","imageactiveprefix":"_active","imageonly":"0","menu_images_align":"top","usemootools":"1","load":"domready","stopdropdownlevel":"0","menuposition":"0","style":"moomenu","opentype":"open","mooduration":"500","mootransition":"Quad","mooease":"easeOut","dureein":"0","dureeout":"500","useopacity":"0","testoverflow":"0","direction":"normal","directionoffset1":"30","directionoffset2":"30","showactivesubitems":"0","usefancy":"1","fancyduration":"500","fancytransition":"Quad","fancyease":"easeOut","theme":"css3megamenu","usecss":"1","orientation":"0","useresponsive":"1","templatelayer":"beez_20-position1","logoimage":"","logolink":"","logoalt":"","logoposition":"left","logowidth":"","logoheight":"","logomargintop":"0","logomarginright":"0","logomarginbottom":"0","logomarginleft":"0","thirdparty":"none","usevmimages":"0","usevmsuffix":"0","vmimagesuffix":"_mini","vmcategoryroot":"0","vmcategorydepth":"0","hikashopitemid":"0","usehikashopimages":"0","usehikashopsuffix":"0","hikashopimagesuffix":"_mini","hikashopcategoryroot":"0","hikashopcategorydepth":"0","hikashopshowall":"0","usek2images":"0","usek2suffix":"0","k2imagesuffix":"_mini","k2categoryroot":"0","k2categorydepth":"0","k2showall":"1"}', 0, '*'),
-(94, 'PROJET HAITI 2012-2018', '', '', 1, 'position-12', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"PROJET HAITI 2012-2018","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/103_5141_fmt1.jpeg","pxHeight":"200","pxWidth":"200","link":"http:\\/\\/www.wesek.de","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(95, 'LE DEFI', '', '', 1, 'position-121', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"LE DEFI","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/100_6582.JPG","pxHeight":"200","pxWidth":"200","link":"http:\\/\\/www.wesek.de","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(96, 'NOS ACTIVITES AU CANADA', '', '', 1, 'position-122', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"NOS ACTIVITES AU CANADA","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/40prod_c.jpg","pxHeight":"200","pxWidth":"200","link":"http:\\/\\/www.wesek.de","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(97, 'FAIRE UN DON', '', '', 1, 'position-123', 883, '2014-03-22 05:10:54', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"FAIRE UN DON","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/don img.png","pxHeight":"200","pxWidth":"200","link":"https:\\/\\/www.canadahelps.org\\/CharityProfilePage.aspx?Language=fr&CharityID=d94303","bgcolor":"#006699","readMore":"Read More"}', 0, '*');
+(93, 'Maximenu CK', '', '', 2, 'position-1', 883, '2014-03-29 18:30:07', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_maximenuck', 1, 1, '{"menutype":"mainmenu","menuid":"maximenuck","startLevel":"1","endLevel":"0","dependantitems":"1","zindexlevel":"10","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","imagerollprefix":"_hover","imageactiveprefix":"_active","imageonly":"0","menu_images_align":"top","usemootools":"1","load":"domready","stopdropdownlevel":"0","menuposition":"0","style":"moomenu","opentype":"open","mooduration":"500","mootransition":"Quad","mooease":"easeOut","dureein":"0","dureeout":"500","useopacity":"0","testoverflow":"0","direction":"normal","directionoffset1":"30","directionoffset2":"30","showactivesubitems":"0","usefancy":"1","fancyduration":"500","fancytransition":"Quad","fancyease":"easeOut","theme":"css3megamenu","usecss":"1","orientation":"0","useresponsive":"1","templatelayer":"beez_20-position1","logoimage":"","logolink":"","logoalt":"","logoposition":"left","logowidth":"","logoheight":"","logomargintop":"0","logomarginright":"0","logomarginbottom":"0","logomarginleft":"0","thirdparty":"none","usevmimages":"0","usevmsuffix":"0","vmimagesuffix":"_mini","vmcategoryroot":"0","vmcategorydepth":"0","hikashopitemid":"0","usehikashopimages":"0","usehikashopsuffix":"0","hikashopimagesuffix":"_mini","hikashopcategoryroot":"0","hikashopcategorydepth":"0","hikashopshowall":"0","usek2images":"0","usek2suffix":"0","k2imagesuffix":"_mini","k2categoryroot":"0","k2categorydepth":"0","k2showall":"1"}', 0, '*'),
+(94, 'PROJET HAITI 2012-2018', '', '', 1, 'position-12', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"PROJET HAITI 2012-2018","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/103_5141_fmt1.jpeg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=3","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(95, 'LE DEFI', '', '', 1, 'position-121', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"LE DEFI","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/100_6582.JPG","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=4","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(96, 'NOS ACTIVITES AU CANADA', '', '', 1, 'position-122', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"NOS ACTIVITES AU CANADA","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/40prod_c.jpg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=5","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(97, 'FAIRE UN DON', '', '', 1, 'position-123', 883, '2014-03-22 05:10:54', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"FAIRE UN DON","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/don img.png","pxHeight":"200","pxWidth":"200","link":"https:\\/\\/www.canadahelps.org\\/CharityProfilePage.aspx?Language=fr&CharityID=d94303","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(98, 'Menu pricipal V2', '', '', 2, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenuv2","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_modules_menu`
+-- Table structure for table `asf_modules_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_modules_menu` (
@@ -1466,7 +1544,7 @@ CREATE TABLE IF NOT EXISTS `asf_modules_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_modules_menu`
+-- Dumping data for table `asf_modules_menu`
 --
 
 INSERT INTO `asf_modules_menu` (`moduleid`, `menuid`) VALUES
@@ -1540,12 +1618,13 @@ INSERT INTO `asf_modules_menu` (`moduleid`, `menuid`) VALUES
 (96, 109),
 (96, 110),
 (96, 115),
-(97, 101);
+(97, 101),
+(98, 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_newsfeeds`
+-- Table structure for table `asf_newsfeeds`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_newsfeeds` (
@@ -1589,7 +1668,7 @@ CREATE TABLE IF NOT EXISTS `asf_newsfeeds` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_overrider`
+-- Table structure for table `asf_overrider`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_overrider` (
@@ -1603,7 +1682,7 @@ CREATE TABLE IF NOT EXISTS `asf_overrider` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_redirect_links`
+-- Table structure for table `asf_redirect_links`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_redirect_links` (
@@ -1619,10 +1698,10 @@ CREATE TABLE IF NOT EXISTS `asf_redirect_links` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_link_old` (`old_url`),
   KEY `idx_link_modifed` (`modified_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Contenu de la table `asf_redirect_links`
+-- Dumping data for table `asf_redirect_links`
 --
 
 INSERT INTO `asf_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `comment`, `hits`, `published`, `created_date`, `modified_date`) VALUES
@@ -1632,12 +1711,13 @@ INSERT INTO `asf_redirect_links` (`id`, `old_url`, `new_url`, `referer`, `commen
 (4, 'http://localhost/asfcanada/index.php/contacter-nous', '', '', '', 1, 0, '2014-02-27 20:16:03', '0000-00-00 00:00:00'),
 (5, 'http://localhost/asfcanada/index.php/menu-haut', '', 'http://localhost/asfcanada/index.php/menu-haut', '', 1, 0, '2014-03-04 07:09:40', '0000-00-00 00:00:00'),
 (6, 'http://localhost/asfcanada/index.php/administrator', '', '', '', 1, 0, '2014-03-04 21:37:41', '0000-00-00 00:00:00'),
-(7, 'http://localhost/asfcanada/index.php/impliquez-vous', '', 'http://localhost/asfcanada/', '', 1, 0, '2014-03-06 01:56:53', '0000-00-00 00:00:00');
+(7, 'http://localhost/asfcanada/index.php/impliquez-vous', '', 'http://localhost/asfcanada/', '', 1, 0, '2014-03-06 01:56:53', '0000-00-00 00:00:00'),
+(8, 'http://localhost/asfcanada/index.php/component/content/article?layout=edit&id=3', '', 'http://localhost/asfcanada/', '', 1, 0, '2014-03-28 18:48:24', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_schemas`
+-- Table structure for table `asf_schemas`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_schemas` (
@@ -1647,7 +1727,7 @@ CREATE TABLE IF NOT EXISTS `asf_schemas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_schemas`
+-- Dumping data for table `asf_schemas`
 --
 
 INSERT INTO `asf_schemas` (`extension_id`, `version_id`) VALUES
@@ -1656,7 +1736,7 @@ INSERT INTO `asf_schemas` (`extension_id`, `version_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_session`
+-- Table structure for table `asf_session`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_session` (
@@ -1675,17 +1755,17 @@ CREATE TABLE IF NOT EXISTS `asf_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_session`
+-- Dumping data for table `asf_session`
 --
 
 INSERT INTO `asf_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('nsunfq15379ut397o76j39q1o2', 0, 1, '1395465123', '__default|a:7:{s:15:"session.counter";i:13;s:19:"session.timer.start";i:1395463566;s:18:"session.timer.last";i:1395465100;s:17:"session.timer.now";i:1395465123;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.2; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '', ''),
-('tif6ldul1ba85gp2avnb13ap86', 1, 0, '1395465096', '__default|a:8:{s:15:"session.counter";i:96;s:19:"session.timer.start";i:1395463626;s:18:"session.timer.last";i:1395465095;s:17:"session.timer.now";i:1395465096;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.2; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":4:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:97;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:8;}s:4:"data";N;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"883";s:4:"name";s:17:"Super Utilisateur";s:8:"username";s:5:"admin";s:5:"email";s:18:"soulgaye@gmail.com";s:8:"password";s:65:"ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h";s:14:"password_clear";s:0:"";s:8:"usertype";s:10:"deprecated";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-01-24 02:15:41";s:13:"lastvisitDate";s:19:"2014-03-21 20:21:16";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"74d6e44c9bf1d38d53a0f48ef509772f";}', 883, 'admin', '');
+('41f84b7c5ea5411fe06a89d2cd8e3d72', 1, 1, '1396119086', '__default|a:8:{s:15:"session.counter";i:2;s:19:"session.timer.start";i:1396119086;s:18:"session.timer.last";i:1396119086;s:17:"session.timer.now";i:1396119086;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";N;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";N;s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"bab5e5991fdece440b5dac2f75cf253f";}', 0, '', ''),
+('aidtvvvrktiplnurfcdqe312k2', 0, 1, '1396118974', '__default|a:7:{s:15:"session.counter";i:17;s:19:"session.timer.start";i:1396117226;s:18:"session.timer.last";i:1396118888;s:17:"session.timer.now";i:1396118973;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_template_styles`
+-- Table structure for table `asf_template_styles`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_template_styles` (
@@ -1701,7 +1781,7 @@ CREATE TABLE IF NOT EXISTS `asf_template_styles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
--- Contenu de la table `asf_template_styles`
+-- Dumping data for table `asf_template_styles`
 --
 
 INSERT INTO `asf_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `params`) VALUES
@@ -1719,75 +1799,7 @@ INSERT INTO `asf_template_styles` (`id`, `template`, `client_id`, `home`, `title
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_update_categories`
---
-
-CREATE TABLE IF NOT EXISTS `asf_update_categories` (
-  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT '',
-  `description` text NOT NULL,
-  `parent` int(11) DEFAULT '0',
-  `updatesite` int(11) DEFAULT '0',
-  PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_update_sites`
---
-
-CREATE TABLE IF NOT EXISTS `asf_update_sites` (
-  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT '',
-  `type` varchar(20) DEFAULT '',
-  `location` text NOT NULL,
-  `enabled` int(11) DEFAULT '0',
-  `last_check_timestamp` bigint(20) DEFAULT '0',
-  PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=7 ;
-
---
--- Contenu de la table `asf_update_sites`
---
-
-INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1393362266),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1393362266),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 0, 1393362266),
-(4, 'JM Slideshow Responsive', 'extension', 'http://extensions.joomlaman.com/jmslideshow/update.xml', 0, 1393969082),
-(5, 'Slideshow CK Update', 'extension', 'http://update.joomlack.fr/mod_slideshowck_update.xml', 0, 1393969082),
-(6, 'Maximenu CK Update', 'extension', 'http://update.joomlack.fr/mod_maximenuck_update.xml', 0, 1393969082);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_update_sites_extensions`
---
-
-CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
-  `update_site_id` int(11) NOT NULL DEFAULT '0',
-  `extension_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`update_site_id`,`extension_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
-
---
--- Contenu de la table `asf_update_sites_extensions`
---
-
-INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
-(1, 700),
-(2, 700),
-(3, 600),
-(4, 602),
-(4, 809),
-(5, 810),
-(6, 811);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_updates`
+-- Table structure for table `asf_updates`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_updates` (
@@ -1809,7 +1821,7 @@ CREATE TABLE IF NOT EXISTS `asf_updates` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=234 ;
 
 --
--- Contenu de la table `asf_updates`
+-- Dumping data for table `asf_updates`
 --
 
 INSERT INTO `asf_updates` (`update_id`, `update_site_id`, `extension_id`, `categoryid`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`) VALUES
@@ -2050,67 +2062,75 @@ INSERT INTO `asf_updates` (`update_id`, `update_site_id`, `extension_id`, `categ
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_notes`
+-- Table structure for table `asf_update_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_user_notes` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
-  `subject` varchar(100) NOT NULL DEFAULT '',
-  `body` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) unsigned NOT NULL,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_category_id` (`catid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `asf_update_categories` (
+  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT '',
+  `description` text NOT NULL,
+  `parent` int(11) DEFAULT '0',
+  `updatesite` int(11) DEFAULT '0',
+  PRIMARY KEY (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_profiles`
+-- Table structure for table `asf_update_sites`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
-  `user_id` int(11) NOT NULL,
-  `profile_key` varchar(100) NOT NULL,
-  `profile_value` varchar(255) NOT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
+CREATE TABLE IF NOT EXISTS `asf_update_sites` (
+  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT '',
+  `type` varchar(20) DEFAULT '',
+  `location` text NOT NULL,
+  `enabled` int(11) DEFAULT '0',
+  `last_check_timestamp` bigint(20) DEFAULT '0',
+  PRIMARY KEY (`update_site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `asf_update_sites`
+--
+
+INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1393362266),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1393362266),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 0, 1393362266),
+(4, 'JM Slideshow Responsive', 'extension', 'http://extensions.joomlaman.com/jmslideshow/update.xml', 0, 1393969082),
+(5, 'Slideshow CK Update', 'extension', 'http://update.joomlack.fr/mod_slideshowck_update.xml', 0, 1393969082),
+(6, 'Maximenu CK Update', 'extension', 'http://update.joomlack.fr/mod_maximenuck_update.xml', 0, 1393969082);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_user_usergroup_map`
+-- Table structure for table `asf_update_sites_extensions`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
-  PRIMARY KEY (`user_id`,`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
+  `update_site_id` int(11) NOT NULL DEFAULT '0',
+  `extension_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`update_site_id`,`extension_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
 
 --
--- Contenu de la table `asf_user_usergroup_map`
+-- Dumping data for table `asf_update_sites_extensions`
 --
 
-INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
-(883, 8);
+INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
+(1, 700),
+(2, 700),
+(3, 600),
+(4, 602),
+(4, 809),
+(5, 810),
+(6, 811);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_usergroups`
+-- Table structure for table `asf_usergroups`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_usergroups` (
@@ -2127,7 +2147,7 @@ CREATE TABLE IF NOT EXISTS `asf_usergroups` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Contenu de la table `asf_usergroups`
+-- Dumping data for table `asf_usergroups`
 --
 
 INSERT INTO `asf_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
@@ -2143,7 +2163,7 @@ INSERT INTO `asf_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_users`
+-- Table structure for table `asf_users`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_users` (
@@ -2170,16 +2190,76 @@ CREATE TABLE IF NOT EXISTS `asf_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=884 ;
 
 --
--- Contenu de la table `asf_users`
+-- Dumping data for table `asf_users`
 --
 
 INSERT INTO `asf_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-03-22 04:47:10', '0', '', '0000-00-00 00:00:00', 0);
+(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-03-29 17:57:55', '0', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_viewlevels`
+-- Table structure for table `asf_user_notes`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `subject` varchar(100) NOT NULL DEFAULT '',
+  `body` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_user_id` int(10) unsigned NOT NULL,
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_category_id` (`catid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asf_user_profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
+  `user_id` int(11) NOT NULL,
+  `profile_key` varchar(100) NOT NULL,
+  `profile_value` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asf_user_usergroup_map`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
+  PRIMARY KEY (`user_id`,`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `asf_user_usergroup_map`
+--
+
+INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
+(883, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asf_viewlevels`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_viewlevels` (
@@ -2192,7 +2272,7 @@ CREATE TABLE IF NOT EXISTS `asf_viewlevels` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `asf_viewlevels`
+-- Dumping data for table `asf_viewlevels`
 --
 
 INSERT INTO `asf_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
@@ -2203,7 +2283,7 @@ INSERT INTO `asf_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_weblinks`
+-- Table structure for table `asf_weblinks`
 --
 
 CREATE TABLE IF NOT EXISTS `asf_weblinks` (
@@ -2249,7 +2329,7 @@ CREATE TABLE IF NOT EXISTS `asf_weblinks` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Contenu de la table `asf_weblinks`
+-- Dumping data for table `asf_weblinks`
 --
 
 INSERT INTO `asf_weblinks` (`id`, `catid`, `sid`, `title`, `alias`, `url`, `description`, `date`, `hits`, `state`, `checked_out`, `checked_out_time`, `ordering`, `archived`, `approved`, `access`, `params`, `language`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `metakey`, `metadesc`, `metadata`, `featured`, `xreference`, `publish_up`, `publish_down`) VALUES
