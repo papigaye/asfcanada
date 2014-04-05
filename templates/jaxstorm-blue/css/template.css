@@ -977,13 +977,16 @@ legend.hidelabeltxt {
 
 
 /** Tables **/
-table {
+/**table {
   border-collapse:collapse
-}
+
+}**/
+.tablechb { margin-left:33px;border:0px; } 
 
 tr, td {
-  border:solid 1px #cccccc;
-  vertical-align: top;  
+  /**border:solid 1px #cccccc;
+  vertical-align: top;  **/
+  padding:23px 10px 23px 5px;
 }
 
 table.weblinks,
