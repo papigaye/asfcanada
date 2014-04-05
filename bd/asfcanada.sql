@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 04 Avril 2014 à 19:05
--- Version du serveur: 5.1.72-community
+-- Généré le: Ven 04 Avril 2014 à 22:03
+-- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -153,6 +153,49 @@ CREATE TABLE IF NOT EXISTS `asf_associations` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `asf_banner_clients`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `contact` varchar(255) NOT NULL DEFAULT '',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `extrainfo` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `metakey` text NOT NULL,
+  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
+  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
+  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`id`),
+  KEY `idx_own_prefix` (`own_prefix`),
+  KEY `idx_metakey_prefix` (`metakey_prefix`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_banner_tracks`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
+  `track_date` datetime NOT NULL,
+  `track_type` int(10) unsigned NOT NULL,
+  `banner_id` int(10) unsigned NOT NULL,
+  `count` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
+  KEY `idx_track_date` (`track_date`),
+  KEY `idx_track_type` (`track_type`),
+  KEY `idx_banner_id` (`banner_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `asf_banners`
 --
 
@@ -193,49 +236,6 @@ CREATE TABLE IF NOT EXISTS `asf_banners` (
   KEY `idx_banner_catid` (`catid`),
   KEY `idx_language` (`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banner_clients`
---
-
-CREATE TABLE IF NOT EXISTS `asf_banner_clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `contact` varchar(255) NOT NULL DEFAULT '',
-  `email` varchar(255) NOT NULL DEFAULT '',
-  `extrainfo` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `metakey` text NOT NULL,
-  `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
-  `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
-  `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-  PRIMARY KEY (`id`),
-  KEY `idx_own_prefix` (`own_prefix`),
-  KEY `idx_metakey_prefix` (`metakey_prefix`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_banner_tracks`
---
-
-CREATE TABLE IF NOT EXISTS `asf_banner_tracks` (
-  `track_date` datetime NOT NULL,
-  `track_type` int(10) unsigned NOT NULL,
-  `banner_id` int(10) unsigned NOT NULL,
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
-  KEY `idx_track_date` (`track_date`),
-  KEY `idx_track_type` (`track_type`),
-  KEY `idx_banner_id` (`banner_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -447,10 +447,10 @@ INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 (24, 62, 'Développement social', 'developpement-social', '', '<p>Développement social</p>', '', 1, 0, 0, 2, '2014-03-05 01:12:49', 883, '', '2014-03-11 19:58:30', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:12:49', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 24, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (25, 63, 'Santé psychosociale', 'sante-psychosociale', '', '<p>Santé psychosociale</p>', '', 1, 0, 0, 2, '2014-03-05 01:14:05', 883, '', '2014-03-11 20:05:20', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:14:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, 22, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (26, 64, 'Santé psychosociale', 'sante', '', '<p>santé psychosociale</p>', '', -2, 0, 0, 2, '2014-03-05 01:25:10', 883, '', '2014-03-11 20:59:50', 883, 0, '0000-00-00 00:00:00', '2014-03-05 01:25:10', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 0, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(27, 65, 'Notre organisme', 'notre-organisme', '', '<p>Notre organisme...</p>', '', 1, 0, 0, 2, '2014-03-29 17:23:47', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:23:47', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 21, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(27, 65, 'Notre organisme', 'notre-organisme', '', '<p>Notre organisme...</p>', '', 1, 0, 0, 2, '2014-03-29 17:23:47', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:23:47', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 21, '', '', 1, 3, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (28, 66, 'Nos axes d’intervention', 'nos-axes-d-intervention', '', '<p>Nos axes d’intervention...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:06', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:06', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 20, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (29, 67, 'Missions, objectifs et valeurs', 'missions-objectifs-et-valeurs', '', '<p>Missions, objectifs et valeurs...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:19', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:19', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 19, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(30, 68, 'Rigueur et transparence (transparence financière)', 'rigueur-et-transparence', '', '<p>Rigueur et transparence (transparence financière)...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:42', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 18, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(30, 68, 'Rigueur et transparence (transparence financière)', 'rigueur-et-transparence', '', '<p>Rigueur et transparence (transparence financière)...</p>', '', 1, 0, 0, 2, '2014-03-29 17:24:42', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:24:42', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 18, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (31, 69, 'Notre équipe', 'notre-equipe', '', '<p>Notre équipe...</p>', '', 1, 0, 0, 2, '2014-03-29 17:25:00', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:25:00', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 17, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (32, 70, 'Actualités ', 'actualites', '', '<p><span style="text-decoration: underline;">Actualités</span>...</p>', '', 1, 0, 0, 2, '2014-03-29 17:25:54', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:25:54', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 16, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (33, 71, 'Nouvelles', 'nouvelles', '', '<p>Nouvelles</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:06', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:06', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 15, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -459,7 +459,7 @@ INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `i
 INSERT INTO `asf_content` (`id`, `asset_id`, `title`, `alias`, `title_alias`, `introtext`, `fulltext`, `state`, `sectionid`, `mask`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `parentid`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (36, 74, 'S’inscrire à la Newsletter', 's-inscrire-a-la-newsletter', '', '<p>S’inscrire à la Newsletter...</p>', '', 1, 0, 0, 2, '2014-03-29 17:26:56', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:26:56', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 12, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (37, 75, 'Agir ensemble', 'agir-ensemble', '', '<p><span style="text-decoration: underline;">Agir ensemble</span>...</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:09', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:09', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 11, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(38, 76, 'Donner', 'donner', '', '<p>Donner...</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:21', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:21', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 10, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(38, 76, 'Donner', 'donner', '', '<p>Donner...</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:21', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:21', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 10, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (39, 77, 'Faire un Don', 'faire-don', '', '<p>Faire un Don..</p>', '', 1, 0, 0, 2, '2014-03-29 17:27:49', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:27:49', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 9, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (40, 78, 'Demander une brochure', 'demander-une-brochure', '', '<p>Demander une brochure...</p>', '', 1, 0, 0, 2, '2014-03-29 17:28:07', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:28:07', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 8, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (41, 79, 'Offrir un cadeau solidaire ', 'offrir-un-cadeau-solidaire', '', '<p>Offrir un cadeau solidaire...</p>', '', 1, 0, 0, 2, '2014-03-29 17:28:18', 883, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-29 17:28:18', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, 7, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -1527,12 +1527,12 @@ INSERT INTO `asf_modules` (`id`, `title`, `note`, `content`, `ordering`, `positi
 (91, 'JM Slideshow Responsive', '', '', 1, 'position-15', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_jmslideshow', 1, 1, '{"jmslideshow_responsive":"1","jmslideshow_width":"700","jmslideshow_image_width":"700","jmslideshow_image_height":"400","jmslideshow_image_style":"fill","class_sfx":"","slider_source":"9","jmslideshow_article_ids":"","jmslideshow_k2_ids":"","jmslideshow_hikashop_ids":"","jmslideshow_file_image_url":"","jmslideshow_file_image_title":"","jmslideshow_file_image_title_link":"","jmslideshow_file_image_desc":"","jmslideshow_file_image":"[{\\"url\\":\\"images\\/slides\\/102_3546.JPG\\",\\"title\\":\\"Partager%20L","jmslideshow_foder_image":"","jmslideshow_image_source":"0","jmslideshow_article_image_source":"3","jmslideshow_ordering":"ASC","jmslideshow_orderby":"1","jmslideshow_count":"5","jmslideshow_layout":"default","jmslideshow_effect":"fade","jmslideshow_speed":"500","jmslideshow_auto":"1","jmslideshow_timeout":"5000","jmslideshow_caption_position":"bottomright","jmslideshow_caption_left":"30","jmslideshow_caption_top":"30","jmslideshow_caption_right":"30","jmslideshow_caption_bottom":"30","jmslideshow_caption_width":"500","jmslideshow_show_desc":"1","jmslideshow_desc_length":"150","jmslideshow_desc_html":"","jmslideshow_readmore_text":"Read more","jmslideshow_show_nav_buttons":"1","jmslideshow_show_pager":"0","jmslideshow_pager_type":"1","jmslideshow_pager_position":"bottomleft","jmslideshow_image_thumbnail_width":"100","jmslideshow_image_thumbnail_height":"65","jmslideshow_pager_left":"30","jmslideshow_pager_top":"30","jmslideshow_pager_right":"30","jmslideshow_pager_bottom":"30","jmslideshow_include_jquery":"2"}', 0, '*'),
 (92, 'Slideshow CK', '', '', 1, 'position-15', 883, '2014-02-27 06:27:52', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_slideshowck', 1, 1, '{"slides":"[{|qq|imgname|qq|:|qq|images\\/slides\\/102_3546.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3546.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/102_3983.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/102_3983.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF0303.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF0303.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|_parent|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq|http:\\/\\/player.vimeo.com\\/video\\/2203727|qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSCF4134.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSCF4134.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|default|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|},{|qq|imgname|qq|:|qq|images\\/slides\\/DSC_0043.JPG|qq|,|qq|imgcaption|qq|:|qq|Partager L''Espoir|qq|,|qq|imgthumb|qq|:|qq|http:\\/\\/localhost\\/asfcanada\\/images\\/slides\\/DSC_0043.JPG|qq|,|qq|imglink|qq|:|qq||qq|,|qq|imgtarget|qq|:|qq|default|qq|,|qq|imgalignment|qq|:|qq|bottomCenter|qq|,|qq|imgvideo|qq|:|qq||qq|,|qq|slideselect|qq|:|qq|image|qq|,|qq|slidearticleid|qq|:|qq||qq|,|qq|slidearticlename|qq|:|qq||qq|,|qq|imgtime|qq|:|qq||qq|}]","theme":"default","skin":"camera_amber_skin","alignment":"center","loader":"none","width":"auto","height":"400","navigation":"2","thumbnails":"0","thumbnailwidth":"100","thumbnailheight":"75","pagination":"0","effect":["random"],"time":"7000","transperiod":"1500","captioneffect":"moveFromLeft","portrait":"0","autoAdvance":"1","hover":"0","displayorder":"normal","limitslides":"","fullpage":"0","imagetarget":"_parent","usemobileimage":"0","mobileimageresolution":"640","loadjquery":"1","loadjqueryeasing":"1","loadjquerymobile":"1","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","articlelength":"150","articlelink":"readmore","articletitle":"h3","showarticletitle":"1","captionstylesusefont":"1","captionstylestextgfont":"Droid Sans","captionstylesfontsize":"12px","captionstylesfontcolor":"","captionstylesfontweight":"normal","captionstylesdescfontsize":"10px","captionstylesdescfontcolor":"","captionstylesusemargin":"1","captionstylesmargintop":"0","captionstylesmarginright":"0","captionstylesmarginbottom":"0","captionstylesmarginleft":"0","captionstylespaddingtop":"0","captionstylespaddingright":"0","captionstylespaddingbottom":"0","captionstylespaddingleft":"0","captionstylesusebackground":"1","captionstylesbgcolor1":"","captionstylesbgimage":"","captionstylesbgpositionx":"left","captionstylesbgpositiony":"top","captionstylesbgimagerepeat":"repeat","captionstylesusegradient":"1","captionstylesbgcolor2":"","captionstylesuseroundedcorners":"1","captionstylesroundedcornerstl":"5","captionstylesroundedcornerstr":"5","captionstylesroundedcornersbr":"5","captionstylesroundedcornersbl":"5","captionstylesuseshadow":"1","captionstylesshadowcolor":"","captionstylesshadowblur":"3","captionstylesshadowspread":"0","captionstylesshadowoffsetx":"0","captionstylesshadowoffsety":"0","captionstylesshadowinset":"0","captionstylesuseborders":"1","captionstylesbordercolor":"","captionstylesborderwidth":"1"}', 0, '*'),
 (93, 'Maximenu CK', '', '', 2, 'position-1', 883, '2014-03-29 18:30:07', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_maximenuck', 1, 1, '{"menutype":"mainmenu","menuid":"maximenuck","startLevel":"1","endLevel":"0","dependantitems":"1","zindexlevel":"10","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","imagerollprefix":"_hover","imageactiveprefix":"_active","imageonly":"0","menu_images_align":"top","usemootools":"1","load":"domready","stopdropdownlevel":"0","menuposition":"0","style":"moomenu","opentype":"open","mooduration":"500","mootransition":"Quad","mooease":"easeOut","dureein":"0","dureeout":"500","useopacity":"0","testoverflow":"0","direction":"normal","directionoffset1":"30","directionoffset2":"30","showactivesubitems":"0","usefancy":"1","fancyduration":"500","fancytransition":"Quad","fancyease":"easeOut","theme":"css3megamenu","usecss":"1","orientation":"0","useresponsive":"1","templatelayer":"beez_20-position1","logoimage":"","logolink":"","logoalt":"","logoposition":"left","logowidth":"","logoheight":"","logomargintop":"0","logomarginright":"0","logomarginbottom":"0","logomarginleft":"0","thirdparty":"none","usevmimages":"0","usevmsuffix":"0","vmimagesuffix":"_mini","vmcategoryroot":"0","vmcategorydepth":"0","hikashopitemid":"0","usehikashopimages":"0","usehikashopsuffix":"0","hikashopimagesuffix":"_mini","hikashopcategoryroot":"0","hikashopcategorydepth":"0","hikashopshowall":"0","usek2images":"0","usek2suffix":"0","k2imagesuffix":"_mini","k2categoryroot":"0","k2categorydepth":"0","k2showall":"1"}', 0, '*'),
-(94, 'PROJET HAITI 2012-2018', '', '', 1, 'position-12', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"PROJET HAITI 2012-2018","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/103_5141_fmt1.jpeg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=3","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(95, 'LE DEFI', '', '', 1, 'position-121', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_WeSeKReadMore', 1, 0, '{"title":"LE DEFI","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/100_6582.JPG","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=4","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(96, 'NOS ACTIVITES AU CANADA', '', '', 1, 'position-122', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"NOS ACTIVITES AU CANADA","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/40prod_c.jpg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=5","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
-(97, 'FAIRE UN DON', '', '', 1, 'position-123', 883, '2014-03-22 05:10:54', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"FAIRE UN DON","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/don img.png","pxHeight":"200","pxWidth":"200","link":"https:\\/\\/www.canadahelps.org\\/CharityProfilePage.aspx?Language=fr&CharityID=d94303","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(94, 'PROJET HAITI 2012-2018', '', '', 1, 'position-121', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"PROJET HAITI 2012-2018","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/103_5141_fmt1.jpeg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=3","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(95, 'LE DEFI', '', '', 1, 'position-122', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"LE DEFI","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/100_6582.JPG","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=4","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(96, 'NOS ACTIVITES AU CANADA', '', '', 1, 'position-123', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"NOS ACTIVITES AU CANADA","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/40prod_c.jpg","pxHeight":"200","pxWidth":"200","link":"index.php?option=com_content&view=article&layout=edit&id=5","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
+(97, 'FAIRE UN DON', '', '', 1, 'position-124', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_WeSeKReadMore', 1, 0, '{"title":"FAIRE UN DON","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.","textcolor":"#FFFFFF","Directory":"images\\/Photos_articles\\/don img.png","pxHeight":"200","pxWidth":"200","link":"https:\\/\\/www.canadahelps.org\\/CharityProfilePage.aspx?Language=fr&CharityID=d94303","bgcolor":"#006699","readMore":"Read More"}', 0, '*'),
 (98, 'Menu pricipal V2', '', '', 2, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenuv2","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
-(99, 'Actualités_facebook', '', '', 1, 'position-14', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_feed', 1, 1, '{"rssurl":"http:\\/\\/www.facebook.com\\/feeds\\/page.php?format=atom10&id=171343846290816","rssrtl":"0","rsstitle":"1","rssdesc":"1","rssimage":"1","rssitems":"3","rssitemdesc":"1","word_count":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*');
+(99, 'Actualités', '', '', 1, 'position-12', 883, '2014-04-04 20:55:22', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_feed', 1, 1, '{"rssurl":"http:\\/\\/www.facebook.com\\/feeds\\/page.php?format=atom10&id=171343846290816","rssrtl":"0","rsstitle":"0","rssdesc":"0","rssimage":"0","rssitems":"1","rssitemdesc":"1","word_count":"50","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1797,7 +1797,7 @@ CREATE TABLE IF NOT EXISTS `asf_session` (
 --
 
 INSERT INTO `asf_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('622ddd99782971063f195d14b3587d20', 1, 0, '1396554511', '__default|a:8:{s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36";s:15:"session.counter";i:3;s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":2:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":1:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:3:"883";s:4:"name";s:17:"Super Utilisateur";s:8:"username";s:5:"admin";s:5:"email";s:18:"soulgaye@gmail.com";s:8:"password";s:65:"ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h";s:14:"password_clear";s:0:"";s:8:"usertype";s:10:"deprecated";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-01-24 02:15:41";s:13:"lastvisitDate";s:19:"2014-04-03 18:59:03";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"909dded84ee139a4dec062e055637121";s:19:"session.timer.start";i:1396554501;s:18:"session.timer.last";i:1396554501;s:17:"session.timer.now";i:1396554502;}', 883, 'admin', '');
+('g9ogt3npluu1tsir3j5uh75nq7', 0, 1, '1396648888', '__default|a:7:{s:15:"session.counter";i:57;s:19:"session.timer.start";i:1396639120;s:18:"session.timer.last";i:1396648857;s:17:"session.timer.now";i:1396648887;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.2; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -1832,6 +1832,74 @@ INSERT INTO `asf_template_styles` (`id`, `template`, `client_id`, `home`, `title
 (9, 'jaxstorm-blue', 0, '1', 'jaxstorm-blue - Par défaut', '{"logoimage":"1","logo":"","sitetitle":"JaxStormBlue","sitedescription":"Designed by Hurricane Media","slides":"1","slideseffect":"0","slidesimage1":"","slideslink1":"","slidesimage2":"","slideslink2":"","slidesimage3":"","slideslink3":"","slidesimage4":"","slideslink4":"","slidesimage5":"","slideslink5":"","slidesimage6":"","slideslink6":"","socialposition":"1","socialicon1":"1","sociallink1":"http:\\/\\/www.facebook.com\\/","socialicon2":"11","sociallink2":"http:\\/\\/twitter.com\\/","socialicon3":"3","sociallink3":"http:\\/\\/plus.google.com","socialicon4":"0","sociallink4":"","socialicon5":"0","sociallink5":""}'),
 (10, 'jaxstorm-blue', 0, '0', 'jaxstorm-blue - Par défaut', '{"logoimage":"1","logo":"","sitetitle":"JaxStormBlue","sitedescription":"Designed by Hurricane Media","slides":"1","slideseffect":"0","slidesimage1":"","slideslink1":"","slidesimage2":"","slideslink2":"","slidesimage3":"","slideslink3":"","slidesimage4":"","slideslink4":"","slidesimage5":"","slideslink5":"","slidesimage6":"","slideslink6":"","socialposition":"1","socialicon1":"1","sociallink1":"http:\\/\\/www.facebook.com\\/","socialicon2":"11","sociallink2":"http:\\/\\/twitter.com\\/","socialicon3":"3","sociallink3":"http:\\/\\/plus.google.com","socialicon4":"0","sociallink4":"","socialicon5":"0","sociallink5":""}'),
 (13, 'asfc_template', 0, '0', 'asfc_template - Par défaut', '{}');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_update_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_update_categories` (
+  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT '',
+  `description` text NOT NULL,
+  `parent` int(11) DEFAULT '0',
+  `updatesite` int(11) DEFAULT '0',
+  PRIMARY KEY (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_update_sites`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_update_sites` (
+  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT '',
+  `type` varchar(20) DEFAULT '',
+  `location` text NOT NULL,
+  `enabled` int(11) DEFAULT '0',
+  `last_check_timestamp` bigint(20) DEFAULT '0',
+  PRIMARY KEY (`update_site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `asf_update_sites`
+--
+
+INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1393362266),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1393362266),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 0, 1393362266),
+(4, 'JM Slideshow Responsive', 'extension', 'http://extensions.joomlaman.com/jmslideshow/update.xml', 0, 1393969082),
+(5, 'Slideshow CK Update', 'extension', 'http://update.joomlack.fr/mod_slideshowck_update.xml', 0, 1393969082),
+(6, 'Maximenu CK Update', 'extension', 'http://update.joomlack.fr/mod_maximenuck_update.xml', 0, 1393969082);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `asf_update_sites_extensions`
+--
+
+CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
+  `update_site_id` int(11) NOT NULL DEFAULT '0',
+  `extension_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`update_site_id`,`extension_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
+
+--
+-- Contenu de la table `asf_update_sites_extensions`
+--
+
+INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
+(1, 700),
+(2, 700),
+(3, 600),
+(4, 602),
+(4, 809),
+(5, 810),
+(6, 811);
 
 -- --------------------------------------------------------
 
@@ -2099,70 +2167,62 @@ INSERT INTO `asf_updates` (`update_id`, `update_site_id`, `extension_id`, `categ
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_update_categories`
+-- Structure de la table `asf_user_notes`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_update_categories` (
-  `categoryid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT '',
-  `description` text NOT NULL,
-  `parent` int(11) DEFAULT '0',
-  `updatesite` int(11) DEFAULT '0',
-  PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Update Categories' AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `asf_user_notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `subject` varchar(100) NOT NULL DEFAULT '',
+  `body` text NOT NULL,
+  `state` tinyint(3) NOT NULL DEFAULT '0',
+  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_user_id` int(10) unsigned NOT NULL,
+  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`),
+  KEY `idx_category_id` (`catid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_update_sites`
+-- Structure de la table `asf_user_profiles`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_update_sites` (
-  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT '',
-  `type` varchar(20) DEFAULT '',
-  `location` text NOT NULL,
-  `enabled` int(11) DEFAULT '0',
-  `last_check_timestamp` bigint(20) DEFAULT '0',
-  PRIMARY KEY (`update_site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=7 ;
-
---
--- Contenu de la table `asf_update_sites`
---
-
-INSERT INTO `asf_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 1393362266),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 1393362266),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 0, 1393362266),
-(4, 'JM Slideshow Responsive', 'extension', 'http://extensions.joomlaman.com/jmslideshow/update.xml', 0, 1393969082),
-(5, 'Slideshow CK Update', 'extension', 'http://update.joomlack.fr/mod_slideshowck_update.xml', 0, 1393969082),
-(6, 'Maximenu CK Update', 'extension', 'http://update.joomlack.fr/mod_maximenuck_update.xml', 0, 1393969082);
+CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
+  `user_id` int(11) NOT NULL,
+  `profile_key` varchar(100) NOT NULL,
+  `profile_value` varchar(255) NOT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `asf_update_sites_extensions`
+-- Structure de la table `asf_user_usergroup_map`
 --
 
-CREATE TABLE IF NOT EXISTS `asf_update_sites_extensions` (
-  `update_site_id` int(11) NOT NULL DEFAULT '0',
-  `extension_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`update_site_id`,`extension_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
+CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
+  PRIMARY KEY (`user_id`,`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `asf_update_sites_extensions`
+-- Contenu de la table `asf_user_usergroup_map`
 --
 
-INSERT INTO `asf_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
-(1, 700),
-(2, 700),
-(3, 600),
-(4, 602),
-(4, 809),
-(5, 810),
-(6, 811);
+INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
+(883, 8);
 
 -- --------------------------------------------------------
 
@@ -2231,67 +2291,7 @@ CREATE TABLE IF NOT EXISTS `asf_users` (
 --
 
 INSERT INTO `asf_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-04-03 19:48:22', '0', '', '0000-00-00 00:00:00', 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_user_notes`
---
-
-CREATE TABLE IF NOT EXISTS `asf_user_notes` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
-  `subject` varchar(100) NOT NULL DEFAULT '',
-  `body` text NOT NULL,
-  `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) unsigned NOT NULL,
-  `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_category_id` (`catid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_user_profiles`
---
-
-CREATE TABLE IF NOT EXISTS `asf_user_profiles` (
-  `user_id` int(11) NOT NULL,
-  `profile_key` varchar(100) NOT NULL,
-  `profile_value` varchar(255) NOT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
-
--- --------------------------------------------------------
-
---
--- Structure de la table `asf_user_usergroup_map`
---
-
-CREATE TABLE IF NOT EXISTS `asf_user_usergroup_map` (
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
-  PRIMARY KEY (`user_id`,`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `asf_user_usergroup_map`
---
-
-INSERT INTO `asf_user_usergroup_map` (`user_id`, `group_id`) VALUES
-(883, 8);
+(883, 'Super Utilisateur', 'admin', 'soulgaye@gmail.com', 'ca3df29a3778726fbd05390045b7eff4:gMP9tbae2CQ56S36iiYmChUr4YUbJ13h', 'deprecated', 0, 1, '2014-01-24 02:15:41', '2014-04-04 20:53:58', '0', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 

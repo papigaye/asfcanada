@@ -239,6 +239,7 @@ if ($socialicon5 > 0) {
                 <div class="content-item"><jdoc:include type="modules" name="position-121" style="xhtml" /></div>
                 <div class="content-item"><jdoc:include type="modules" name="position-122" style="xhtml" /></div>
                 <div class="content-item"><jdoc:include type="modules" name="position-123" style="xhtml" /></div>
+                <div class="content-item"><jdoc:include type="modules" name="position-124" style="xhtml" /></div>
 			</div>
 			<?php endif; ?>
 

@@ -17,6 +17,7 @@ if ($feed != false)
 	$iUrl	= isset($feed->image->url)	? $feed->image->url	: null;
 	$iTitle = isset($feed->image->title) ? $feed->image->title : null;
 	?>
+	<div class="incline"></div>
 	<div style="direction: <?php echo $rssrtl ? 'rtl' :'ltr'; ?>; text-align: <?php echo $rssrtl ? 'right' :'left'; ?> ! important"  class="feed<?php echo $moduleclass_sfx; ?>">
 	<?php
 	// feed description
@@ -66,27 +67,9 @@ if ($feed != false)
 				// item title
 				?>
 				<li class="newsfeed-item">
-					<?php	if (!is_null($currItem->get_link())) {
-					?>
-				<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
-
-					{ echo '<h5 class="feed-link">';}
-				else
-				{
-				echo '<h4 class="feed-link">';
-				}
-				?>
-
-				<a href="<?php echo $currItem->get_link(); ?>" target="_blank">
-					<?php echo $currItem->get_title(); ?></a>
-					<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
-
-					{ echo '</h5>';}
-						else
-						{ echo '</h4>';}
-				?>
+					
 				<?php
-				}
+				
 
 				// item description
 				if ($params->get('rssitemdesc', 1))
@@ -115,6 +98,26 @@ if ($feed != false)
 
 					<?php
 				}
+				?>
+				<?php	if (!is_null($currItem->get_link())) {
+					?>
+				<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
+
+					{ echo '<h5 class="feed-link">';}
+				else
+				{
+				echo '<h4 class="feed-link">';
+				}
+				?>
+
+				<a href="<?php echo $currItem->get_link(); ?>" target="_blank">
+					<?php echo "Cliquez ici" /*$currItem->get_title();*/ ?></a>
+					<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
+
+					{ echo '</h5>';}
+						else
+						{ echo '</h4>';}
+					}
 				?>
 				</li>
 				<?php

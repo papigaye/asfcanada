@@ -22,7 +22,7 @@ $bgcolor 				= $params->get('bgcolor', 0);
 $WeSeK_moduleid         = $module->id ;
 $readMore				= $params->get('readMore', 'ReadMore');
 ?>
-<div class="wesekReadMore<?php echo $WeSeK_moduleid; ?>">
+<div class="wesekReadMore<?php /*echo $WeSeK_moduleid;*/ ?>">
 	<div class="wesekReadMore">
 		<div class="readMore">                   
 			<div class="mask">
