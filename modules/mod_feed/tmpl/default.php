@@ -18,6 +18,7 @@ if ($feed != false)
 	$iTitle = isset($feed->image->title) ? $feed->image->title : null;
 	?>
 	<div class="incline"></div>
+	
 	<div style="direction: <?php echo $rssrtl ? 'rtl' :'ltr'; ?>; text-align: <?php echo $rssrtl ? 'right' :'left'; ?> ! important"  class="feed<?php echo $moduleclass_sfx; ?>">
 	<?php
 	// feed description
@@ -109,7 +110,7 @@ if ($feed != false)
 				echo '<h4 class="feed-link">';
 				}
 				?>
-
+				<a href="<?php echo $currItem->get_link(); ?>" target="_blank"><div class="plus bg_orange">+</div></a>
 				<a href="<?php echo $currItem->get_link(); ?>" target="_blank">
 					<?php echo "Cliquez ici" /*$currItem->get_title();*/ ?></a>
 					<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))

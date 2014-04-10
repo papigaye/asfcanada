@@ -2162,16 +2162,29 @@ STYLE ARTICLE PREVIEW
 	display: block;
 	/*position: absolute;
         /*z-index: 1000;*/
-        cursor: pointer;
+        /*cursor: pointer;
         width: 200px;
         height: 150px;
         background-color: #f79320;
        /* border:0px solid #f79320;*/
-       position: absolute;
+       /*position: absolute;
        display: block;
         opacity: 0.7;
-        z-index: 1000;
+        z-index: 1000;*/
   
+}
+.jaune_trans{
+  cursor: pointer;
+  bottom: 0px;
+  width: 200px;
+  height: 150px;
+  background-color: #f79320;
+  display: block;
+  position: absolute;
+  z-index: 1005;
+  opacity: 3;
+  top:0;
+  opacity:0;
 }
 .jaune_trans:hover{
   /*cursor:pointer;
@@ -2182,17 +2195,25 @@ STYLE ARTICLE PREVIEW
   z-index: 2;*/
   cursor: pointer;
   bottom: 0px;
-  width: 200px;
-  height: 150px;
+  width: 201px;
+  height: 153px;
   background-color: #f79320;
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 1005;
-  opacity: 3;
+  opacity: 0.5;
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+  color:white;
+  line-height:150px; 
 }
 .news_img img{
 	width:201px;
 	height:152px;
+}
+.news_img img ~ div.jaune_trans{
+	display:block;
 }
 .wesekReadMore{
 	width:200px;
@@ -2211,6 +2232,7 @@ ACtualite module
 	height:200px;
 	margin-left:17px;
 	padding-left:10px;
+	position: relative;
 }
 .content-item .moduletable{
 	position:relative;
@@ -2241,4 +2263,24 @@ ACtualite module
     top:34px;
     left:0;
     background:#333;
+}
+.plus{
+	position:absolute;
+	height: 50px;
+	width: 50px;
+	left:0;
+	bottom:0;
+	font-size: 3em;
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+	cursor: pointer;
+	z-index: 1000;
+	text-decoration: none;
+	
+}
+
+.plus:HOVER{
+	color: white;
 }
