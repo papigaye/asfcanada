@@ -2170,21 +2170,28 @@ STYLE ARTICLE PREVIEW
   width: 165px;
 }
 .news_img:hover{
+  /*cursor:pointer;
+  height:150px;
+  width:200px;*/
+ /* background-color:  #f79320;
+  z-index: 2;*/
+  	/*color: #fff;*/
+        /*bottom: 30px;
+	display: block;
+	/*position: absolute;
+        /*z-index: 1000;*/
         cursor: pointer;
-        width: 165px;
-        height: 140px;
+        width: 200px;
+        height: 150px;
         background-color: #f79320;
-       position: absolute;
-       display: block;
-        opacity: 0.7;
-        z-index: 1000;
+       /* border:0px solid #f79320;*/
   
 }
 .jaune_trans:hover{
   cursor: pointer;
   bottom: 0px;
-  width: 165px;
-  height: 140px;
+  width: 200px;
+  height: 150px;
   background-color: #f79320;
     margin-left: auto;
   margin-right: auto;
@@ -2193,6 +2200,11 @@ STYLE ARTICLE PREVIEW
   z-index: 1005;
   opacity: 3;
 }
+.news_img img{
+	width:201px;
+	height:152px;
+}
+
 .wesekReadMore{
 	width:200px;
 	height:260px;
@@ -2241,6 +2253,7 @@ ACtualite module
     left:0;
     background:#333;
 }
+
 /********************************************************************
 Don module
 *******************************************************************/
