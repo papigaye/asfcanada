@@ -98,7 +98,7 @@ for ($j = 0; $j < $totalItems; $j ++)
 		}
 		?> <a href="<?php echo $currItem->get_link(); ?>" target="_blank">
 	<div class="plus bg_orange">+</div>
-	</a> <a href="<?php echo $currItem->get_link(); ?>" target="_blank"> <?php echo "Cliquez ici" /*$currItem->get_title();*/ ?></a>
+	</a> 
 	<?php if (!is_null($feed->title) && $params->get('rsstitle', 1))
 
 { echo '</h5>';}
