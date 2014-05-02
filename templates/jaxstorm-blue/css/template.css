@@ -2188,7 +2188,7 @@ z-index: 1000;*/
 .jaune_trans{
   cursor: pointer;
   bottom: 0px;
-  width: 200px;
+  width: 170px;
   height: 150px;
   background-color: #f79320;
   display: block;
@@ -2207,7 +2207,7 @@ color: #f79320;
 z-index: 2;*/
   cursor: pointer;
   bottom: 0px;
-  width: 201px;
+  width: 170px;
   height: 153px;
   background-color: #f79320;
   display: block;
@@ -2228,8 +2228,30 @@ height:152px;
 display:block;
 }
 .wesekReadMore{
-width:200px;
+width:170px;
 height:260px;
+margin-left: 5px;
+margin-right: 5px;
+}
+/**********************************************
+module don
+********************************************************************/
+
+#moduleDon .jaune_trans{
+  cursor: pointer;
+  background-color:initial;
+  opacity: 0;
+  position:absolute;
+}
+#moduleDon .news_img{
+    text-align: center;
+    width: auto;
+}
+#moduleDon img{
+  width: 80px;
+  height: 90px; 
+  text-align: center;
+
 }
 /********************************************************************
 ACtualite module
