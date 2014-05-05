@@ -234,7 +234,7 @@ hr {
   margin: 0;
 }*/
 #wrapper {
-  width:97%;
+  width:1111px;
   display: block;
   padding: 0;
   min-height: 100%;
@@ -805,6 +805,8 @@ hr {
 
 #content-top {
   margin-bottom: 18px;
+  /*margin-left: 110px;
+  margin-right: 50px*/
 }
 
 ul.actions {
@@ -1990,7 +1992,7 @@ body.contentpane a:hover {
   padding: 24px 0 10px 0;
   clear: both;
   position:relative;
-  width:900px;
+  /*width:1200px;*/
   margin: auto;
 }
 
@@ -2081,8 +2083,18 @@ body.contentpane a:hover {
 .content-item{
   display:inline-block;
   margin-left:10px;
+  
 }
-
+.content-esp{
+    width: 180px;
+    margin-left: 0px;
+}
+#topnav_wrap, 
+#header_wrap,
+#slideshow,
+#content-menu_wrap_bg{
+	margin: 0 auto;
+}
 /**************************************************************
   MODULE FOOTER CSS
 *****************************************************************/
@@ -2140,7 +2152,7 @@ STYLE ARTICLE PREVIEW
   text-decoration:none;
   padding-top:15px;
   /*width:100px;
-  /*word-wrap:break-word;*/
+/*word-wrap:break-word;*/
   text-align: center;
 }
 .news_h2 a{
@@ -2159,87 +2171,131 @@ STYLE ARTICLE PREVIEW
 }
 .news_img:hover{
   /*cursor:pointer;
-  height:150px;
-  width:200px;*/
- /* background-color:  #f79320;
-  z-index: 2;*/
-  	/*color: #fff;*/
+height:150px;
+width:200px;*/
+ /* background-color: #f79320;
+z-index: 2;*/
+   /*color: #fff;*/
         /*bottom: 30px;
-	display: block;
-	/*position: absolute;
-        /*z-index: 1000;*/
-        cursor: pointer;
-        width: 200px;
-        height: 150px;
-        background-color: #f79320;
-       /* border:0px solid #f79320;*/
-       position: absolute;
-       display: block;
-        opacity: 0.7;
-        z-index: 1000;
+display: block;
+/*position: absolute;
+/*z-index: 1000;*/
+        /*cursor: pointer;
+width: 200px;
+height: 150px;
+background-color: #f79320;
+/* border:0px solid #f79320;*/
+       /*position: absolute;
+display: block;
+opacity: 0.7;
+z-index: 1000;*/
   
 }
-.jaune_trans:hover{
-  /*cursor:pointer;
-  position:absolute;
-  height:200px;
-  width:200px;
-  color: #f79320;
-  z-index: 2;*/
+.jaune_trans{
   cursor: pointer;
   bottom: 0px;
-  width: 200px;
+  width: 170px;
   height: 150px;
   background-color: #f79320;
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 1005;
   opacity: 3;
+  top:0;
+  opacity:0;
+}
+.jaune_trans:hover{
+  /*cursor:pointer;
+position:absolute;
+height:200px;
+width:200px;
+color: #f79320;
+z-index: 2;*/
+  cursor: pointer;
+  bottom: 0px;
+  width: 170px;
+  height: 153px;
+  background-color: #f79320;
+  display: block;
+  position: absolute;
+  z-index: 1005;
+  opacity: 0.5;
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+  color:white;
+  line-height:150px;
 }
 .news_img img{
-	width:201px;
-	height:152px;
+width:201px;
+height:152px;
+}
+.news_img img ~ div.jaune_trans{
+display:block;
 }
 .wesekReadMore{
-	width:200px;
-	height:260px;
+width:170px;
+height:260px;
+margin-left: 5px;
+margin-right: 5px;
+}
+/**********************************************
+module don
+********************************************************************/
+
+#moduleDon .jaune_trans{
+  cursor: pointer;
+  background-color:initial;
+  opacity: 0;
+  position:absolute;
+}
+#moduleDon .news_img{
+    text-align: center;
+    width: auto;
+}
+#moduleDon img{
+  width: 80px;
+  height: 90px; 
+  text-align: center;
+
 }
 /********************************************************************
 ACtualite module
 *******************************************************************/
 
 .feed{
-	background-color: black;
-	color:white;
-	width:300px !important;
-	padding-top:60px;
-	height:100%;
-	height:200px;
-	margin-left:17px;
-	padding-left:10px;
+background-color: black;
+color:white;
+width:300px !important;
+padding-top:60px;
+height:100%;
+height:200px;
+margin-left:17px;
+padding-left:10px;
+position: relative;
 }
 .content-item .moduletable{
-	position:relative;
-	
+position:relative;
+
 }
 .content-item .moduletable h3{
-	background-color: #f79320;
-	color:white;
-	position:absolute;
-	top:0;
-	left:0;
-	right:0;
-	z-index:1000;
-	padding:10px;
-	font-size:14px;
-	text-align: center;
-	margin-top: 10px !important;
+background-color: #f79320;
+color:white;
+position:absolute;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+padding:10px;
+font-size:14px;
+text-align: center;
+margin-top: 10px !important;
 }
 .incline{
-	position:absolute;
-	width:20px;
-	height:18px;
-	-webkit-transform: rotate(12deg);
+position:absolute;
+width:20px;
+height:18px;
+-webkit-transform: rotate(12deg);
     -moz-transform: rotate(12deg);
     -o-transform: rotate(12deg);
     -ms-transform: rotate(12deg);
@@ -2247,4 +2303,24 @@ ACtualite module
     top:34px;
     left:0;
     background:#333;
+}
+.plus{
+position:absolute;
+height: 50px;
+width: 50px;
+left:0;
+bottom:0;
+font-size: 3em;
+color: black;
+text-align: center;
+vertical-align: middle;
+line-height: 50px;
+cursor: pointer;
+z-index: 1000;
+text-decoration: none;
+
+}
+
+.plus:HOVER{
+color: white;
 }
